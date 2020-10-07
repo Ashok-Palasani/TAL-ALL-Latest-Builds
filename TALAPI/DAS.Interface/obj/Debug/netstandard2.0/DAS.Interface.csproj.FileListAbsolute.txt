@@ -1,0 +1,484 @@
+C:\Users\Admin\source\repos\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+C:\Users\Admin\source\repos\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+C:\Users\Admin\source\repos\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+C:\Users\Admin\source\repos\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+C:\Users\Admin\source\repos\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+C:\Users\Admin\source\repos\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Monika\DAS\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Monika\DAS\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Monika\DAS\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Monika\DAS\DAS\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Monika\DAS\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Monika\DAS\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Monika\DAS\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Monika\DAS\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Monika\DAS\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Monika\DAS\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS\DAS\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191003\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\Vignesh\DAS20191003\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191003\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191003\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\Vignesh\DAS20191003\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\Vignesh\DAS20191003\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\Vignesh\DAS20191003\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\Vignesh\DAS20191003\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\Vignesh\DAS20191003\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\Vignesh\DAS20191003\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\Vignesh\DAS20191003\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\Vignesh\DAS20191003\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\Vignesh\DAS20191003\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191003\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS20191005\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Monika\DAS20191005\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS20191005\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS20191005\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Monika\DAS20191005\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Monika\DAS20191005\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Monika\DAS20191005\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Monika\DAS20191005\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Monika\DAS20191005\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Monika\DAS20191005\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Monika\DAS20191005\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Monika\DAS20191005\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Monika\DAS20191005\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS20191005\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191022\DAS20191022\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS20191005\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\Vignesh\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\Vignesh\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\Vignesh\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\Vignesh\DAS20191023\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\Vignesh\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\Vignesh\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\Vignesh\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\Vignesh\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\Vignesh\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\Vignesh\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191023\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\Vignesh\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\Vignesh\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\Vignesh\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\Vignesh\DAS20191024\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\Vignesh\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\Vignesh\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\Vignesh\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\Vignesh\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\Vignesh\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\Vignesh\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191024\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\DAS20191024V1\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\DAS20191024V1\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\DAS20191024V1\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\DAS20191024V1\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\DAS20191024V1\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\DAS20191024V1\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\DAS20191024V1\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\DAS20191024V1\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\DAS20191024V1\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\DAS20191024V1\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\DAS20191024V1\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\DAS20191024V1\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\DAS20191024V1\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\DAS20191024V1\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191025\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\Vignesh\DAS20191025\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191025\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191025\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\Vignesh\DAS20191025\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\Vignesh\DAS20191025\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\Vignesh\DAS20191025\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\Vignesh\DAS20191025\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\Vignesh\DAS20191025\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\Vignesh\DAS20191025\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\Vignesh\DAS20191025\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\Vignesh\DAS20191025\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\Vignesh\DAS20191025\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191025\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191102\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191102Latest\DAS20191102\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Vignesh\DASLatest20191111\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\DASNewBuild\DAS20191111_Latest\DAS20191111\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\New folder (3)\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\New folder (3)\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\New folder (3)\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\New folder (3)\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\New folder (3)\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\New folder (3)\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\New folder (3)\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\New folder (3)\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\New folder (3)\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\New folder (3)\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\New folder (3)\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\New folder (3)\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\New folder (3)\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\New folder (3)\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DAS20191125\DAS20191122\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\Vignesh\DASlatest20191125\DAS20191125_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\New folder (5)\DAS20191129_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+E:\mainiMailChanges\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS20191005\DAS20191203_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+C:\Users\Pavan Kumar V\Desktop\DAS2020117_splitUpdateChanges\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Monika\DAS20191005\DAS2020120_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild\DAS2020129_splitUpdateChangesLatest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020129_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\DAS2020307_splitUpdateChangesLatest_withtcfapproved masters\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\veeresh\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\TCFBuild_ProdRunning\withnocomplience & OEE deck_Latest_DAS2020416\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+C:\Users\TOSHIBA\Downloads\Withnocomplienece & OEE deck latest_withinte_20200727\Withnocomplienece & OEE deck latest_withinte_20200727\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TSAL\Anjali\Withnocomplienece & OEE deck latest_withinte_20200831_latest\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.deps.json
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csprojAssemblyReference.cache
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CoreCompileInputs.cache
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfoInputs.cache
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.AssemblyInfo.cs
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.csproj.CopyComplete
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.Interface\obj\Debug\netstandard2.0\DAS.Interface.pdb

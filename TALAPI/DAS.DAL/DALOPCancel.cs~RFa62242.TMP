@@ -1,0 +1,1067 @@
+﻿using DAS.DAL.Resource;
+using DAS.DBModels;
+using DAS.EntityModels;
+using DAS.Interface;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Text;
+using System.Text.RegularExpressions;
+using static DAS.EntityModels.OPCancelEntity;
+
+namespace DAS.DAL
+{
+    public class DALOPCancel : IOpCancel
+    {
+        public i_facility_talContext db = new i_facility_talContext();
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(DALLoss));
+
+        public static IConfiguration configuration;
+
+        public DALOPCancel(i_facility_talContext _db, IConfiguration _configuration)
+        {
+            db = _db;
+            configuration = _configuration;
+        }
+
+        public CommonResponse GetPrevOpCancelDetails()
+        {
+            CommonResponse entity = new CommonResponse();
+
+            try
+            {
+                List<TblPrevOperationCancel> PrevOpCancelDetails = new List<TblPrevOperationCancel>();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return entity;
+        }
+
+
+        //public EntityModel GetPrevOpCancelDetails(string prevoperationDets)
+        //{
+        //    EntityModel entity = new EntityModel();
+
+        //    try
+        //    {
+        //       // List<TblPrevOperationCancel> opcancelfromexcel= 
+        //        List<TblPrevOperationCancel> PrevOpCancelDetails = new List<TblPrevOperationCancel>();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //    return entity;
+        //}
+
+        public CommonResponse GetPrevOpCancelDetails(LsitOPcancelDet Opcanceldet)
+        {
+            CommonResponse entity = new CommonResponse();
+
+            try
+            {
+                if (Opcanceldet.OPCancelDetailsList.Count > 0)
+                {
+                    //string correctedDate = GetCorrectedDate();
+                    //List<Tblhmiscreen> HMIList = new List<Tblhmiscreen>();
+
+                    //HMIList = db.Tblhmiscreen.Where(m => m.CorrectedDate == correctedDate && m.Status==2).ToList();  // Jobfinished workorders
+
+                    //var workordernum = HMIList.Select(m => m.WorkOrderNo).ToList(); 
+                    //var operationnum = HMIList.Select(m => m.OperationNo).ToList();
+
+                    //Opcanceldet.OPCancelDetailsList = Opcanceldet.OPCancelDetailsList.Where(m => m.CorrectedDate == correctedDate && workordernum.Contains(m.ProductionOrder) && operationnum.Contains(m.Operation)).ToList();
+
+
+                }
+                //List<TblPrevOperationCancel> PrevOpCancelDetails = new List<TblPrevOperationCancel>();
+
+                entity.isTure = true;
+                entity.response = Opcanceldet;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return entity;
+        }
+
+
+        #region Vignesh logic for operation cancallation
+
+        //For getting data from list and add into table
+        public CommonResponse GetListOFOperationNumberFileData(List<UpLoadExcel> data)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                SELOperationCancelDet objSELOperationCancelDet = new SELOperationCancelDet();
+                List<OperationCancelDet> listOperationCancelDetSucess = new List<OperationCancelDet>();
+                List<OperationCancelDet> listOperationCancelDetFail = new List<OperationCancelDet>();
+                if (data.Count > 0)
+                {                    
+                    foreach (var row in data)
+                    {
+                        string workOrderNo = row.ProductionOrder;
+                        string operationNo = row.Operation;
+                        string partNo = row.PartNumber;
+                        string workCenter = row.WorkCenter;
+                        int machineId = db.Tblmachinedetails.Where(x => x.IsDeleted == 0 && x.MachineInvNo == workCenter).Select(x => x.MachineId).FirstOrDefault();
+                        var hmiData = db.Tblhmiscreen.Where(x => x.MachineId == machineId && x.PartNo == partNo && x.OperationNo == operationNo && x.WorkOrderNo == workOrderNo && x.Status == 2 && x.IsWorkInProgress == 1).FirstOrDefault();
+                        if (hmiData != null)
+                        {
+                            OperationCancelDet objOperationCancelDet = new OperationCancelDet();
+                            objOperationCancelDet.correctedDate = row.CorrectedDate;
+                            objOperationCancelDet.isCancelled = 0;
+                            objOperationCancelDet.operation = operationNo;
+                            objOperationCancelDet.partNo = partNo;
+                            objOperationCancelDet.processedQty = row.Qty;
+                            objOperationCancelDet.productionOrder = workOrderNo;
+                            objOperationCancelDet.workCenter = workCenter;
+                            listOperationCancelDetSucess.Add(objOperationCancelDet);
+
+                        }
+                        else
+                        {
+                            OperationCancelDet objOperationCancelDet = new OperationCancelDet();
+                            objOperationCancelDet.correctedDate = row.CorrectedDate;
+                            objOperationCancelDet.isCancelled = 0;
+                            objOperationCancelDet.operation = operationNo;
+                            objOperationCancelDet.partNo = partNo;
+                            objOperationCancelDet.processedQty = row.Qty;
+                            objOperationCancelDet.productionOrder = workOrderNo;
+                            objOperationCancelDet.workCenter = workCenter;
+                            listOperationCancelDetFail.Add(objOperationCancelDet);
+                        }
+                    }
+                    InsertToTablePrvOperation(listOperationCancelDetSucess);// insert all data into table
+                    List<OperationCancelDet> listOperationCancelDet = GetListOFOperationCancalaation();//get all the previous opretion for cancalation
+                    objSELOperationCancelDet.OPCancelDetailsSuccessList = listOperationCancelDet;
+                    objSELOperationCancelDet.OPCancelDetailsErrorList = listOperationCancelDetFail;
+
+                    obj.isTure = true;
+                    obj.response = objSELOperationCancelDet;
+
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = Resource.ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = Resource.ResourceResponse.ExceptionMessage;
+                log.Error(ex.ToString());
+                if (ex.InnerException.ToString() != null)
+                {
+                    log.Error(ex.InnerException.ToString());
+                }
+            }
+            return obj;
+        }
+
+        // Insert into Tbale and get the list to show case
+        public bool InsertToTablePrvOperation(List<OperationCancelDet> listOperationCancelDetSucess)
+        {
+            bool check = false;
+            int updateLevel = 1;
+            try
+            {
+                if (listOperationCancelDetSucess.Count > 0)
+                {
+                    foreach (var row in listOperationCancelDetSucess)
+                    {
+                        string workOrderNo = row.productionOrder;
+                        string operationNo = row.operation;
+                        string partNo = row.partNo;
+                        string workCenter = row.workCenter;
+                        //var prvOpCancelData = db.TblPrevOperationCancel.Where(x => x.PartNumber == partNo && x.Operation == operationNo && x.ProductionOrder == workOrderNo && x.WorkCenter == workCenter).FirstOrDefault();
+                        //if (prvOpCancelData == null)
+                        //{
+                        var getMailIdsLevel = db.TblTcfApprovedMaster.Where(x => x.TcfModuleId == 6 && x.IsDeleted == 0).ToList();
+                        foreach (var rowMail in getMailIdsLevel)
+                        {
+                            if (rowMail.SecondApproverCcList != null && rowMail.SecondApproverToList != null)
+                            {
+                                updateLevel = 2;
+                            }
+                        }
+                        TblTcfPrevOperationCancel addRow = new TblTcfPrevOperationCancel();
+                        addRow.CorrectedDate = row.correctedDate;
+                        addRow.CreatedBy = 1;// change as per user login
+                        addRow.IsCancelled = 0;
+                        addRow.CreatedOn = DateTime.Now;
+                        addRow.Operation = row.operation;
+                        addRow.PartNumber = row.partNo;
+                        addRow.ProductionOrder = row.productionOrder;
+                        addRow.Qty = row.processedQty;
+                        addRow.WorkCenter = row.workCenter;
+                        addRow.UploadDate = DateTime.Now.ToString("yyyy-MM-dd");
+                        addRow.UpdateLevel = updateLevel;
+                        db.TblTcfPrevOperationCancel.Add(addRow);
+                        db.SaveChanges();
+                        //}
+                        //else
+                        //{
+                        //    prvOpCancelData.IsCancelled = 0;
+                        //    prvOpCancelData.Qty = row.processedQty;
+                        //    prvOpCancelData.CorrectedDate = row.correctedDate;
+                        //    db.SaveChanges();
+                        //}
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                check = false;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return check;
+        }
+
+        //getting list of all data for cancelation
+        public List<OperationCancelDet> GetListOFOperationCancalaation()
+        {
+            List<OperationCancelDet> listOperationCancelDet = new List<OperationCancelDet>();
+            try
+            {
+                var operationCancelData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 0).ToList();
+                foreach (var row in operationCancelData)
+                {
+                    int qty = 0;
+                    if (row.Qty > 0)
+                    {
+                        qty = Convert.ToInt32(row.Qty);
+                    }
+                    OperationCancelDet objOperationCancelDet = new OperationCancelDet();
+                    objOperationCancelDet.correctedDate = row.CorrectedDate;
+                    objOperationCancelDet.isCancelled = row.IsCancelled;
+                    objOperationCancelDet.operation = row.Operation;
+                    objOperationCancelDet.partNo = row.PartNumber;
+                    objOperationCancelDet.processedQty = qty;
+                    objOperationCancelDet.productionOrder = row.ProductionOrder;
+                    objOperationCancelDet.workCenter = row.WorkCenter;
+                    objOperationCancelDet.opCancelID = row.TcfopcancelId;
+                    listOperationCancelDet.Add(objOperationCancelDet);
+                }
+            }
+            catch (Exception ex)
+            {
+                listOperationCancelDet = null;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return listOperationCancelDet;
+        }
+
+        //select and unselect the operatio number
+        public CommonResponse AcceptRejectOperationNo(AcceptCancel data)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                int opCancelID = data.opCancelID;
+                var updateRow = db.TblTcfPrevOperationCancel.Where(x => x.TcfopcancelId == opCancelID).FirstOrDefault();
+                if (updateRow != null)
+                {
+                    if (data.isChecked == 1)
+                    {
+                        updateRow.IsCancelled = 1;
+                    }
+                    else if (data.isChecked == 0)
+                    {
+                        updateRow.IsCancelled = 0;
+                    }
+                    db.SaveChanges();
+                    obj.isTure = true;
+                    obj.response = Resource.ResourceResponse.SuccessMessage;
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = Resource.ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = Resource.ResourceResponse.ExceptionMessage;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.ToString()); }
+            }
+            return obj;
+        }
+
+        //get the the uncanclled list not sent for approval
+        public CommonResponse GetCancledList()
+        {
+            CommonResponse obj = new CommonResponse();
+            List<OperationCancelDet> listOperationCancelDet = new List<OperationCancelDet>();
+            try
+            {
+                var operationCancelData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 0 && x.SendApprove == 0).ToList();
+                foreach (var row in operationCancelData)
+                {
+                    int qty = 0;
+                    if (row.Qty > 0)
+                    {
+                        qty = Convert.ToInt32(row.Qty);
+                    }
+                    OperationCancelDet objOperationCancelDet = new OperationCancelDet();
+                    objOperationCancelDet.correctedDate = row.CorrectedDate;
+                    objOperationCancelDet.isCancelled = row.IsCancelled;
+                    objOperationCancelDet.operation = row.Operation;
+                    objOperationCancelDet.partNo = row.PartNumber;
+                    objOperationCancelDet.processedQty = qty;
+                    objOperationCancelDet.productionOrder = row.ProductionOrder;
+                    objOperationCancelDet.workCenter = row.WorkCenter;
+                    objOperationCancelDet.opCancelID = row.TcfopcancelId;
+                    listOperationCancelDet.Add(objOperationCancelDet);
+                }
+                obj.isTure = true;
+                obj.response = listOperationCancelDet;
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = Resource.ResourceResponse.ExceptionMessage;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        //get the the canclled list fixed
+        public CommonResponse GetUnCancledList()
+        {
+            CommonResponse obj = new CommonResponse();
+            List<OperationCancelDet> listOperationCancelDet = new List<OperationCancelDet>();
+            try
+            {
+                string correctedDate = GetCorrectedDate();
+                var operationCancelData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 1 && x.SendApprove == 0 && x.UploadDate == correctedDate).ToList();
+                foreach (var row in operationCancelData)
+                {
+                    int qty = 0;
+                    if (row.Qty > 0)
+                    {
+                        qty = Convert.ToInt32(row.Qty);
+                    }
+                    OperationCancelDet objOperationCancelDet = new OperationCancelDet();
+                    objOperationCancelDet.correctedDate = row.CorrectedDate;
+                    objOperationCancelDet.isCancelled = row.IsCancelled;
+                    objOperationCancelDet.operation = row.Operation;
+                    objOperationCancelDet.partNo = row.PartNumber;
+                    objOperationCancelDet.processedQty = qty;
+                    objOperationCancelDet.productionOrder = row.ProductionOrder;
+                    objOperationCancelDet.workCenter = row.WorkCenter;
+                    objOperationCancelDet.opCancelID = row.TcfopcancelId;
+                    listOperationCancelDet.Add(objOperationCancelDet);
+                }
+                obj.isTure = true;
+                obj.response = listOperationCancelDet;
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = Resource.ResourceResponse.ExceptionMessage;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        //get current day date
+        public string GetCorrectedDate()
+        {
+            string CorrectedDate = null;
+            Tbldaytiming StartTime = db.Tbldaytiming.Where(m => m.IsDeleted == 0).FirstOrDefault();
+            TimeSpan Start = StartTime.StartTime;
+            if (Start <= DateTime.Now.TimeOfDay)
+            {
+                CorrectedDate = DateTime.Now.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                CorrectedDate = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+            }
+            return CorrectedDate;
+        }
+
+        //Send Approvall Method for accept and reject
+        public CommonResponse SendForApproval()
+        {
+            CommonResponse obj = new CommonResponse();   // get all the details then send by url or by html
+            try
+            {
+                string machName = "";
+                var reader = Path.Combine(@"C:\TataReport\TCFTemplate\PRVOPTemplate.html");
+                string htmlStr = File.ReadAllText(reader);
+                String[] seperator = { "{{WOStart}}" };
+                string[] htmlArr = htmlStr.Split(seperator, 2, StringSplitOptions.RemoveEmptyEntries);
+
+                var woHtml = htmlArr[1].Split(new String[] { "{{WOEnd}}" }, 2, StringSplitOptions.RemoveEmptyEntries)[0];
+                htmlStr = htmlStr.Replace("{{WOStart}}", "");
+                htmlStr = htmlStr.Replace("{{WOEnd}}", "");
+                string uploadDate = "";
+                int sl = 1;
+
+                var prvOperationData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 1 && x.SendApprove == 0).ToList();
+
+                foreach (var row in prvOperationData)
+                {
+                    row.SendApprove = 1;
+                    db.SaveChanges();
+
+                    uploadDate = row.UploadDate;
+
+                    String slno = Convert.ToString(sl);
+                    htmlStr = htmlStr.Replace("{{slno}}", slno);
+                    htmlStr = htmlStr.Replace("{{MachineName}}", row.WorkCenter);
+                    htmlStr = htmlStr.Replace("{{WorkOrderNo}}", row.ProductionOrder);
+                    htmlStr = htmlStr.Replace("{{PartNo}}", row.PartNumber);
+                    htmlStr = htmlStr.Replace("{{OprationNo}}", row.Operation);
+                    htmlStr = htmlStr.Replace("{{QTY}}", Convert.ToString(row.Qty));
+                    htmlStr = htmlStr.Replace("{{CorrectedDate}}", row.CorrectedDate);
+
+                    if (prvOperationData.Count == 1)
+                    {
+                        htmlStr = htmlStr.Replace("{{WO}}", "");
+                    }
+                    else if (sl < prvOperationData.Count)
+                    {
+
+                        htmlStr = htmlStr.Replace("{{WO}}", woHtml);
+                    }
+                    else
+                    {
+                        htmlStr = htmlStr.Replace("{{WO}}", woHtml);
+                    }
+                    sl++;
+                }
+                machName="Operation Cancellation " + uploadDate;
+
+                htmlStr = htmlStr.Replace(woHtml, "");
+                htmlStr = htmlStr.Replace("{{secondLevel}}", "For 1st Level Approval");
+
+                string acceptUrl = configuration.GetSection("MySettings").GetSection("AcceptURLPRVOP").Value;
+                string rejectUrl = configuration.GetSection("MySettings").GetSection("RejectURLPRVOP").Value;
+
+                string rejectSrc = rejectUrl + "uploadDate=" + uploadDate;
+                string acceptSrc = acceptUrl + "uploadDate=" + uploadDate;
+
+                string toMailIds = "";
+                string ccMailIds = "";
+
+                var tcfApproveMail = db.TblTcfApprovedMaster.Where(x => x.IsDeleted == 0 && x.TcfModuleId == 6).ToList();
+                foreach (var row in tcfApproveMail)
+                {
+                    toMailIds += row.FirstApproverToList+",";
+                    ccMailIds += row.FirstApproverCcList + ",";
+                }
+
+                htmlStr = htmlStr.Replace("{{WO}}", "");
+                htmlStr = htmlStr.Replace("{{userName}}", "All");
+                htmlStr = htmlStr.Replace("{{urlA}}", acceptSrc);
+                htmlStr = htmlStr.Replace("{{urlR}}", rejectSrc);
+
+                toMailIds = toMailIds.Remove(toMailIds.Length - 1);// removing last comma
+                ccMailIds = ccMailIds.Remove(ccMailIds.Length - 1);// removing last comma
+
+
+                bool ret = SendMail(htmlStr, toMailIds, ccMailIds, 1, machName);
+
+                if (ret)
+                {
+                    obj.isTure = true;
+                    obj.response = ResourceResponse.SuccessMessage;
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = ResourceResponse.FailureMessage;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        //Accept tht previous operation cancallation even 2nd approval
+        public CommonResponse AcceptPrvOp(string uploadDate)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                bool updateReportTab = false;
+                string machName = "";
+                int appLevl = 0;
+                string levl1toMail = "", levl1ccMail = "", levl2toMail = "", levl2ccMail = "";
+                var tcfPrvOpData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 1 && x.SendApprove == 1 && x.UploadDate == uploadDate && (x.AcceptReject == 0 || x.AcceptReject1 == 0)).ToList();
+                if (tcfPrvOpData.Count > 0)
+                {
+                    machName = "Operation Cancellation " + uploadDate;
+                    foreach (var row in tcfPrvOpData)
+                    {
+                        if (row.AcceptReject == 0)
+                        {
+                            row.AcceptReject = 1;
+                            row.ApprovalLevel = 1;
+                            db.SaveChanges();
+                            if (row.UpdateLevel == 1) // checking the report table updation need or not
+                            {
+                                updateReportTab = true;
+                            }
+                            appLevl = 1;
+                        }
+                        else if (row.AcceptReject1 == 0)
+                        {
+                            row.AcceptReject1 = 1;
+                            row.ApprovalLevel = 2;
+                            db.SaveChanges();
+                            if (row.UpdateLevel == 2)  // checking the report table updation need or not
+                            {
+                                updateReportTab = true;
+                            }
+                            appLevl = 2;
+                        }
+                    }
+
+                    var checkApprovalMail = db.TblTcfApprovedMaster.Where(x => x.IsDeleted == 0 && x.TcfModuleId == 6).ToList();
+                    foreach (var mailRow in checkApprovalMail)
+                    {
+                        if (appLevl == 1)
+                        {
+                            if (mailRow.FirstApproverToList != null && mailRow.FirstApproverCcList != null)
+                            {
+                                levl1toMail = mailRow.FirstApproverToList+",";
+                                levl1ccMail = mailRow.FirstApproverCcList+",";
+                            }
+                        }
+                        if (appLevl == 2)
+                        {
+                            if (mailRow.SecondApproverToList != null && mailRow.SecondApproverCcList != null)
+                            {
+                                levl2toMail = mailRow.SecondApproverToList+",";
+                                levl2ccMail = mailRow.SecondApproverCcList+",";
+                            }
+                        }
+                    }
+                    levl2toMail = levl2toMail.Remove(levl2toMail.Length - 1);
+                    levl2ccMail = levl2ccMail.Remove(levl2ccMail.Length - 1);
+
+                    if (updateReportTab)// send mail and update the report table
+                    {
+                        bool ret = false;
+                        try
+                        {
+                            string message = "<!DOCTYPE html><html xmlns = 'http://www.w3.org/1999/xhtml' ><head><title></title><link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans'/>" +
+                       "</head><body><p>Dear " + " All" + ",</p></br><p><center> The Operation Cancellation Has Been Accepted</center></p></br><p>Thank you" +
+                       "</p></body></html>";
+
+                            if (levl2toMail != "" && levl2ccMail != "")
+                            {
+                                ret = SendMail(message, levl2toMail, levl2ccMail, 0,machName);
+                            }
+                            else if (levl1toMail != "" && levl1ccMail != "")
+                            {
+                                ret = SendMail(message, levl1toMail, levl1ccMail, 0,machName);
+                            }
+
+                            if (ret) //reportupdate
+                            {
+                                bool check = InsertIntoPrvOpTab(uploadDate);
+                                if (check)
+                                {
+                                    obj.isTure = true;
+                                    obj.response = ResourceResponse.SuccessMessage;
+                                }
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+                        }
+                    }
+                    else // send mail
+                    {
+                        try
+                        {
+                            bool ret = false;
+                            var reader = Path.Combine(@"C:\TataReport\TCFTemplate\PRVOPTemplate.html");
+                            string htmlStr = File.ReadAllText(reader);
+                            String[] seperator = { "{{WOStart}}" };
+                            string[] htmlArr = htmlStr.Split(seperator, 2, StringSplitOptions.RemoveEmptyEntries);
+
+                            var woHtml = htmlArr[1].Split(new String[] { "{{WOEnd}}" }, 2, StringSplitOptions.RemoveEmptyEntries)[0];
+                            htmlStr = htmlStr.Replace("{{WOStart}}", "");
+                            htmlStr = htmlStr.Replace("{{WOEnd}}", "");
+                            int sl = 1;
+
+                            var prvOperationData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 1 && x.SendApprove == 1 && x.AcceptReject==1 && x.AcceptReject1==0).ToList();
+
+                            foreach (var row in prvOperationData)
+                            {
+                                //row.SendApprove = 1;
+                                //db.SaveChanges();
+
+                                uploadDate = row.UploadDate;
+
+                                String slno = Convert.ToString(sl);
+                                htmlStr = htmlStr.Replace("{{slno}}", slno);
+                                htmlStr = htmlStr.Replace("{{MachineName}}", row.WorkCenter);
+                                htmlStr = htmlStr.Replace("{{WorkOrderNo}}", row.ProductionOrder);
+                                htmlStr = htmlStr.Replace("{{PartNo}}", row.PartNumber);
+                                htmlStr = htmlStr.Replace("{{OprationNo}}", row.Operation);
+                                htmlStr = htmlStr.Replace("{{QTY}}", Convert.ToString(row.Qty));
+                                htmlStr = htmlStr.Replace("{{CorrectedDate}}", row.CorrectedDate);
+
+                                if (prvOperationData.Count == 1)
+                                {
+                                    htmlStr = htmlStr.Replace("{{WO}}", "");
+                                }
+                                else if (sl < prvOperationData.Count)
+                                {
+
+                                    htmlStr = htmlStr.Replace("{{WO}}", woHtml);
+                                }
+                                else
+                                {
+                                    htmlStr = htmlStr.Replace("{{WO}}", woHtml);
+                                }
+                                sl++;
+                            }
+
+                            htmlStr = htmlStr.Replace(woHtml, "");
+                            htmlStr = htmlStr.Replace("{{secondLevel}}", "For 2nd Level Approval");
+
+                            string acceptUrl = configuration.GetSection("MySettings").GetSection("AcceptURLPRVOP").Value;
+                            string rejectUrl = configuration.GetSection("MySettings").GetSection("RejectURLPRVOP").Value;
+
+                            string rejectSrc = rejectUrl + "uploadDate=" + uploadDate;
+                            string acceptSrc = acceptUrl + "uploadDate=" + uploadDate;
+
+                            htmlStr = htmlStr.Replace("{{WO}}", "");
+                            htmlStr = htmlStr.Replace("{{userName}}", "All");
+                            htmlStr = htmlStr.Replace("{{urlA}}", acceptSrc);
+                            htmlStr = htmlStr.Replace("{{urlR}}", rejectSrc);
+
+
+                            if (levl2toMail != "" && levl2ccMail != "")
+                            {
+                                ret = SendMail(htmlStr, levl2toMail, levl2ccMail, 0, machName);
+                            }
+                            else if (levl1toMail != "" && levl1ccMail != "")
+                            {
+                                ret = SendMail(htmlStr, levl1toMail, levl1ccMail, 0, machName);
+                            }
+
+                            if(ret)
+                            {
+                                obj.isTure = true;
+                                obj.response = "Sent For Seconds Approval";
+                            }
+                            else
+                            {
+                                obj.isTure = false;
+                                obj.response = ResourceResponse.FailureMessage;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+                        }
+                    }
+
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = Resource.ResourceResponse.ExceptionMessage;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        //update to the table previous cancelation
+        public bool InsertIntoPrvOpTab(string uploadDate)
+        {
+            bool result = false;
+            try
+            {
+                var tcfPrvOpData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 1 && x.SendApprove == 1 && x.UploadDate == uploadDate && (x.AcceptReject == 1 || x.AcceptReject1 == 1) && x.Update == 0).ToList();
+                foreach (var row in tcfPrvOpData)
+                {
+                    TblPrevOperationCancel addRow = new TblPrevOperationCancel();
+                    addRow.CorrectedDate = row.CorrectedDate;
+                    addRow.CreatedBy = 1;//change as per login
+                    addRow.CreatedOn = DateTime.Now;
+                    addRow.IsCancelled = row.IsCancelled;
+                    addRow.Operation = row.Operation;
+                    addRow.PartNumber = row.PartNumber;
+                    addRow.ProductionOrder = row.ProductionOrder;
+                    addRow.Qty = row.Qty;
+                    addRow.WorkCenter = row.WorkCenter;
+                    row.Update = 1;
+                    db.TblPrevOperationCancel.Add(addRow);
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return result;
+        }
+
+        //mailing concept for send mail
+        public bool SendMail(string message, string toList, string ccList, int image,string subject)
+        {
+            bool ret = false;
+            try
+            {
+                if (message != "" && toList != "" && ccList != null)
+                {
+                    string toMailID = toList;
+                    string ccMailID = ccList;
+                    MailMessage mail = new MailMessage();
+                    mail.To.Add(toMailID);
+                    if (ccMailID != "")
+                    {
+                        mail.CC.Add(ccMailID);
+                    }
+
+                    var smtpConn = db.Smtpdetails.Where(x => x.IsDeleted == true && x.TcfModuleId == 6).FirstOrDefault();
+                    string hostName = smtpConn.Host;
+                    int port = smtpConn.Port;
+                    bool enableSsl = smtpConn.EnableSsl;
+                    bool useDefaultCredentials = smtpConn.UseDefaultCredentials;
+                    string emailId = smtpConn.EmailId;
+                    string password = smtpConn.Password;
+                    string fromMail = smtpConn.FromMailId;
+                    string connectType = "";
+                    if (smtpConn.ConnectType != "" || smtpConn.ConnectType != null)
+                    {
+                        connectType=smtpConn.ConnectType;//domain
+                    }
+
+
+
+                    //string fromMail= configuration.GetSection("SMTPConn").GetSection("FromMailID").Value;
+
+                    mail.From = new MailAddress(fromMail);
+                    mail.Subject = subject;
+                    mail.Body = "" + message;
+                    mail.IsBodyHtml = true;
+
+                    if (image == 1)
+                    {
+                        AlternateView htmlView = AlternateView.CreateAlternateViewFromString(message, Encoding.UTF8, MediaTypeNames.Text.Html);
+                        // Create a plain text message for client that don't support HTML
+                        AlternateView plainView = AlternateView.CreateAlternateViewFromString(Regex.Replace(message, "<[^>]+?>", string.Empty), Encoding.UTF8, MediaTypeNames.Text.Plain);
+                        string mediaType = MediaTypeNames.Image.Jpeg;
+                        LinkedResource img = new LinkedResource(@"C:\TataReport\TCFTemplate\120px-Tata_logo.Jpeg", mediaType);
+                        // Make sure you set all these values!!!
+                        img.ContentId = "EmbeddedContent_1";
+                        img.ContentType.MediaType = mediaType;
+                        img.TransferEncoding = TransferEncoding.Base64;
+                        img.ContentType.Name = img.ContentId;
+                        img.ContentLink = new Uri("cid:" + img.ContentId);
+                        LinkedResource img1 = new LinkedResource(@"C:\TataReport\TCFTemplate\approve.Jpeg", mediaType);
+                        // Make sure you set all these values!!!
+                        img1.ContentId = "EmbeddedContent_2";
+                        img1.ContentType.MediaType = mediaType;
+                        img1.TransferEncoding = TransferEncoding.Base64;
+                        img1.ContentType.Name = img.ContentId;
+                        img1.ContentLink = new Uri("cid:" + img1.ContentId);
+                        LinkedResource img2 = new LinkedResource(@"C:\TataReport\TCFTemplate\reject.Jpeg", mediaType);
+                        // Make sure you set all these values!!!
+                        img2.ContentId = "EmbeddedContent_3";
+                        img2.ContentType.MediaType = mediaType;
+                        img2.TransferEncoding = TransferEncoding.Base64;
+                        img2.ContentType.Name = img.ContentId;
+                        img2.ContentLink = new Uri("cid:" + img2.ContentId);
+                        htmlView.LinkedResources.Add(img);
+                        htmlView.LinkedResources.Add(img1);
+                        htmlView.LinkedResources.Add(img2);
+                        mail.AlternateViews.Add(plainView);
+                        mail.AlternateViews.Add(htmlView);
+                    }
+
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = hostName;
+                    smtp.Port = port;
+                    smtp.EnableSsl = enableSsl;
+                    smtp.UseDefaultCredentials = useDefaultCredentials;
+                    if (connectType == "")
+                    {
+                        smtp.Credentials = new System.Net.NetworkCredential(emailId, password);
+                    }
+                    else
+                    {
+                        smtp.Credentials = new System.Net.NetworkCredential(emailId, password, connectType);
+                    }
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Send(mail);
+
+
+                    ret = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ret = false;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return ret;
+        }
+
+        //Common method for displaying the data in accept and reject
+        public CommonResponse CommonDtatForDisplay(string uploadDate)
+        {
+            CommonResponse obj = new CommonResponse();
+            List<IndexOperationCancelDet> listOperationCancelDet = new List<IndexOperationCancelDet>();
+            try
+            {
+                var operationCancelData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 1 && x.SendApprove == 1 && x.UploadDate==uploadDate && (x.AcceptReject==0 || x.AcceptReject1==0) && x.Update==0).ToList();
+                if (operationCancelData.Count > 0)
+                {
+                    foreach (var row in operationCancelData)
+                    {
+                        int qty = 0;
+                        string acceptreject = "No";
+                        if (row.Qty > 0)
+                        {
+                            qty = Convert.ToInt32(row.Qty);
+                        }
+                        if (row.AcceptReject == 1 || row.AcceptReject1 == 1 && row.RejectReason1 == 0)
+                        {
+                            acceptreject = "Yes";
+                        }
+
+
+
+                        IndexOperationCancelDet objOperationCancelDet = new IndexOperationCancelDet();
+                        objOperationCancelDet.correctedDate = row.CorrectedDate;
+                        objOperationCancelDet.isCancelled = row.IsCancelled;
+                        objOperationCancelDet.operation = row.Operation;
+                        objOperationCancelDet.partNo = row.PartNumber;
+                        objOperationCancelDet.processedQty = qty;
+                        objOperationCancelDet.productionOrder = row.ProductionOrder;
+                        objOperationCancelDet.workCenter = row.WorkCenter;
+                        objOperationCancelDet.opCancelID = row.TcfopcancelId;
+                        objOperationCancelDet.sentApp = "Yes";
+                        objOperationCancelDet.acceptReject = acceptreject;
+                        listOperationCancelDet.Add(objOperationCancelDet);
+                    }
+                    obj.isTure = true;
+                    obj.response = listOperationCancelDet;
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = Resource.ResourceResponse.ExceptionMessage;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        //Get the reasons
+        public CommonResponse GetRejectReason()
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                List<RejectReasonData> listRejectReasonData = new List<RejectReasonData>();
+                var rejectReassondata = db.Tblrejectreason.Where(x => x.IsDeleted == 0 && x.IsTcf == 1).ToList();
+                if (rejectReassondata.Count > 0)
+                {
+                    foreach (var row in rejectReassondata)
+                    {
+                        RejectReasonData objRejectReasonData = new RejectReasonData();
+                        objRejectReasonData.reasonId = row.Rid;
+                        objRejectReasonData.reasonName = row.RejectName;
+                        listRejectReasonData.Add(objRejectReasonData);
+                    }
+                    obj.isTure = true;
+                    obj.response = listRejectReasonData;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        //Reject the operation cancellation
+        public CommonResponse RejectPrvOPCan(int reasonId, string uploadDate)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                int checkMail = 0;
+                string toMails = "", ccMails = "";
+                string machName = "";
+                var tcfPrvOpData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 1 && x.SendApprove == 1 && x.UploadDate == uploadDate && (x.AcceptReject == 0 || x.AcceptReject1 == 0)).ToList();
+                if (tcfPrvOpData.Count > 0)
+                {
+                    foreach (var row in tcfPrvOpData)
+                    {
+                        machName = "Operation Cancellation " + uploadDate;
+                        if (row.AcceptReject == 0)
+                        {
+                            row.AcceptReject = 2;
+                            row.RejectReason = reasonId;
+                            row.ApprovalLevel = 1;
+                            db.SaveChanges();
+                            checkMail = 1;
+                        }
+                        else if (row.AcceptReject1 == 0)
+                        {
+                            row.AcceptReject1 = 2;
+                            row.RejectReason1 = reasonId;
+                            row.ApprovalLevel = 2;
+                            db.SaveChanges();
+                            checkMail = 2;
+                        }
+                    }
+
+                    var checkApprovalMail = db.TblTcfApprovedMaster.Where(x => x.IsDeleted == 0 && x.TcfModuleId == 6).ToList();
+                    foreach (var mailRow in checkApprovalMail)
+                    {
+                        if (checkMail == 1)
+                        {
+                            if (mailRow.SecondApproverToList != null && mailRow.SecondApproverCcList != null)
+                            {
+                                toMails = mailRow.SecondApproverToList;
+                                ccMails = mailRow.SecondApproverCcList;
+                            }
+                        }
+                        if (checkMail == 2)
+                        {
+                            if (mailRow.FirstApproverToList != null && mailRow.FirstApproverCcList != null)
+                            {
+                                toMails = mailRow.FirstApproverToList;
+                                ccMails = mailRow.SecondApproverCcList;
+                            }
+                        }
+                    }
+
+
+                    bool ret = false;
+                    try
+                    {
+                        string rejectName = db.Tblrejectreason.Where(x => x.IsDeleted == 0 && x.Rid == reasonId).Select(x => x.RejectNameDesc).FirstOrDefault();
+
+                        string message = "<!DOCTYPE html><html xmlns = 'http://www.w3.org/1999/xhtml' ><head><title></title><link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans'/>" +
+                   "</head><body><p>Dear " + " All" + ",</p></br><p><center> The Operation Cancellation Has Been Rejected for this "+ rejectName + ".</center></p></br><p>Thank you" +
+                   "</p></body></html>";
+
+
+                        ret = SendMail(message, toMails, ccMails, 0, machName);
+
+
+                        if (ret)
+                        {
+                            obj.isTure = true;
+                            obj.response = "Sent Reject Mail";
+                        }
+                        else
+                        {
+                            obj.isTure = false;
+                            obj.response = ResourceResponse.FailureMessage;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        //Index Method
+        public CommonResponse Index()
+        {
+            CommonResponse obj = new CommonResponse();
+            List<IndexOperationCancelDet> listOperationCancelDet = new List<IndexOperationCancelDet>();
+            try
+            {
+                var operationCancelData = db.TblTcfPrevOperationCancel.Where(x => x.IsCancelled == 1 && x.SendApprove == 1).ToList();
+                foreach (var row in operationCancelData)
+                {
+                    int qty = 0;
+                    string acceptreject = "No";
+                    if (row.Qty > 0)
+                    {
+                        qty = Convert.ToInt32(row.Qty);
+                    }
+                    if (row.AcceptReject == 1 || row.AcceptReject1 == 1 && row.RejectReason1 == 0)
+                    {
+                        acceptreject = "Yes";
+                    }
+
+                    IndexOperationCancelDet objOperationCancelDet = new IndexOperationCancelDet();
+                    objOperationCancelDet.correctedDate = row.CorrectedDate;
+                    objOperationCancelDet.isCancelled = row.IsCancelled;
+                    objOperationCancelDet.operation = row.Operation;
+                    objOperationCancelDet.partNo = row.PartNumber;
+                    objOperationCancelDet.processedQty = qty;
+                    objOperationCancelDet.productionOrder = row.ProductionOrder;
+                    objOperationCancelDet.workCenter = row.WorkCenter;
+                    objOperationCancelDet.opCancelID = row.TcfopcancelId;
+                    objOperationCancelDet.sentApp = "Yes";
+                    objOperationCancelDet.acceptReject = acceptreject;
+                    listOperationCancelDet.Add(objOperationCancelDet);
+                }
+                obj.isTure = true;
+                obj.response = listOperationCancelDet;
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = Resource.ResourceResponse.ExceptionMessage;
+                log.Error(ex.ToString()); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        #endregion
+    }
+}

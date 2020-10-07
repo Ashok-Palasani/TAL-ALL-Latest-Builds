@@ -1,0 +1,1033 @@
+﻿using DAS.DAL.Resource;
+using DAS.DBModels;
+using DAS.EntityModels;
+using DAS.Interface;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace DAS.DAL
+{
+    public class DALHMIWrongQty : IHMIWrongQty
+    {
+        i_facility_talContext db = new i_facility_talContext();
+
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(DALHMIDetails));
+
+        public static IConfiguration configuration;
+
+        public DALHMIWrongQty(i_facility_talContext _db, IConfiguration _configuration)
+        {
+            db = _db;
+            configuration = _configuration;
+        }
+
+
+        //Index method for displaying
+
+
+
+        //Get data for job finish and partial finsh data from tblhmiscreen
+        public CommonResponse GetWOJFPFDetails(Getdata data)
+        {
+            CommonResponse comobj = new CommonResponse();
+            try
+            {
+                List<WODetails> listWODetails = new List<WODetails>();
+                var wolist = db.Tblhmiscreen.Where(m => (m.Status == 2 || m.Status == 1) && (m.IsWorkInProgress == 1 || m.IsWorkInProgress == 0) && m.WorkOrderNo == data.WoNo && m.OperationNo == data.OpNo).OrderBy(x => x.Hmiid).ToList();
+                if (wolist.Count > 0)
+                {
+                    bool check = InsertIntoWQTYTable(wolist);
+                    if (check)
+                    {
+                        var wrongQtyData = db.Tblwqtyhmiscreen.Where(x => x.WorkOrderNo == data.WoNo && x.OperationNo == data.OpNo).ToList();
+                        if (wrongQtyData.Count > 0)
+                        {
+                            foreach (var rowwo in wrongQtyData)
+                            {
+                                int machineID = rowwo.MachineId;
+                                string machineName = db.Tblmachinedetails.Where(x => x.IsDeleted == 0 && x.MachineId == machineID).Select(x => x.MachineInvNo).FirstOrDefault();
+                                WODetails objWODetails = new WODetails();
+                                objWODetails.WoNo = rowwo.WorkOrderNo;
+                                objWODetails.OpNo = rowwo.OperationNo;
+                                objWODetails.partno = rowwo.PartNo;
+                                objWODetails.StartTime = Convert.ToDateTime(rowwo.Date).ToString("yyyy-MM-dd HH:mm:ss");
+                                objWODetails.EndTime = Convert.ToDateTime(rowwo.Time).ToString("yyyy-MM-dd HH:mm:ss");
+                                objWODetails.Project = rowwo.Project;
+                                objWODetails.prodfai = rowwo.ProdFai;
+                                objWODetails.WoQty = Convert.ToString(rowwo.TargetQty);
+                                objWODetails.ProcessQty = Convert.ToString(rowwo.ProcessQty);
+                                objWODetails.DeliveredQty = Convert.ToString(rowwo.DeliveredQty);
+                                objWODetails.WQtyhmiid = rowwo.Wqtyhmiid;
+                                objWODetails.MachineName = machineName;
+                                listWODetails.Add(objWODetails);
+                            }
+                            comobj.isTure = true;
+                            comobj.response = listWODetails;
+                        }
+                        else
+                        {
+                            comobj.isTure = false;
+                            comobj.response = ResourceResponse.NoItemsFound; ;
+                        }
+                    }
+                    else
+                    {
+                        var wrongQtyData = db.Tblwqtyhmiscreen.Where(x => x.WorkOrderNo == data.WoNo && x.OperationNo == data.OpNo && x.SendApprove == 0).ToList();
+                        if (wrongQtyData.Count > 0)
+                        {
+                            foreach (var rowwo in wrongQtyData)
+                            {
+                                int machineID = rowwo.MachineId;
+                                string machineName = db.Tblmachinedetails.Where(x => x.IsDeleted == 0 && x.MachineId == machineID).Select(x => x.MachineInvNo).FirstOrDefault();
+                                WODetails objWODetails = new WODetails();
+                                objWODetails.WoNo = rowwo.WorkOrderNo;
+                                objWODetails.OpNo = rowwo.OperationNo;
+                                objWODetails.partno = rowwo.PartNo;
+                                objWODetails.StartTime = Convert.ToDateTime(rowwo.Date).ToString("yyyy-MM-dd HH:mm:ss");
+                                objWODetails.EndTime = Convert.ToDateTime(rowwo.Time).ToString("yyyy-MM-dd HH:mm:ss");
+                                objWODetails.Project = rowwo.Project;
+                                objWODetails.prodfai = rowwo.ProdFai;
+                                objWODetails.WoQty = Convert.ToString(rowwo.TargetQty);
+                                objWODetails.ProcessQty = Convert.ToString(rowwo.ProcessQty);
+                                objWODetails.DeliveredQty = Convert.ToString(rowwo.DeliveredQty);
+                                objWODetails.WQtyhmiid = rowwo.Wqtyhmiid;
+                                objWODetails.MachineName = machineName;
+                                listWODetails.Add(objWODetails);
+                            }
+                            comobj.isTure = true;
+                            comobj.response = listWODetails;
+                        }
+                        else
+                        {
+                            comobj.isTure = false;
+                            comobj.response = ResourceResponse.NoItemsFound; ;
+                        }
+                    }
+                }
+                else
+                {
+                    comobj.isTure = false;
+                    comobj.response = ResourceResponse.NoItemsFound;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                comobj.isTure = false;
+                comobj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return comobj;
+        }
+
+        #region Auto Suggest        
+
+        public CommonResponse GetWorkOrderDetails(string workOrderNo)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                List<EntityHMIWrongQty> listEntityHMIWrongQty = new List<EntityHMIWrongQty>();
+                DataTable dtWO = new DataTable();
+                string workOrder = workOrderNo + "%";
+                string connectionString = configuration.GetSection("MySettings").GetSection("DbConnection").Value;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand("AutoSuggestWorkOrder", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@workorder", workOrder);
+                SqlDataAdapter sdaWO = new SqlDataAdapter(cmd);
+                sdaWO.Fill(dtWO);
+                if (dtWO.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dtWO.Rows.Count; i++)
+                    {
+                        EntityHMIWrongQty objEntityHMIWrongQty = new EntityHMIWrongQty();
+                        objEntityHMIWrongQty.workOrderNo = Convert.ToString(dtWO.Rows[i][0]);
+                        listEntityHMIWrongQty.Add(objEntityHMIWrongQty);
+                    }
+                    obj.isTure = true;
+                    obj.response = listEntityHMIWrongQty;
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+
+        //Get operation number
+        public CommonResponse GetOperationDetails(AutoSuggestOpetaion data)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                List<AutoSuggestOperationNo> listAutoSuggestOperationNo = new List<AutoSuggestOperationNo>();
+                DataTable dtWO = new DataTable();
+                string opNo = data.operationNo + "%";
+                string workOrderNo = data.workOrderNo;
+                string connectionString = configuration.GetSection("MySettings").GetSection("DbConnection").Value;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand("AutoSuggestOperationNo", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@operation", opNo);
+                cmd.Parameters.AddWithValue("@workorder", workOrderNo);
+                SqlDataAdapter sdaWO = new SqlDataAdapter(cmd);
+                sdaWO.Fill(dtWO);
+                if (dtWO.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dtWO.Rows.Count; i++)
+                    {
+                        AutoSuggestOperationNo objAutoSuggestOperationNo = new AutoSuggestOperationNo();
+                        objAutoSuggestOperationNo.operationNo = Convert.ToString(dtWO.Rows[i][0]);
+                        listAutoSuggestOperationNo.Add(objAutoSuggestOperationNo);
+                    }
+                    obj.isTure = true;
+                    obj.response = listAutoSuggestOperationNo;
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        #endregion
+        // for updating the value and validating it
+        public CommonResponse ValidateQtyUpdate(ValidateQTYUpdate data)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                int wQtyHMIId = data.WQtyhmiid;
+                var wQtyData = db.Tblwqtyhmiscreen.Where(x => x.Wqtyhmiid == wQtyHMIId).FirstOrDefault();
+                if (wQtyData != null)
+                {
+                    if (wQtyData.Status == 2 && wQtyData.IsWorkInProgress == 1)
+                    {
+                        int deliveryQTY = Convert.ToInt32(data.qty);
+                        int totalQty = Convert.ToInt32(wQtyData.TargetQty);
+                        int processQty = Convert.ToInt32(wQtyData.ProcessQty);
+                        int checkQty = deliveryQTY + processQty;
+                        if (checkQty == totalQty)
+                        {
+                            wQtyData.DeliveredQty = deliveryQTY;
+                            db.SaveChanges();
+                            obj.isTure = true;
+                            obj.response = ResourceResponse.UpdatedSuccessMessage;
+                        }
+                        else if (checkQty > totalQty)
+                        {
+                            obj.isTure = false;
+                            obj.response = "The Qty " + deliveryQTY + " Entred is Greater Than Total Qty " + totalQty;
+                        }
+                        else if (checkQty < totalQty)
+                        {
+                            wQtyData.DeliveredQty = deliveryQTY;
+                            wQtyData.Status = 1;
+                            wQtyData.IsWorkInProgress = 0;
+                            db.SaveChanges();
+                            obj.isTure = true;
+                            obj.response = ResourceResponse.UpdatedSuccessMessage;
+                        }
+                    }
+                    else if (wQtyData.Status == 1 && wQtyData.IsWorkInProgress == 0)
+                    {
+                        int deliveryQTY = Convert.ToInt32(data.qty);
+                        int processQty = Convert.ToInt32(wQtyData.ProcessQty);
+                        int totalQty = Convert.ToInt32(wQtyData.TargetQty);
+                        string workOrderNo = wQtyData.WorkOrderNo;
+                        string operationNo = wQtyData.OperationNo;
+                        string partNo = wQtyData.PartNo;
+                        DateTime startTime = Convert.ToDateTime(wQtyData.Date);
+                        var wQtyJFData = db.Tblwqtyhmiscreen.Where(x => x.PartNo == partNo && x.WorkOrderNo == workOrderNo && x.OperationNo == operationNo && x.Status == 2 && x.IsWorkInProgress == 1).FirstOrDefault();
+                        if (wQtyJFData == null)// if there no job finish row for particular wo,op and pn
+                        {
+                            var getAllRowWithIn = db.Tblwqtyhmiscreen.Where(x => x.Date > startTime && x.PartNo == partNo && x.WorkOrderNo == workOrderNo && x.OperationNo == operationNo).OrderBy(x => x.Date).ToList();
+                            if (getAllRowWithIn.Count > 0)
+                            {
+                                int deliveryQtySum = deliveryQTY;
+                                foreach (var row in getAllRowWithIn)
+                                {
+                                    deliveryQtySum += Convert.ToInt32(row.DeliveredQty);
+                                }
+                                if (deliveryQtySum == totalQty)
+                                {
+                                    int updationQty = deliveryQTY + processQty;
+                                    foreach (var row in getAllRowWithIn)
+                                    {
+                                        row.ProcessQty = updationQty;
+                                        db.SaveChanges();
+                                        updationQty = Convert.ToInt32(row.DeliveredQty);
+                                        if (updationQty == totalQty) // for last row update to JF
+                                        {
+                                            row.Status = 2;
+                                            row.IsWorkInProgress = 1;
+                                            db.SaveChanges();
+                                        }
+                                    }
+                                    obj.isTure = true;
+                                    obj.response = ResourceResponse.UpdatedSuccessMessage;
+                                }
+                                else if (deliveryQtySum < totalQty)
+                                {
+                                    int updationQty = deliveryQTY + processQty;
+                                    foreach (var row in getAllRowWithIn)
+                                    {
+                                        row.ProcessQty = updationQty;
+                                        db.SaveChanges();
+                                        updationQty = Convert.ToInt32(row.DeliveredQty);
+                                    }
+                                    obj.isTure = true;
+                                    obj.response = ResourceResponse.UpdatedSuccessMessage;
+                                }
+                                else if (deliveryQtySum > totalQty)
+                                {
+                                    obj.isTure = false;
+                                    obj.response = "The Qty " + deliveryQtySum + " Entred is Greater Than Total Qty " + totalQty;
+                                }
+                            }
+                            else
+                            {
+                                int checkQty = deliveryQTY + processQty;
+                                if (checkQty == totalQty)
+                                {
+                                    wQtyData.DeliveredQty = deliveryQTY;
+                                    wQtyData.Status = 2;
+                                    wQtyData.IsWorkInProgress = 1;
+                                    db.SaveChanges();
+                                    obj.isTure = true;
+                                    obj.response = ResourceResponse.UpdatedSuccessMessage;
+                                }
+                                else if (checkQty < totalQty)
+                                {
+                                    wQtyData.DeliveredQty = deliveryQTY;
+                                    db.SaveChanges();
+                                    obj.isTure = true;
+                                    obj.response = ResourceResponse.UpdatedSuccessMessage;
+
+                                }
+                                else if (checkQty > totalQty)
+                                {
+                                    obj.isTure = false;
+                                    obj.response = "The Qty " + checkQty + " Entred is Greater Than Total Qty " + totalQty;
+                                }
+                            }
+                        }
+                        else  // if there job finish row for particular wo,op and pn
+                        {
+                            var getAllRowWithIn = db.Tblwqtyhmiscreen.Where(x => x.Date > startTime && x.PartNo == partNo && x.WorkOrderNo == workOrderNo && x.OperationNo == operationNo).OrderBy(x => x.Date).ToList();
+                            if (getAllRowWithIn.Count > 0)
+                            {
+                                int deliveryQtySum = deliveryQTY;
+                                foreach (var row in getAllRowWithIn)
+                                {
+                                    deliveryQtySum += Convert.ToInt32(row.DeliveredQty);
+                                }
+                                if (deliveryQtySum == totalQty)
+                                {
+                                    int updationQty = deliveryQTY + processQty;
+                                    foreach (var row in getAllRowWithIn)
+                                    {
+                                        row.ProcessQty = updationQty;
+                                        db.SaveChanges();
+                                        updationQty = Convert.ToInt32(row.DeliveredQty);
+                                        if (updationQty == totalQty) // for last row update to JF
+                                        {
+                                            row.Status = 2;
+                                            row.IsWorkInProgress = 1;
+                                            db.SaveChanges();
+                                            obj.isTure = true;
+                                            obj.response = ResourceResponse.UpdatedSuccessMessage;
+                                        }
+                                    }
+                                }
+                                else if (deliveryQtySum < totalQty)
+                                {
+                                    int updationQty = deliveryQTY + processQty;
+                                    foreach (var row in getAllRowWithIn)
+                                    {
+                                        row.ProcessQty = updationQty;
+                                        db.SaveChanges();
+                                        updationQty = Convert.ToInt32(row.DeliveredQty);
+                                    }
+                                    obj.isTure = true;
+                                    obj.response = ResourceResponse.UpdatedSuccessMessage;
+                                }
+                                else if (deliveryQtySum > totalQty)
+                                {
+                                    obj.isTure = false;
+                                    obj.response = "The Qty " + deliveryQtySum + " Entred is Greater Than Total Qty " + totalQty;
+                                }
+                            }
+                            else
+                            {
+                                //obj.isTure = false;
+                                //obj.response = ResourceResponse.NoItemsFound;    //// need to check
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        //validate the quantity and with the selected workorder list
+        public CommonResponse ValidateQtyData(GetIdsValues data)
+        {
+            CommonResponse obj = new CommonResponse();
+            int index = 0, wQtyId = 0, value = 0, wQtyIdPrevoius = 0, valuePrevoius = 0, editedDelivertQty = 0, tblProcessQty = 0, previousDelivertQty = 0, previousProcessQty = 0, calProcessQty = 0, sumC = 0, sumP = 0;
+            try
+            {
+                //getting the connection string from app string.json
+                string connectionString = configuration.GetSection("MySettings").GetSection("DbConnection").Value;
+                SqlConnection conn = new SqlConnection(connectionString);
+                string truncateQuery = "truncate table [i_facility_tsal].[dbo].[tblTempCalculate]";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(truncateQuery, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                string[] wQtyIds = data.wQtyHmiIds.Split(',');
+                string[] values = data.values.Split(',');
+                for (int i = 0; i < wQtyIds.Count(); i++)
+                {
+                    if (index == 0)
+                    {
+                        wQtyId = Convert.ToInt32(wQtyIds[i]);
+                        value = Convert.ToInt32(values[i]);
+                        var getValuesFromWQTY = db.Tblwqtyhmiscreen.Where(x => x.Wqtyhmiid == wQtyId).FirstOrDefault();
+                        if (getValuesFromWQTY != null)
+                        {
+                            editedDelivertQty = Convert.ToInt32(values[i]);
+                            tblProcessQty = Convert.ToInt32(getValuesFromWQTY.ProcessQty);
+                            TblTempCalculate addRow = new TblTempCalculate();
+                            addRow.Whmiid = getValuesFromWQTY.Wqtyhmiid;
+                            addRow.PdelQty = Convert.ToInt32(getValuesFromWQTY.DeliveredQty);
+                            addRow.PprocQty = Convert.ToInt32(getValuesFromWQTY.ProcessQty);
+                            addRow.CdelQty = editedDelivertQty;
+                            addRow.CprocQty = tblProcessQty;
+                            db.TblTempCalculate.Add(addRow);
+                            db.SaveChanges();
+                        }
+                        else
+                        {
+                            obj.isTure = false;
+                            obj.response = ResourceResponse.NoItemsFound;
+                            break;
+                        }
+                        index++;
+                    }
+                    else if (index == 1)
+                    {
+                        wQtyId = Convert.ToInt32(wQtyIds[i]);
+                        value = Convert.ToInt32(values[i]);
+                        wQtyIdPrevoius = Convert.ToInt32(wQtyIds[i - 1]);
+                        valuePrevoius = Convert.ToInt32(values[i - 1]);
+                        var getValuesFromWQTY = db.Tblwqtyhmiscreen.Where(x => x.Wqtyhmiid == wQtyId).FirstOrDefault();
+                        var getValuesFromWQTYPrevious = db.TblTempCalculate.Where(x => x.Whmiid == wQtyIdPrevoius).FirstOrDefault();
+                        if (getValuesFromWQTY != null)
+                        {
+                            editedDelivertQty = Convert.ToInt32(values[i]);
+                            previousDelivertQty = Convert.ToInt32(getValuesFromWQTYPrevious.CdelQty);
+                            previousProcessQty = Convert.ToInt32(getValuesFromWQTYPrevious.CprocQty);
+                            calProcessQty = previousDelivertQty + previousProcessQty;
+                            TblTempCalculate addRow = new TblTempCalculate();
+                            addRow.Whmiid = getValuesFromWQTY.Wqtyhmiid;
+                            addRow.PdelQty = Convert.ToInt32(getValuesFromWQTY.DeliveredQty);
+                            addRow.PprocQty = Convert.ToInt32(getValuesFromWQTY.ProcessQty);
+                            addRow.CdelQty = editedDelivertQty;
+                            addRow.CprocQty = calProcessQty;
+                            db.TblTempCalculate.Add(addRow);
+                            db.SaveChanges();
+                        }
+                        else
+                        {
+                            obj.isTure = false;
+                            obj.response = ResourceResponse.NoItemsFound;
+                            break;
+                        }
+                    }
+                }
+                var validateQty = db.TblTempCalculate.Where(x => x.Whmiid != 0).OrderByDescending(x => x.Whmiid).FirstOrDefault();
+                if (validateQty != null)
+                {
+                    sumC = Convert.ToInt32(validateQty.CdelQty) + Convert.ToInt32(validateQty.CprocQty);
+                    sumP = Convert.ToInt32(validateQty.PdelQty) + Convert.ToInt32(validateQty.PprocQty);
+                    if (sumC == sumP)
+                    {
+                        for (int i = 0; i < wQtyIds.Count(); i++)
+                        {
+                            wQtyId = Convert.ToInt32(wQtyIds[i]);
+                            var getValuesFromWQTY = db.Tblwqtyhmiscreen.Where(x => x.Wqtyhmiid == wQtyId).FirstOrDefault();
+                            var getValuesFromWQTYValidate = db.TblTempCalculate.Where(x => x.Whmiid == wQtyId).FirstOrDefault();
+                            if (getValuesFromWQTY != null)
+                            {
+                                getValuesFromWQTY.DeliveredQty = getValuesFromWQTYValidate.CdelQty;
+                                getValuesFromWQTY.ProcessQty = getValuesFromWQTYValidate.CprocQty;
+                                db.SaveChanges();
+                            }
+                        }
+                        obj.isTure = true;
+                        obj.response = ResourceResponse.SuccessMessage;
+                    }
+                    else
+                    {
+                        obj.isTure = false;
+                        obj.response = "The Sum OF Deliverty Qty :" + validateQty.CdelQty + " + Process Qty:" + validateQty.CprocQty + " Not Equal To Target Qty:" + sumP;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        //inserting rows in table
+        public bool InsertIntoWQTYTable(List<Tblhmiscreen> hmiList)
+        {
+            bool result = false;
+            try
+            {
+                if (hmiList.Count > 0)
+                {
+                    foreach (var row in hmiList)
+                    {
+                        var wrongQtyRow = db.Tblwqtyhmiscreen.Where(x => x.Bhmiid == row.Hmiid).FirstOrDefault();
+                        if (wrongQtyRow == null)
+                        {
+                            Tblwqtyhmiscreen addRow = new Tblwqtyhmiscreen();
+                            addRow.BatchCount = row.BatchCount;
+                            addRow.Bhmiid = row.Hmiid;
+                            addRow.CorrectedDate = row.CorrectedDate;
+                            addRow.Date = row.Date;
+                            addRow.DdlwokrCentre = row.DdlwokrCentre;
+                            addRow.DeliveredQty = row.DeliveredQty;
+                            addRow.DoneWithRow = row.DoneWithRow;
+                            addRow.Hmimonth = row.Hmimonth;
+                            addRow.Hmiquarter = row.Hmiquarter;
+                            addRow.HmiweekNumber = row.HmiweekNumber;
+                            addRow.Hmiyear = row.Hmiyear;
+                            addRow.IsHold = row.IsHold;
+                            addRow.IsMultiWo = row.IsMultiWo;
+                            addRow.IsSplitSapUpdated = row.IsSplitSapUpdated;
+                            addRow.IsSync = row.IsSync;
+                            addRow.IsUpdate = row.IsUpdate;
+                            addRow.IsWorkInProgress = row.IsWorkInProgress;
+                            addRow.IsWorkOrder = row.IsWorkOrder;
+                            addRow.Machine = row.Machine;
+                            addRow.MachineId = row.MachineId;
+                            addRow.OperationNo = row.OperationNo;
+                            addRow.OperatiorId = row.OperatiorId;
+                            addRow.OperatorDet = row.OperatorDet;
+                            addRow.PartNo = row.PartNo;
+                            addRow.PestartTime = row.PestartTime;
+                            addRow.ProcessQty = row.ProcessQty;
+                            addRow.ProdFai = row.ProdFai;
+                            addRow.Project = row.Project;
+                            addRow.RejQty = row.RejQty;
+                            addRow.Shift = row.Shift;
+                            addRow.SplitWo = row.SplitWo;
+                            addRow.Status = row.Status;
+                            addRow.TargetQty = row.TargetQty;
+                            addRow.Time = row.Time;
+                            addRow.WorkOrderNo = row.WorkOrderNo;
+                            db.Tblwqtyhmiscreen.Add(addRow);
+                            db.SaveChanges();
+                        }
+                        else
+                        {
+                            // do nothing
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                result = false;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return result;
+        }
+
+        // send mail on approval
+        public CommonResponse SendApproval(Getdata data)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                string workOrderNo = data.WoNo;
+                string operationNo = data.OpNo;
+                //string correctedDate = data.Date;
+                var wrongQtyData = db.Tblwqtyhmiscreen.Where(x => x.SendApprove == 0 && x.OperationNo == operationNo && x.WorkOrderNo == workOrderNo).ToList();
+                if (wrongQtyData.Count > 0)
+                {
+                    var reader = Path.Combine(@"C:\TataReport\TCFTemplate\WOAceptRejectTemplate.html");
+                    string htmlStr = File.ReadAllText(reader);
+                    String[] seperator = { "{{WOStart}}" };
+                    string[] htmlArr = htmlStr.Split(seperator, 2, StringSplitOptions.RemoveEmptyEntries);
+
+                    var woHtml = htmlArr[1].Split(new String[] { "{{WOEnd}}" }, 2, StringSplitOptions.RemoveEmptyEntries)[0];
+                    htmlStr = htmlStr.Replace("{{WOStart}}", "");
+                    htmlStr = htmlStr.Replace("{{WOEnd}}", "");
+
+                    int sl = 1;
+
+                    foreach (var row in wrongQtyData)
+                    {
+                        row.SendApprove = 1;
+                        db.SaveChanges();
+
+                        String slno = Convert.ToString(sl);
+                        int mchId = Convert.ToInt32(row.MachineId);
+                        String operatorId = Convert.ToString(row.OperatiorId);
+                        String targetQty = Convert.ToString(row.TargetQty);
+                        String processQty = Convert.ToString(row.ProcessQty);
+                        DateTime startDateTime = Convert.ToDateTime(row.Date);
+                        DateTime endDateTime = Convert.ToDateTime(row.Time);
+                        String deliveryQty = Convert.ToString(row.DeliveredQty);
+                        String machineName = db.Tblmachinedetails.Where(x => x.IsDeleted == 0 && x.MachineId == mchId).Select(x => x.MachineInvNo).FirstOrDefault();
+                        htmlStr = htmlStr.Replace("{{slno}}", slno);
+                        htmlStr = htmlStr.Replace("{{MachineName}}", machineName);
+                        htmlStr = htmlStr.Replace("{{Shift}}", row.Shift);
+                        htmlStr = htmlStr.Replace("{{StartTime}}", startDateTime.ToString("yyyy-MM-dd HH:mm:ss"));
+                        htmlStr = htmlStr.Replace("{{EndTime}}", endDateTime.ToString("yyyy-MM-dd HH:mm:ss"));
+                        htmlStr = htmlStr.Replace("{{OperatorId}}", operatorId);
+                        htmlStr = htmlStr.Replace("{{WorkOrderNo}}", row.WorkOrderNo);
+                        htmlStr = htmlStr.Replace("{{PartNo}}", row.PartNo);
+                        htmlStr = htmlStr.Replace("{{OprationNo}}", row.OperationNo);
+                        htmlStr = htmlStr.Replace("{{Project}}", row.Project);
+                        htmlStr = htmlStr.Replace("{{ProdFAI}}", row.ProdFai);
+                        htmlStr = htmlStr.Replace("{{WorkOrderQty}}", targetQty);
+                        htmlStr = htmlStr.Replace("{{ProcessedQty}}", processQty);
+                        htmlStr = htmlStr.Replace("{{DeliveryQty}}", deliveryQty);
+
+                        if (wrongQtyData.Count == 1)
+                        {
+                            htmlStr = htmlStr.Replace("{{WO}}", "");
+                        }
+                        else if (sl < wrongQtyData.Count)
+                        {
+
+                            htmlStr = htmlStr.Replace("{{WO}}", woHtml);
+                        }
+                        else
+                        {
+                            htmlStr = htmlStr.Replace("{{WO}}", woHtml);
+                        }
+                        sl++;
+                    }
+
+                    htmlStr = htmlStr.Replace(woHtml, "");
+
+                    string acceptUrl = configuration.GetSection("MySettings").GetSection("AcceptURLWrongQty").Value;
+                    string rejectUrl = configuration.GetSection("MySettings").GetSection("RejectURLWrongQty").Value;
+
+                    string rejectSrc = rejectUrl + "workOrderNo="+ workOrderNo + "&operationNo="+ operationNo + "";
+                    string acceptSrc = acceptUrl + "workOrderNo=" + workOrderNo + "&operationNo=" + operationNo + "";
+
+                    string toName = "";
+                    string toMailIds = "";
+                    string ccMailIds = "";
+
+                    var tcfApproveMail = db.TblTcfApprovedMaster.Where(x => x.IsDeleted == 0 && x.TcfModuleId == 5).ToList();
+                    foreach (var row in tcfApproveMail)
+                    {
+                        toMailIds += row.FirstApproverToList;
+                        ccMailIds += row.FirstApproverCcList;
+                    }
+
+
+                    htmlStr = htmlStr.Replace("{{WO}}", "");
+                    htmlStr = htmlStr.Replace("{{userName}}", "ALL");
+                    //htmlStr = htmlStr.Replace("{{Sname}}", "Saurabh");
+                    //htmlStr = htmlStr.Replace("{{Lurl}}", logo);
+                    htmlStr = htmlStr.Replace("{{urlA}}", acceptSrc);
+                    htmlStr = htmlStr.Replace("{{urlR}}", rejectSrc);
+
+
+
+                    //string toMailID = "monika.ms@srkssolutions.com";
+                    //string ccMailID = "vignesh.pai@srkssolutions.com,pavan.v@srkssolutions.com";
+                    //string ccMailID = "vignesh.pai@srkssolutions.com,aswini.gp@srkssolutions.com";
+
+                    string toMailID = toMailIds.Remove(toMailIds.Length - 1);// removing last comma
+                    string ccMailID = ccMailIds;
+
+                    bool ret = SendMail(htmlStr, toMailID, ccMailID, 1);
+
+                    if (ret)
+                    {
+                        obj.isTure = true;
+                        obj.response = ResourceResponse.SuccessMessage;
+                    }
+                    else
+                    {
+                        obj.isTure = false;
+                        obj.response = ResourceResponse.FailureMessage;
+                    }
+
+
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        // get data to show case on accept and rehect
+        public CommonResponse GetAllData(Getdata data)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                List<WODetails> listWODetails = new List<WODetails>();
+                string workOrderNo = data.WoNo;
+                string operationNo = data.OpNo;
+                //string correctedDate = data.Date;
+                var wrongQtyData = db.Tblwqtyhmiscreen.Where(x => x.SendApprove == 1 && x.OperationNo == operationNo && x.WorkOrderNo == workOrderNo && x.AcceptReject==0).ToList();
+                if (wrongQtyData.Count > 0)
+                {
+                    foreach (var row in wrongQtyData)
+                    {
+                        int machineID = row.MachineId;
+                        string machineName = db.Tblmachinedetails.Where(x => x.IsDeleted == 0 && x.MachineId == machineID).Select(x => x.MachineInvNo).FirstOrDefault();
+                        WODetails objWODetails = new WODetails();
+                        objWODetails.WoNo = row.WorkOrderNo;
+                        objWODetails.OpNo = row.OperationNo;
+                        objWODetails.partno = row.PartNo;
+                        objWODetails.StartTime = Convert.ToDateTime(row.Date).ToString("yyyy-MM-dd HH:mm:ss");
+                        objWODetails.EndTime = Convert.ToDateTime(row.Time).ToString("yyyy-MM-dd HH:mm:ss");
+                        objWODetails.Project = row.Project;
+                        objWODetails.prodfai = row.ProdFai;
+                        objWODetails.WoQty = Convert.ToString(row.TargetQty);
+                        objWODetails.ProcessQty = Convert.ToString(row.ProcessQty);
+                        objWODetails.DeliveredQty = Convert.ToString(row.DeliveredQty);
+                        objWODetails.WQtyhmiid = row.Wqtyhmiid;
+                        objWODetails.MachineName = machineName;
+                        listWODetails.Add(objWODetails);
+                    }
+                    obj.isTure = true;
+                    obj.response = listWODetails;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        // accept the WorkOrder Updated QTY 
+        public CommonResponse AcceptWoQtyData(Getdata data)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                string workOrderNo = data.WoNo;
+                string operationNo = data.OpNo;
+                //DateTime correctedDate = Convert.ToDateTime(data.Date);
+                bool check = false;
+                var getWorkOrderQtyData = db.Tblwqtyhmiscreen.Where(x => x.WorkOrderNo == workOrderNo && x.OperationNo == operationNo && x.SendApprove == 1 && x.AcceptReject == 0).ToList();
+                if (getWorkOrderQtyData.Count > 0)
+                {
+                    foreach (var row in getWorkOrderQtyData)
+                    {
+                        row.AcceptReject = 1;
+                        db.SaveChanges();
+                        check = UpdateQtyLiveHist(row);
+                    }
+                    if (check)
+                    {
+                        string toMailIds = "";
+                        string ccMailIds = "";
+                        var tcfApproveMail = db.TblTcfApprovedMaster.Where(x => x.IsDeleted == 0 && x.TcfModuleId == 5).ToList();
+                        foreach (var row in tcfApproveMail)
+                        {
+                            toMailIds += row.FirstApproverToList;
+                            ccMailIds += row.FirstApproverCcList;
+                        }
+                        string message = "<!DOCTYPE html><html xmlns = 'http://www.w3.org/1999/xhtml' ><head><title></title><link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans'/>" +
+                       "</head><body><p>Dear ALL"+",</p></br><p><center> The Wrong QtY updation Has Been Accepted</center></p></br><p>Thank you" +
+                       "</p></body></html>";
+
+                        bool ret = SendMail(message, toMailIds, ccMailIds, 0);
+
+                        if (ret)
+                        {                           
+                            obj.isTure = true;
+                            obj.response = ResourceResponse.SuccessMessage;
+                        }
+                    }
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+        // update the record to live tables
+        public bool UpdateQtyLiveHist(Tblwqtyhmiscreen data)
+        {
+            bool result = false;
+            try
+            {
+                string workOrderNo = data.WorkOrderNo;
+                string operationNo = data.OperationNo;
+                string correctedDate = data.CorrectedDate;
+                int isWorkInProgress = data.IsWorkInProgress;
+                int status = Convert.ToInt32(data.Status);
+                int deliveryQty = Convert.ToInt32(data.DeliveredQty);
+                var checkHmiDataUpdate = db.Tblhmiscreen.Where(x => x.CorrectedDate == correctedDate && x.WorkOrderNo == workOrderNo && x.OperationNo == operationNo).FirstOrDefault();
+                if (checkHmiDataUpdate != null)
+                {
+                    checkHmiDataUpdate.DeliveredQty = deliveryQty;
+                    checkHmiDataUpdate.Status = status;
+                    checkHmiDataUpdate.IsWorkInProgress = isWorkInProgress;
+                    db.SaveChanges();
+                    result = true;
+                }
+                else
+                {
+                    result = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                result = false;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return result;
+        }
+
+        //Get the reject Reasons
+        public CommonResponse GetRejectReasons()
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                List<RejectReasonData> listRejectReasonData = new List<RejectReasonData>();
+                var rejectReassondata = db.Tblrejectreason.Where(x => x.IsDeleted == 0 && x.IsTcf == 1).ToList();
+                if (rejectReassondata.Count > 0)
+                {
+                    foreach (var row in rejectReassondata)
+                    {
+                        RejectReasonData objRejectReasonData = new RejectReasonData();
+                        objRejectReasonData.reasonId = row.Rid;
+                        objRejectReasonData.reasonName = row.RejectName;
+                        listRejectReasonData.Add(objRejectReasonData);
+                    }
+                    obj.isTure = true;
+                    obj.response = listRejectReasonData;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return obj;
+        }
+
+
+        // accept the WorkOrder Updated QTY 
+        public CommonResponse RejectWoQtyData(GetdataWithRejectReason data)
+        {
+            CommonResponse obj = new CommonResponse();
+            try
+            {
+                string workOrderNo = data.WoNo;
+                string operationNo = data.OpNo;
+                //DateTime correctedDate = Convert.ToDateTime(data.Date);
+                var getWorkOrderQtyData = db.Tblwqtyhmiscreen.Where(x => x.WorkOrderNo == workOrderNo && x.OperationNo == operationNo && x.SendApprove == 1 && x.AcceptReject == 0).ToList();
+                if (getWorkOrderQtyData.Count > 0)
+                {
+                    foreach (var row in getWorkOrderQtyData)
+                    {
+                        row.AcceptReject = 2;
+                        db.SaveChanges();
+                    }
+                    string toMailIds = "";
+                    string ccMailIds = "";
+                    var tcfApproveMail = db.TblTcfApprovedMaster.Where(x => x.IsDeleted == 0 && x.TcfModuleId == 5).ToList();
+                    foreach (var row in tcfApproveMail)
+                    {
+                        toMailIds += row.FirstApproverToList;
+                        ccMailIds += row.FirstApproverCcList;
+                    }
+
+                    string message = "<!DOCTYPE html><html xmlns = 'http://www.w3.org/1999/xhtml' ><head><title></title><link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans'/>" +
+                       "</head><body><p>Dear Vignesh,</p></br><p><center> The Wrong Qty Updation Has Been Rejected</center></p></br><p>Thank you" +
+                       "</p></br><p>Sincerely,</p><p>Dear Vignesh</p></br></body></html>";
+
+                    bool ret = SendMail(message, toMailIds, ccMailIds, 0);
+
+                    if (ret)
+                    {
+                        obj.isTure = true;
+                        obj.response = ResourceResponse.SuccessMessage;
+                    }
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = ResourceResponse.NoItemsFound;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj.isTure = false;
+                obj.response = ResourceResponse.ExceptionMessage;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return obj;
+        }
+
+
+        public bool SendMail(string message, string toList, string ccList, int image)
+        {
+            bool ret = false;
+            try
+            {
+                if (message != "" && toList != "" && ccList != null)
+                {
+
+                    //string toMailID = "monika.ms@srkssolutions.com";
+                    ////string ccMailID = "vignesh.pai@srkssolutions.com,pavan.v@srkssolutions.com";
+                    //string ccMailID = "vignesh.pai@srkssolutions.com";
+                    string toMailID = toList;
+                    string ccMailID = ccList;
+                    MailMessage mail = new MailMessage();
+                    mail.To.Add(toMailID);
+                    if (ccMailID != "")
+                    {
+                        mail.CC.Add(ccMailID);
+                    }
+                    string fromMail = configuration.GetSection("SMTPConn").GetSection("FromMailID").Value;
+
+                    mail.From = new MailAddress(fromMail);
+                    mail.Subject = "Wrong Qty Updation";
+                    mail.Body = "" + message;
+                    mail.IsBodyHtml = true;
+
+                    if (image == 1)
+                    {
+                        AlternateView htmlView = AlternateView.CreateAlternateViewFromString(message, Encoding.UTF8, MediaTypeNames.Text.Html);
+                        // Create a plain text message for client that don't support HTML
+                        AlternateView plainView = AlternateView.CreateAlternateViewFromString(Regex.Replace(message, "<[^>]+?>", string.Empty), Encoding.UTF8, MediaTypeNames.Text.Plain);
+                        string mediaType = MediaTypeNames.Image.Jpeg;
+                        LinkedResource img = new LinkedResource(@"C:\TataReport\TCFTemplate\120px-Tata_logo.Jpeg", mediaType);
+                        // Make sure you set all these values!!!
+                        img.ContentId = "EmbeddedContent_1";
+                        img.ContentType.MediaType = mediaType;
+                        img.TransferEncoding = TransferEncoding.Base64;
+                        img.ContentType.Name = img.ContentId;
+                        img.ContentLink = new Uri("cid:" + img.ContentId);
+                        LinkedResource img1 = new LinkedResource(@"C:\TataReport\TCFTemplate\approve.Jpeg", mediaType);
+                        // Make sure you set all these values!!!
+                        img1.ContentId = "EmbeddedContent_2";
+                        img1.ContentType.MediaType = mediaType;
+                        img1.TransferEncoding = TransferEncoding.Base64;
+                        img1.ContentType.Name = img.ContentId;
+                        img1.ContentLink = new Uri("cid:" + img1.ContentId);
+                        LinkedResource img2 = new LinkedResource(@"C:\TataReport\TCFTemplate\reject.Jpeg", mediaType);
+                        // Make sure you set all these values!!!
+                        img2.ContentId = "EmbeddedContent_3";
+                        img2.ContentType.MediaType = mediaType;
+                        img2.TransferEncoding = TransferEncoding.Base64;
+                        img2.ContentType.Name = img.ContentId;
+                        img2.ContentLink = new Uri("cid:" + img2.ContentId);
+                        htmlView.LinkedResources.Add(img);
+                        htmlView.LinkedResources.Add(img1);
+                        htmlView.LinkedResources.Add(img2);
+                        mail.AlternateViews.Add(plainView);
+                        mail.AlternateViews.Add(htmlView);
+                    }
+
+                    string hostName = configuration.GetSection("SMTPConn").GetSection("Host").Value;
+                    int port = Convert.ToInt32(configuration.GetSection("SMTPConn").GetSection("Port").Value);
+                    bool enableSsl = Convert.ToBoolean(configuration.GetSection("SMTPConn").GetSection("EnableSsl").Value);
+                    bool useDefaultCredentials = Convert.ToBoolean(configuration.GetSection("SMTPConn").GetSection("UseDefaultCredentials").Value);
+                    string emailId = configuration.GetSection("SMTPConn").GetSection("EmailId").Value;
+                    string password = configuration.GetSection("SMTPConn").GetSection("Password").Value;
+
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = hostName;
+                    smtp.Port = port;
+                    smtp.EnableSsl = enableSsl;
+                    smtp.UseDefaultCredentials = useDefaultCredentials;
+                    smtp.Credentials = new System.Net.NetworkCredential(emailId, password);
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Send(mail);
+
+
+                    ret = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ret = false;
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+            }
+            return ret;
+        }
+    }
+}
