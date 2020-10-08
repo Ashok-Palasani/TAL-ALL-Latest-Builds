@@ -1,0 +1,142 @@
+2020-05-22 13:47:09:  ApplicationStart
+2020-05-22 13:51:15:  ApplicationStart
+2020-05-22 14:34:22:  ApplicationStart
+2020-05-22 14:39:15:  ApplicationStart
+2020-05-22 14:40:36:  File watcher method
+2020-05-22 14:40:39:  File watcher method filename:Copy of Copy of DDL.xlsx
+2020-05-22 14:40:42:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 14:42:29:  File watcher method before handleddlfile:
+2020-05-22 14:42:32:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 14:43:14:  HandleDDLFile Section: System.InvalidOperationException: ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at FileWatcherForDDL.Form1.CheckDDLStatus(Int32 i) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 773
+   at FileWatcherForDDL.Form1.HandleDDLFile(String DDLPath) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 232
+2020-05-22 14:43:35:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 14:47:39:  ApplicationStart
+2020-05-22 14:48:26:  File watcher method
+2020-05-22 14:48:28:  File watcher method filename:Copy of Copy of DDL.xlsx
+2020-05-22 14:48:31:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 14:49:36:  File watcher method before handleddlfile:
+2020-05-22 14:49:39:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 14:50:11:  HandleDDLFile Section: System.InvalidOperationException: ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at FileWatcherForDDL.Form1.CheckDDLStatus(Int32 i) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 779
+   at FileWatcherForDDL.Form1.HandleDDLFile(String DDLPath) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 232
+2020-05-22 14:50:36:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 14:54:40:  ApplicationStart
+2020-05-22 14:55:18:  File watcher method
+2020-05-22 14:55:19:  File watcher method filename:Copy of Copy of DDL.xlsx
+2020-05-22 14:55:22:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 14:56:29:  File watcher method before handleddlfile:
+2020-05-22 14:56:31:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 14:57:25:  HandleDDLFile Section: System.InvalidOperationException: ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at FileWatcherForDDL.Form1.CheckDDLStatus(Int32 i) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 781
+   at FileWatcherForDDL.Form1.HandleDDLFile(String DDLPath) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 232
+2020-05-22 14:59:04:  ApplicationStart
+2020-05-22 14:59:41:  File watcher method
+2020-05-22 14:59:42:  File watcher method filename:Copy of Copy of DDL.xlsx
+2020-05-22 14:59:45:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 15:00:50:  File watcher method before handleddlfile:
+2020-05-22 15:00:52:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 15:52:31:  ApplicationStart
+2020-05-22 15:53:28:  File watcher method
+2020-05-22 15:53:31:  File watcher method filename:Copy of Copy of DDL.xlsx
+2020-05-22 15:53:33:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 15:54:45:  File watcher method before handleddlfile:
+2020-05-22 15:54:45:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 15:54:46:  HandleDDLFile Section: System.NullReferenceException: Object reference not set to an instance of an object.
+   at FileWatcherForDDL.Form1.CheckDDLStatus(Int32 i) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 779
+   at FileWatcherForDDL.Form1.HandleDDLFile(String DDLPath) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 232
+2020-05-22 15:54:52:  DeleteDuplicate SP Error: System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'i_facility_tsal.dbo.tblddl'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at FileWatcherForDDL.Form1.fileSystemWatcher1_Created(Object sender, FileSystemEventArgs e) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 120
+ClientConnectionId:7257beaa-2ed1-4979-bbf1-d346f8514254
+Error Number:208,State:1,Class:16
+2020-05-22 15:55:52:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 15:57:13:  IN FileWatcher Section: System.IO.FileNotFoundException: Could not find file 'D:\PCS-DAS-Sync\DDL\Copy of Copy of DDL.xlsx'.
+File name: 'D:\PCS-DAS-Sync\DDL\Copy of Copy of DDL.xlsx'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   at FileWatcherForDDL.Form1.fileSystemWatcher1_Created(Object sender, FileSystemEventArgs e) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 81
+2020-05-22 16:00:34:  ApplicationStart
+2020-05-22 16:02:38:  File watcher method
+2020-05-22 16:02:41:  File watcher method filename:Copy of Copy of DDL.xlsx
+2020-05-22 16:03:06:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 16:04:30:  File watcher method before handleddlfile:
+2020-05-22 16:04:38:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 16:04:52:  HandleDDLFile Section: System.NullReferenceException: Object reference not set to an instance of an object.
+   at FileWatcherForDDL.Form1.CheckDDLStatus(Int32 i) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 779
+   at FileWatcherForDDL.Form1.HandleDDLFile(String DDLPath) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 232
+2020-05-22 16:05:11:  DeleteDuplicate SP Error: System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'i_facility_tsal.dbo.tblddl'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at FileWatcherForDDL.Form1.fileSystemWatcher1_Created(Object sender, FileSystemEventArgs e) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 120
+ClientConnectionId:8e3bf8c0-dba3-4620-9313-f0afdfc9473b
+Error Number:208,State:1,Class:16
+2020-05-22 16:08:02:  DeleteDuplicate SP Error: System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'i_facility_tsal.dbo.tblddl'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at FileWatcherForDDL.Form1.fileSystemWatcher1_Created(Object sender, FileSystemEventArgs e) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 120
+ClientConnectionId:8e3bf8c0-dba3-4620-9313-f0afdfc9473b
+Error Number:208,State:1,Class:16
+2020-05-22 16:10:38:  ApplicationStart
+2020-05-22 16:11:02:  System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Diagnostics.Debugger.CustomNotification(ICustomDebuggerNotification data)
+   at System.Diagnostics.Debugger.NotifyOfCrossThreadDependencySlow()
+   at System.Diagnostics.Debugger.NotifyOfCrossThreadDependency()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at FileWatcherForDDL.Form1..ctor() in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 27
+2020-05-22 16:11:08:  File watcher method
+2020-05-22 16:11:09:  File watcher method filename:Copy of Copy of DDL.xlsx
+2020-05-22 16:11:13:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 16:12:20:  File watcher method before handleddlfile:
+2020-05-22 16:12:23:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 16:14:28:  HandleDDLFile Section: System.NullReferenceException: Object reference not set to an instance of an object.
+   at FileWatcherForDDL.Form1.CheckDDLStatus(Int32 i) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 779
+   at FileWatcherForDDL.Form1.HandleDDLFile(String DDLPath) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 232
+2020-05-22 16:15:15:  ApplicationStart
+2020-05-22 16:15:40:  File watcher method
+2020-05-22 16:15:40:  File watcher method filename:Copy of Copy of DDL.xlsx
+2020-05-22 16:15:57:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 16:16:04:  File watcher method before handleddlfile:
+2020-05-22 16:16:06:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 16:19:36:  ApplicationStart
+2020-05-22 16:19:56:  File watcher method
+2020-05-22 16:19:56:  File watcher method filename:Copy of Copy of DDL.xlsx
+2020-05-22 16:20:00:  File watcher method destination path:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 16:20:05:  File watcher method before handleddlfile:
+2020-05-22 16:20:08:  HandleDDLFile:D:\PCS-DAS-Sync\Uploaded DDL\Copy of Copy of DDL.xlsx
+2020-05-22 16:21:15:  HandleDDLFile fileLocation:D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\\DDL\Copy of Copy of DDL.xlsx
+2020-07-20 16:43:23:  ApplicationStart
+2020-07-20 16:43:48:  System.ArgumentException: The directory name \\10.80.20.16\DDL-DAS Report\DDL is invalid.
+   at System.IO.FileSystemWatcher.set_Path(String value)
+   at FileWatcherForDDL.Form1.InitializeComponent(String path, String username, String password, String domainName, String path1, String username1, String password1, String domainName1) in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.Designer.cs:line 46
+   at FileWatcherForDDL.Form1..ctor() in D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\Form1.cs:line 44

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mazakdaqModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="mazakdaqModelStoreContainer">
+    <EntitySet Name="shift_master" EntityType="mazakdaqModel.Store.shift_master" store:Type="Tables" Schema="mazakdaq" />
+    <EntitySet Name="tblnetworkdetailsforddl" EntityType="mazakdaqModel.Store.tblnetworkdetailsforddl" store:Type="Tables" Schema="mazakdaq" />
+  </EntityContainer>
+  <EntityType Name="shift_master">
+    <Key>
+      <PropertyRef Name="ShiftID" />
+    </Key>
+    <Property Name="ShiftID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftName" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="StartTime" Type="time" Nullable="false" />
+    <Property Name="EndTime" Type="time" Nullable="false" />
+    <Property Name="InsertedOn" Type="datetime" Nullable="false" />
+    <Property Name="InsertedBy" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="IsDeleted" Type="int" Nullable="false" />
+    <Property Name="Duration" Type="int" />
+  </EntityType>
+  <EntityType Name="tblnetworkdetailsforddl">
+    <Key>
+      <PropertyRef Name="NPFDDLID" />
+    </Key>
+    <Property Name="NPFDDLID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Path" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="DomainName" Type="varchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+</Schema>

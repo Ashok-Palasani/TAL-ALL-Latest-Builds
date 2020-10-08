@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mazakdaqModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="mazakdaqEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="tblnetworkdetailsforddls" EntityType="mazakdaqModel.tblnetworkdetailsforddl" />
+    <EntitySet Name="shift_master" EntityType="mazakdaqModel.shift_master" />
+  </EntityContainer>
+  <EntityType Name="tblnetworkdetailsforddl">
+    <Key>
+      <PropertyRef Name="NPFDDLID" />
+    </Key>
+    <Property Type="Int32" Name="NPFDDLID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Path" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DomainName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+  </EntityType>
+  <EntityType Name="shift_master">
+    <Key>
+      <PropertyRef Name="ShiftID" />
+    </Key>
+    <Property Type="Int32" Name="ShiftID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ShiftName" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Time" Name="StartTime" Nullable="false" />
+    <Property Type="Time" Name="EndTime" Nullable="false" />
+    <Property Type="DateTime" Name="InsertedOn" Nullable="false" />
+    <Property Type="String" Name="InsertedBy" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="String" Name="ModifiedBy" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="Int32" Name="Duration" />
+  </EntityType>
+</Schema>

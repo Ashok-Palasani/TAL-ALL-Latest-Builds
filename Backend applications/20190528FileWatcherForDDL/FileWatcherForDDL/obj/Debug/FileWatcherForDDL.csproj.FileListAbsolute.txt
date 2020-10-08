@@ -1,0 +1,35 @@
+C:\Users\TECH-1\Documents\Visual Studio 2012\TATA\TATA Workspace\FileWatcherForDDL\FileWatcherForDDL\bin\Debug\FileWatcherForDDL.exe.config
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\FileWatcherForDDL.exe.config
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\FileWatcherForDDL.exe
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\FileWatcherForDDL.pdb
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EntityFramework.dll
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EPPlus.dll
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\System.Data.dll
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EntityFramework.xml
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.csprojAssemblyReference.cache
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.Form1.resources
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.Properties.Resources.resources
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.csproj.GenerateResource.cache
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.csproj.CoreCompileInputs.cache
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.csproj.CopyComplete
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.exe
+D:\Ashok\TSAL_UAT\Suhas\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.pdb
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\FileWatcherForDDL.exe.config
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\FileWatcherForDDL.exe
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\FileWatcherForDDL.pdb
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EntityFramework.dll
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EPPlus.dll
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\System.Data.dll
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EntityFramework.xml
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.csprojAssemblyReference.cache
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.Form1.resources
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.Properties.Resources.resources
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.csproj.GenerateResource.cache
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.csproj.CoreCompileInputs.cache
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.csproj.CopyComplete
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.exe
+D:\Aswini\TAL\BackEnd Applications\20190528FileWatcherForDDL\FileWatcherForDDL\obj\Debug\FileWatcherForDDL.pdb

@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mazakdaqModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="mazakdaqEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_autoreport_log" EntityType="mazakdaqModel.tbl_autoreport_log" />
+    <EntitySet Name="tbl_autoreportbasedon" EntityType="mazakdaqModel.tbl_autoreportbasedon" />
+    <EntitySet Name="tbl_autoreportsetting" EntityType="mazakdaqModel.tbl_autoreportsetting" />
+    <EntitySet Name="tbl_autoreporttime" EntityType="mazakdaqModel.tbl_autoreporttime" />
+    <EntitySet Name="tbl_multiwoselection" EntityType="mazakdaqModel.tbl_multiwoselection" />
+    <EntitySet Name="tbl_reportmaster" EntityType="mazakdaqModel.tbl_reportmaster" />
+    <EntitySet Name="tblbreakdowns" EntityType="mazakdaqModel.tblbreakdown" />
+    <EntitySet Name="tblcells" EntityType="mazakdaqModel.tblcell" />
+    <EntitySet Name="tbldailyprodstatus" EntityType="mazakdaqModel.tbldailyprodstatu" />
+    <EntitySet Name="tblendcodes" EntityType="mazakdaqModel.tblendcode" />
+    <EntitySet Name="tblgenericworkcodes" EntityType="mazakdaqModel.tblgenericworkcode" />
+    <EntitySet Name="tblgenericworkentries" EntityType="mazakdaqModel.tblgenericworkentry" />
+    <EntitySet Name="tblhmiscreens" EntityType="mazakdaqModel.tblhmiscreen" />
+    <EntitySet Name="tblholdcodes" EntityType="mazakdaqModel.tblholdcode" />
+    <EntitySet Name="tbllivedailyprodstatus" EntityType="mazakdaqModel.tbllivedailyprodstatu" />
+    <EntitySet Name="tbllossescodes" EntityType="mazakdaqModel.tbllossescode" />
+    <EntitySet Name="tbllossofentries" EntityType="mazakdaqModel.tbllossofentry" />
+    <EntitySet Name="tblmachinedetails" EntityType="mazakdaqModel.tblmachinedetail" />
+    <EntitySet Name="tblmailids" EntityType="mazakdaqModel.tblmailid" />
+    <EntitySet Name="tblmanuallossofentries" EntityType="mazakdaqModel.tblmanuallossofentry" />
+    <EntitySet Name="tblmasterparts_st_sw" EntityType="mazakdaqModel.tblmasterparts_st_sw" />
+    <EntitySet Name="tblmodes" EntityType="mazakdaqModel.tblmode" />
+    <EntitySet Name="tbloeedashboardvariables" EntityType="mazakdaqModel.tbloeedashboardvariable" />
+    <EntitySet Name="tblplants" EntityType="mazakdaqModel.tblplant" />
+    <EntitySet Name="tblshops" EntityType="mazakdaqModel.tblshop" />
+    <EntitySet Name="tblwolossesses" EntityType="mazakdaqModel.tblwolossess" />
+    <EntitySet Name="tblworeports" EntityType="mazakdaqModel.tblworeport" />
+    <AssociationSet Name="AutoReportID" Association="mazakdaqModel.AutoReportID">
+      <End Role="tbl_autoreportsetting" EntitySet="tbl_autoreportsetting" />
+      <End Role="tbl_autoreport_log" EntitySet="tbl_autoreport_log" />
+    </AssociationSet>
+    <AssociationSet Name="BasedOnID" Association="mazakdaqModel.BasedOnID">
+      <End Role="tbl_autoreportbasedon" EntitySet="tbl_autoreportbasedon" />
+      <End Role="tbl_autoreportsetting" EntitySet="tbl_autoreportsetting" />
+    </AssociationSet>
+    <AssociationSet Name="ReportCellID" Association="mazakdaqModel.ReportCellID">
+      <End Role="tblcell" EntitySet="tblcells" />
+      <End Role="tbl_autoreportsetting" EntitySet="tbl_autoreportsetting" />
+    </AssociationSet>
+    <AssociationSet Name="ReportID" Association="mazakdaqModel.ReportID">
+      <End Role="tbl_reportmaster" EntitySet="tbl_reportmaster" />
+      <End Role="tbl_autoreportsetting" EntitySet="tbl_autoreportsetting" />
+    </AssociationSet>
+    <AssociationSet Name="ReportPlantID" Association="mazakdaqModel.ReportPlantID">
+      <End Role="tblplant" EntitySet="tblplants" />
+      <End Role="tbl_autoreportsetting" EntitySet="tbl_autoreportsetting" />
+    </AssociationSet>
+    <AssociationSet Name="ReportShopID" Association="mazakdaqModel.ReportShopID">
+      <End Role="tblshop" EntitySet="tblshops" />
+      <End Role="tbl_autoreportsetting" EntitySet="tbl_autoreportsetting" />
+    </AssociationSet>
+    <AssociationSet Name="ReportTimeID" Association="mazakdaqModel.ReportTimeID">
+      <End Role="tbl_autoreporttime" EntitySet="tbl_autoreporttime" />
+      <End Role="tbl_autoreportsetting" EntitySet="tbl_autoreportsetting" />
+    </AssociationSet>
+    <AssociationSet Name="ReportWorkCentreID" Association="mazakdaqModel.ReportWorkCentreID">
+      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
+      <End Role="tbl_autoreportsetting" EntitySet="tbl_autoreportsetting" />
+    </AssociationSet>
+    <AssociationSet Name="BreakdowncodeId" Association="mazakdaqModel.BreakdowncodeId">
+      <End Role="tbllossescode" EntitySet="tbllossescodes" />
+      <End Role="tblbreakdown" EntitySet="tblbreakdowns" />
+    </AssociationSet>
+    <AssociationSet Name="CellIDtblmachinedetails" Association="mazakdaqModel.CellIDtblmachinedetails">
+      <End Role="tblcell" EntitySet="tblcells" />
+      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
+    </AssociationSet>
+    <AssociationSet Name="PlantsId" Association="mazakdaqModel.PlantsId">
+      <End Role="tblplant" EntitySet="tblplants" />
+      <End Role="tblcell" EntitySet="tblcells" />
+    </AssociationSet>
+    <AssociationSet Name="ShopId" Association="mazakdaqModel.ShopId">
+      <End Role="tblshop" EntitySet="tblshops" />
+      <End Role="tblcell" EntitySet="tblcells" />
+    </AssociationSet>
+    <AssociationSet Name="MachineID1" Association="mazakdaqModel.MachineID1">
+      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
+      <End Role="tbldailyprodstatu" EntitySet="tbldailyprodstatus" />
+    </AssociationSet>
+    <AssociationSet Name="GenericWorkID" Association="mazakdaqModel.GenericWorkID">
+      <End Role="tblgenericworkcode" EntitySet="tblgenericworkcodes" />
+      <End Role="tblgenericworkentry" EntitySet="tblgenericworkentries" />
+    </AssociationSet>
+    <AssociationSet Name="MachineIDhmi" Association="mazakdaqModel.MachineIDhmi">
+      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
+      <End Role="tblhmiscreen" EntitySet="tblhmiscreens" />
+    </AssociationSet>
+    <AssociationSet Name="MachineIDLDPS" Association="mazakdaqModel.MachineIDLDPS">
+      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
+      <End Role="tbllivedailyprodstatu" EntitySet="tbllivedailyprodstatus" />
+    </AssociationSet>
+    <AssociationSet Name="LossCodeID" Association="mazakdaqModel.LossCodeID">
+      <End Role="tbllossescode" EntitySet="tbllossescodes" />
+      <End Role="tbllossofentry" EntitySet="tbllossofentries" />
+    </AssociationSet>
+    <AssociationSet Name="ManualLossCodeID" Association="mazakdaqModel.ManualLossCodeID">
+      <End Role="tbllossescode" EntitySet="tbllossescodes" />
+      <End Role="tblmanuallossofentry" EntitySet="tblmanuallossofentries" />
+    </AssociationSet>
+    <AssociationSet Name="PlantIDtblmachinedetails" Association="mazakdaqModel.PlantIDtblmachinedetails">
+      <End Role="tblplant" EntitySet="tblplants" />
+      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
+    </AssociationSet>
+    <AssociationSet Name="ShopIDtblmachinedetails" Association="mazakdaqModel.ShopIDtblmachinedetails">
+      <End Role="tblshop" EntitySet="tblshops" />
+      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
+    </AssociationSet>
+    <AssociationSet Name="PlantID" Association="mazakdaqModel.PlantID">
+      <End Role="tblplant" EntitySet="tblplants" />
+      <End Role="tblshop" EntitySet="tblshops" />
+    </AssociationSet>
+    <EntitySet Name="tblapp_paths" EntityType="mazakdaqModel.tblapp_paths" />
+    <EntitySet Name="tbldaytimings" EntityType="mazakdaqModel.tbldaytiming" />
+    <EntitySet Name="tblusers" EntityType="mazakdaqModel.tbluser" />
+    <AssociationSet Name="Mid" Association="mazakdaqModel.Mid">
+      <End Role="tblmachinedetail" EntitySet="tblmachinedetails" />
+      <End Role="tbluser" EntitySet="tblusers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tbl_autoreport_log">
+    <Key>
+      <PropertyRef Name="AutoReportLogID" />
+    </Key>
+    <Property Type="Int32" Name="AutoReportLogID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="CorrectedDate" />
+    <Property Type="Int32" Name="AutoReportID" />
+    <Property Type="DateTime" Name="InsertedOn" />
+    <Property Type="Int32" Name="ExcelCreated" />
+    <Property Type="Int32" Name="MailSent" />
+    <Property Type="DateTime" Name="CompletedOn" />
+    <Property Type="DateTime" Name="ExcelCreatedTime" />
+    <NavigationProperty Name="tbl_autoreportsetting" Relationship="mazakdaqModel.AutoReportID" FromRole="tbl_autoreport_log" ToRole="tbl_autoreportsetting" />
+  </EntityType>
+  <EntityType Name="tbl_autoreportbasedon">
+    <Key>
+      <PropertyRef Name="BasedOnID" />
+    </Key>
+    <Property Type="Int32" Name="BasedOnID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="BasedOn" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Desc" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedOn" />
+    <Property Type="Int32" Name="CreatedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="Int32" Name="IsDeleted" />
+    <NavigationProperty Name="tbl_autoreportsetting" Relationship="mazakdaqModel.BasedOnID" FromRole="tbl_autoreportbasedon" ToRole="tbl_autoreportsetting" />
+  </EntityType>
+  <EntityType Name="tbl_autoreportsetting">
+    <Key>
+      <PropertyRef Name="AutoReportID" />
+    </Key>
+    <Property Type="Int32" Name="AutoReportID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ReportID" />
+    <Property Type="Int32" Name="BasedOn" />
+    <Property Type="Int32" Name="AutoReportTimeID" />
+    <Property Type="String" Name="ToMailList" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CCMailList" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedOn" />
+    <Property Type="Int32" Name="CreatedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="Int32" Name="IsDeleted" />
+    <Property Type="Int32" Name="PlantID" />
+    <Property Type="Int32" Name="ShopID" />
+    <Property Type="Int32" Name="CellID" />
+    <Property Type="Int32" Name="MachineID" />
+    <Property Type="DateTime" Name="NextRunDate" />
+    <NavigationProperty Name="tbl_autoreport_log" Relationship="mazakdaqModel.AutoReportID" FromRole="tbl_autoreportsetting" ToRole="tbl_autoreport_log" />
+    <NavigationProperty Name="tbl_autoreportbasedon" Relationship="mazakdaqModel.BasedOnID" FromRole="tbl_autoreportsetting" ToRole="tbl_autoreportbasedon" />
+    <NavigationProperty Name="tblcell" Relationship="mazakdaqModel.ReportCellID" FromRole="tbl_autoreportsetting" ToRole="tblcell" />
+    <NavigationProperty Name="tbl_reportmaster" Relationship="mazakdaqModel.ReportID" FromRole="tbl_autoreportsetting" ToRole="tbl_reportmaster" />
+    <NavigationProperty Name="tblplant" Relationship="mazakdaqModel.ReportPlantID" FromRole="tbl_autoreportsetting" ToRole="tblplant" />
+    <NavigationProperty Name="tblshop" Relationship="mazakdaqModel.ReportShopID" FromRole="tbl_autoreportsetting" ToRole="tblshop" />
+    <NavigationProperty Name="tbl_autoreporttime" Relationship="mazakdaqModel.ReportTimeID" FromRole="tbl_autoreportsetting" ToRole="tbl_autoreporttime" />
+    <NavigationProperty Name="tblmachinedetail" Relationship="mazakdaqModel.ReportWorkCentreID" FromRole="tbl_autoreportsetting" ToRole="tblmachinedetail" />
+  </EntityType>
+  <EntityType Name="tbl_autoreporttime">
+    <Key>
+      <PropertyRef Name="AutoReportTimeID" />
+    </Key>
+    <Property Type="Int32" Name="AutoReportTimeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AutoReportTime" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedOn" />
+    <Property Type="Int32" Name="CreatedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="Int32" Name="IsDeleted" />
+    <NavigationProperty Name="tbl_autoreportsetting" Relationship="mazakdaqModel.ReportTimeID" FromRole="tbl_autoreporttime" ToRole="tbl_autoreportsetting" />
+  </EntityType>
+  <EntityType Name="tbl_multiwoselection">
+    <Key>
+      <PropertyRef Name="MultiWOID" />
+    </Key>
+    <Property Type="Int32" Name="MultiWOID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WorkOrder" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PartNo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OperationNo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="TargetQty" />
+    <Property Type="Int32" Name="DeliveredQty" />
+    <Property Type="Int32" Name="HMIID" />
+    <Property Type="DateTime" Name="CreatedOn" />
+    <Property Type="Int32" Name="IsCompleted" />
+    <Property Type="Int32" Name="ProcessQty" />
+    <Property Type="String" Name="DDLWorkCentre" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsSubmit" Nullable="false" />
+    <Property Type="Int32" Name="ScrapQty" Nullable="false" />
+    <Property Type="String" Name="SplitWO" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_reportmaster">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Type="Int32" Name="ReportID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ReportName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ReportDescription" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ReportDispName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ReportTemplatePath" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreatedOn" />
+    <Property Type="Int32" Name="CreatedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="Int32" Name="IsDeleted" />
+    <NavigationProperty Name="tbl_autoreportsetting" Relationship="mazakdaqModel.ReportID" FromRole="tbl_reportmaster" ToRole="tbl_autoreportsetting" />
+  </EntityType>
+  <EntityType Name="tblbreakdown">
+    <Key>
+      <PropertyRef Name="BreakdownID" />
+    </Key>
+    <Property Type="Int32" Name="BreakdownID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="StartTime" />
+    <Property Type="DateTime" Name="EndTime" />
+    <Property Type="Int32" Name="BreakDownCode" />
+    <Property Type="Int32" Name="MachineID" Nullable="false" />
+    <Property Type="String" Name="CorrectedDate" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Shift" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageDesc" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageCode" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DoneWithRow" />
+    <NavigationProperty Name="tbllossescode" Relationship="mazakdaqModel.BreakdowncodeId" FromRole="tblbreakdown" ToRole="tbllossescode" />
+  </EntityType>
+  <EntityType Name="tblcell">
+    <Key>
+      <PropertyRef Name="CellID" />
+    </Key>
+    <Property Type="Int32" Name="CellID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CellName" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CellDesc" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PlantID" />
+    <Property Type="Int32" Name="ShopID" Nullable="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <NavigationProperty Name="tbl_autoreportsetting" Relationship="mazakdaqModel.ReportCellID" FromRole="tblcell" ToRole="tbl_autoreportsetting" />
+    <NavigationProperty Name="tblmachinedetails" Relationship="mazakdaqModel.CellIDtblmachinedetails" FromRole="tblcell" ToRole="tblmachinedetail" />
+    <NavigationProperty Name="tblplant" Relationship="mazakdaqModel.PlantsId" FromRole="tblcell" ToRole="tblplant" />
+    <NavigationProperty Name="tblshop" Relationship="mazakdaqModel.ShopId" FromRole="tblcell" ToRole="tblshop" />
+  </EntityType>
+  <EntityType Name="tbldailyprodstatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineID" />
+    <Property Type="DateTime" Name="StartTime" />
+    <Property Type="DateTime" Name="EndTime" />
+    <Property Type="Int32" Name="Duration" />
+    <Property Type="String" Name="Status" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" />
+    <Property Type="DateTime" Name="InsertedOn" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="String" Name="CorrectedDate" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ColorCode" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblmachinedetail" Relationship="mazakdaqModel.MachineID1" FromRole="tbldailyprodstatu" ToRole="tblmachinedetail" />
+  </EntityType>
+  <EntityType Name="tblendcode">
+    <Key>
+      <PropertyRef Name="EndCodeID" />
+    </Key>
+    <Property Type="Int32" Name="EndCodeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="EndCode" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EndCodeSDesc" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EndCodeLDesc" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+  </EntityType>
+  <EntityType Name="tblgenericworkcode">
+    <Key>
+      <PropertyRef Name="GenericWorkID" />
+    </Key>
+    <Property Type="Int32" Name="GenericWorkID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="GenericWorkCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GenericWorkDesc" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageType" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="GWCodesLevel" Nullable="false" />
+    <Property Type="Int32" Name="GWCodesLevel1ID" />
+    <Property Type="Int32" Name="GWCodesLevel2ID" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="Int32" Name="EndCode" />
+    <Property Type="DateTime" Name="DeletedDate" />
+    <NavigationProperty Name="tblgenericworkentries" Relationship="mazakdaqModel.GenericWorkID" FromRole="tblgenericworkcode" ToRole="tblgenericworkentry" />
+  </EntityType>
+  <EntityType Name="tblgenericworkentry">
+    <Key>
+      <PropertyRef Name="GWEntryID" />
+    </Key>
+    <Property Type="Int32" Name="GWEntryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="GWCodeID" Nullable="false" />
+    <Property Type="DateTime" Name="StartDateTime" />
+    <Property Type="DateTime" Name="EndDateTime" />
+    <Property Type="String" Name="CorrectedDate" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MachineID" Nullable="false" />
+    <Property Type="String" Name="Shift" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GWCodeDesc" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GWCode" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DoneWithRow" Nullable="false" />
+    <NavigationProperty Name="tblgenericworkcode" Relationship="mazakdaqModel.GenericWorkID" FromRole="tblgenericworkentry" ToRole="tblgenericworkcode" />
+  </EntityType>
+  <EntityType Name="tblhmiscreen">
+    <Key>
+      <PropertyRef Name="HMIID" />
+    </Key>
+    <Property Type="Int32" Name="HMIID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineID" Nullable="false" />
+    <Property Type="Int32" Name="OperatiorID" Nullable="false" />
+    <Property Type="String" Name="Shift" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="DateTime" Name="Time" />
+    <Property Type="String" Name="Project" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PartNo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OperationNo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Rej_Qty" />
+    <Property Type="String" Name="Work_Order_No" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Target_Qty" />
+    <Property Type="Int32" Name="Delivered_Qty" />
+    <Property Type="Int32" Name="Status" />
+    <Property Type="String" Name="CorrectedDate" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Prod_FAI" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="isUpdate" Nullable="false" />
+    <Property Type="Int32" Name="DoneWithRow" Nullable="false" />
+    <Property Type="Int32" Name="isWorkInProgress" Nullable="false" />
+    <Property Type="Int32" Name="isWorkOrder" Nullable="false" />
+    <Property Type="String" Name="OperatorDet" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="PEStartTime" />
+    <Property Type="Int32" Name="ProcessQty" Nullable="false" />
+    <Property Type="String" Name="DDLWokrCentre" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsMultiWO" Nullable="false" />
+    <Property Type="Int32" Name="IsHold" Nullable="false" />
+    <Property Type="String" Name="SplitWO" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblmachinedetail" Relationship="mazakdaqModel.MachineIDhmi" FromRole="tblhmiscreen" ToRole="tblmachinedetail" />
+  </EntityType>
+  <EntityType Name="tblholdcode">
+    <Key>
+      <PropertyRef Name="HoldCodeID" />
+    </Key>
+    <Property Type="Int32" Name="HoldCodeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="HoldCode" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="HoldCodeDesc" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageType" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="HoldCodesLevel" Nullable="false" />
+    <Property Type="Int32" Name="HoldCodesLevel1ID" />
+    <Property Type="Int32" Name="HoldCodesLevel2ID" />
+    <Property Type="String" Name="ContributeTo" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="Int32" Name="EndCode" />
+    <Property Type="DateTime" Name="DeletedDate" />
+  </EntityType>
+  <EntityType Name="tbllivedailyprodstatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineID" />
+    <Property Type="DateTime" Name="StartTime" />
+    <Property Type="DateTime" Name="EndTime" />
+    <Property Type="Int32" Name="Duration" />
+    <Property Type="String" Name="Status" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" />
+    <Property Type="DateTime" Name="InsertedOn" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="String" Name="CorrectedDate" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ColorCode" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblmachinedetail" Relationship="mazakdaqModel.MachineIDLDPS" FromRole="tbllivedailyprodstatu" ToRole="tblmachinedetail" />
+  </EntityType>
+  <EntityType Name="tbllossescode">
+    <Key>
+      <PropertyRef Name="LossCodeID" />
+    </Key>
+    <Property Type="Int32" Name="LossCodeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="LossCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LossCodeDesc" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageType" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="LossCodesLevel" Nullable="false" />
+    <Property Type="Int32" Name="LossCodesLevel1ID" />
+    <Property Type="Int32" Name="LossCodesLevel2ID" />
+    <Property Type="String" Name="ContributeTo" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="Int32" Name="EndCode" />
+    <Property Type="DateTime" Name="DeletedDate" />
+    <NavigationProperty Name="tblbreakdowns" Relationship="mazakdaqModel.BreakdowncodeId" FromRole="tbllossescode" ToRole="tblbreakdown" />
+    <NavigationProperty Name="tbllossofentries" Relationship="mazakdaqModel.LossCodeID" FromRole="tbllossescode" ToRole="tbllossofentry" />
+    <NavigationProperty Name="tblmanuallossofentries" Relationship="mazakdaqModel.ManualLossCodeID" FromRole="tbllossescode" ToRole="tblmanuallossofentry" />
+  </EntityType>
+  <EntityType Name="tbllossofentry">
+    <Key>
+      <PropertyRef Name="LossID" />
+    </Key>
+    <Property Type="Int32" Name="LossID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MessageCodeID" Nullable="false" />
+    <Property Type="DateTime" Name="StartDateTime" />
+    <Property Type="DateTime" Name="EndDateTime" />
+    <Property Type="DateTime" Name="EntryTime" />
+    <Property Type="String" Name="CorrectedDate" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MachineID" Nullable="false" />
+    <Property Type="String" Name="Shift" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageDesc" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageCode" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsUpdate" Nullable="false" />
+    <Property Type="Int32" Name="DoneWithRow" Nullable="false" />
+    <Property Type="Int32" Name="IsStart" />
+    <Property Type="Int32" Name="IsScreen" />
+    <Property Type="Int32" Name="ForRefresh" Nullable="false" />
+    <NavigationProperty Name="tbllossescode" Relationship="mazakdaqModel.LossCodeID" FromRole="tbllossofentry" ToRole="tbllossescode" />
+  </EntityType>
+  <EntityType Name="tblmachinedetail">
+    <Key>
+      <PropertyRef Name="MachineID" />
+    </Key>
+    <Property Type="Int32" Name="MachineID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MachineInvNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="IPAddress" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MachineType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ControllerType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="InsertedOn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="InsertedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="Int32" Name="IsDeleted" />
+    <Property Type="String" Name="MachineModel" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MachineMake" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ModelType" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MachineDispName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsParameters" Nullable="false" />
+    <Property Type="String" Name="ShopNo" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsPCB" />
+    <Property Type="Int32" Name="IsLevel" />
+    <Property Type="Int32" Name="PlantID" />
+    <Property Type="Int32" Name="ShopID" />
+    <Property Type="Int32" Name="CellID" />
+    <Property Type="String" Name="DeletedDate" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsNormalWC" Nullable="false" />
+    <Property Type="Int32" Name="ManualWCID" />
+    <NavigationProperty Name="tbl_autoreportsetting" Relationship="mazakdaqModel.ReportWorkCentreID" FromRole="tblmachinedetail" ToRole="tbl_autoreportsetting" />
+    <NavigationProperty Name="tblcell" Relationship="mazakdaqModel.CellIDtblmachinedetails" FromRole="tblmachinedetail" ToRole="tblcell" />
+    <NavigationProperty Name="tbldailyprodstatus" Relationship="mazakdaqModel.MachineID1" FromRole="tblmachinedetail" ToRole="tbldailyprodstatu" />
+    <NavigationProperty Name="tblhmiscreens" Relationship="mazakdaqModel.MachineIDhmi" FromRole="tblmachinedetail" ToRole="tblhmiscreen" />
+    <NavigationProperty Name="tbllivedailyprodstatus" Relationship="mazakdaqModel.MachineIDLDPS" FromRole="tblmachinedetail" ToRole="tbllivedailyprodstatu" />
+    <NavigationProperty Name="tblplant" Relationship="mazakdaqModel.PlantIDtblmachinedetails" FromRole="tblmachinedetail" ToRole="tblplant" />
+    <NavigationProperty Name="tblshop" Relationship="mazakdaqModel.ShopIDtblmachinedetails" FromRole="tblmachinedetail" ToRole="tblshop" />
+    <NavigationProperty Name="tblusers" Relationship="mazakdaqModel.Mid" FromRole="tblmachinedetail" ToRole="tbluser" />
+  </EntityType>
+  <EntityType Name="tblmailid">
+    <Key>
+      <PropertyRef Name="MailIDsID" />
+    </Key>
+    <Property Type="Int32" Name="MailIDsID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactNo" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" />
+    <Property Type="Int32" Name="CreatedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+  </EntityType>
+  <EntityType Name="tblmanuallossofentry">
+    <Key>
+      <PropertyRef Name="MLossID" />
+    </Key>
+    <Property Type="Int32" Name="MLossID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MessageCodeID" Nullable="false" />
+    <Property Type="DateTime" Name="StartDateTime" />
+    <Property Type="String" Name="CorrectedDate" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MachineID" Nullable="false" />
+    <Property Type="String" Name="Shift" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageDesc" MaxLength="145" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MessageCode" MaxLength="145" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="HMIID" />
+    <Property Type="String" Name="PartNo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="OpNo" />
+    <Property Type="String" Name="WONo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EndDateTime" />
+    <Property Type="Int32" Name="EndHMIID" />
+    <Property Type="DateTime" Name="DeletedDate" />
+    <NavigationProperty Name="tbllossescode" Relationship="mazakdaqModel.ManualLossCodeID" FromRole="tblmanuallossofentry" ToRole="tbllossescode" />
+  </EntityType>
+  <EntityType Name="tblmasterparts_st_sw">
+    <Key>
+      <PropertyRef Name="PARTSSTSWID" />
+    </Key>
+    <Property Type="Int32" Name="PARTSSTSWID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PartNo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OpNo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="StdSetupTime" />
+    <Property Type="Decimal" Name="StdCuttingTime" />
+    <Property Type="Decimal" Name="StdChangeoverTime" />
+    <Property Type="Decimal" Name="InputWeight" />
+    <Property Type="Decimal" Name="OutputWeight" />
+    <Property Type="Decimal" Name="MaterialRemovedQty" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="String" Name="StdSetupTimeUnit" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="StdCuttingTimeUnit" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="StdChangeoverTimeUnit" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="InputWeightUnit" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OutputWeightUnit" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MaterialRemovedQtyUnit" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DeletedDate" />
+  </EntityType>
+  <EntityType Name="tblmode">
+    <Key>
+      <PropertyRef Name="ModeID" />
+    </Key>
+    <Property Type="Int32" Name="ModeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineID" Nullable="false" />
+    <Property Type="String" Name="Mode" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="InsertedOn" Nullable="false" />
+    <Property Type="Int32" Name="InsertedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="String" Name="CorrectedDate" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="StartTime" />
+    <Property Type="DateTime" Name="EndTime" />
+    <Property Type="String" Name="ColorCode" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsCompleted" Nullable="false" />
+    <Property Type="Int32" Name="DurationInSec" />
+  </EntityType>
+  <EntityType Name="tbloeedashboardvariable">
+    <Key>
+      <PropertyRef Name="OEEVariablesID" />
+    </Key>
+    <Property Type="Int32" Name="OEEVariablesID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PlantID" />
+    <Property Type="Int32" Name="ShopID" />
+    <Property Type="Int32" Name="CellID" />
+    <Property Type="Int32" Name="WCID" />
+    <Property Type="DateTime" Name="StartDate" />
+    <Property Type="DateTime" Name="EndDate" />
+    <Property Type="Double" Name="MinorLosses" />
+    <Property Type="Double" Name="Blue" />
+    <Property Type="Double" Name="Green" />
+    <Property Type="Double" Name="SettingTime" />
+    <Property Type="Double" Name="ROALossess" />
+    <Property Type="Double" Name="DownTimeBreakdown" />
+    <Property Type="Double" Name="SummationOfSCTvsPP" />
+    <Property Type="Double" Name="ScrapQtyTime" />
+    <Property Type="Double" Name="ReWOTime" />
+    <Property Type="String" Name="Loss1Name" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Loss1Value" />
+    <Property Type="String" Name="Loss2Name" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Loss2Value" />
+    <Property Type="String" Name="Loss3Name" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Loss3Value" />
+    <Property Type="String" Name="Loss4Name" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Loss4Value" />
+    <Property Type="String" Name="Loss5Name" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Loss5Value" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblplant">
+    <Key>
+      <PropertyRef Name="PlantID" />
+    </Key>
+    <Property Type="Int32" Name="PlantID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PlantName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PlantDesc" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <NavigationProperty Name="tbl_autoreportsetting" Relationship="mazakdaqModel.ReportPlantID" FromRole="tblplant" ToRole="tbl_autoreportsetting" />
+    <NavigationProperty Name="tblcells" Relationship="mazakdaqModel.PlantsId" FromRole="tblplant" ToRole="tblcell" />
+    <NavigationProperty Name="tblmachinedetails" Relationship="mazakdaqModel.PlantIDtblmachinedetails" FromRole="tblplant" ToRole="tblmachinedetail" />
+    <NavigationProperty Name="tblshops" Relationship="mazakdaqModel.PlantID" FromRole="tblplant" ToRole="tblshop" />
+  </EntityType>
+  <EntityType Name="tblshop">
+    <Key>
+      <PropertyRef Name="ShopID" />
+    </Key>
+    <Property Type="Int32" Name="ShopID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ShopName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ShopDesc" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PlantID" Nullable="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <NavigationProperty Name="tbl_autoreportsetting" Relationship="mazakdaqModel.ReportShopID" FromRole="tblshop" ToRole="tbl_autoreportsetting" />
+    <NavigationProperty Name="tblcells" Relationship="mazakdaqModel.ShopId" FromRole="tblshop" ToRole="tblcell" />
+    <NavigationProperty Name="tblmachinedetails" Relationship="mazakdaqModel.ShopIDtblmachinedetails" FromRole="tblshop" ToRole="tblmachinedetail" />
+    <NavigationProperty Name="tblplant" Relationship="mazakdaqModel.PlantID" FromRole="tblshop" ToRole="tblplant" />
+  </EntityType>
+  <EntityType Name="tblwolossess">
+    <Key>
+      <PropertyRef Name="WOLossesID" />
+    </Key>
+    <Property Type="Int32" Name="WOLossesID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="HMIID" />
+    <Property Type="Int32" Name="LossID" />
+    <Property Type="String" Name="LossName" MaxLength="145" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="LossDuration" />
+    <Property Type="Int32" Name="Level" />
+    <Property Type="Int32" Name="LossCodeLevel1ID" />
+    <Property Type="String" Name="LossCodeLevel1Name" MaxLength="145" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="LossCodeLevel2ID" />
+    <Property Type="String" Name="LossCodeLevel2Name" MaxLength="145" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="InsertedOn" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblworeport">
+    <Key>
+      <PropertyRef Name="WOReportID" />
+    </Key>
+    <Property Type="Int32" Name="WOReportID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineID" />
+    <Property Type="Int32" Name="HMIID" />
+    <Property Type="String" Name="OperatorName" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Shift" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CorrectedDate" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PartNo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="WorkOrderNo" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OpNo" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="TargetQty" />
+    <Property Type="Int32" Name="DeliveredQty" />
+    <Property Type="Int32" Name="IsPF" />
+    <Property Type="Int32" Name="IsHold" />
+    <Property Type="Decimal" Name="CuttingTime" />
+    <Property Type="Decimal" Name="SettingTime" />
+    <Property Type="Decimal" Name="SelfInspection" />
+    <Property Type="Decimal" Name="Idle" />
+    <Property Type="Decimal" Name="Breakdown" />
+    <Property Type="String" Name="Type" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="NCCuttingTimePerPart" />
+    <Property Type="Decimal" Name="TotalNCCuttingTime" />
+    <Property Type="Decimal" Name="WOEfficiency" />
+    <Property Type="Int32" Name="RejectedQty" />
+    <Property Type="String" Name="RejectedReason" MaxLength="245" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Program" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="MRWeight" />
+    <Property Type="DateTime" Name="InsertedOn" />
+    <Property Type="Int32" Name="IsMultiWO" Nullable="false" />
+    <Property Type="Int32" Name="IsNormalWC" />
+    <Property Type="String" Name="HoldReason" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="MinorLoss" />
+    <Property Type="String" Name="SplitWO" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Blue" />
+    <Property Type="Decimal" Name="ScrapQtyTime" />
+    <Property Type="Decimal" Name="ReWorkTime" />
+    <Property Type="Decimal" Name="SummationOfSCTvsPP" />
+  </EntityType>
+  <Association Name="AutoReportID">
+    <End Type="mazakdaqModel.tbl_autoreportsetting" Role="tbl_autoreportsetting" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbl_autoreport_log" Role="tbl_autoreport_log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_autoreportsetting">
+        <PropertyRef Name="AutoReportID" />
+      </Principal>
+      <Dependent Role="tbl_autoreport_log">
+        <PropertyRef Name="AutoReportID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BasedOnID">
+    <End Type="mazakdaqModel.tbl_autoreportbasedon" Role="tbl_autoreportbasedon" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbl_autoreportsetting" Role="tbl_autoreportsetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_autoreportbasedon">
+        <PropertyRef Name="BasedOnID" />
+      </Principal>
+      <Dependent Role="tbl_autoreportsetting">
+        <PropertyRef Name="BasedOn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReportCellID">
+    <End Type="mazakdaqModel.tblcell" Role="tblcell" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbl_autoreportsetting" Role="tbl_autoreportsetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcell">
+        <PropertyRef Name="CellID" />
+      </Principal>
+      <Dependent Role="tbl_autoreportsetting">
+        <PropertyRef Name="CellID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReportID">
+    <End Type="mazakdaqModel.tbl_reportmaster" Role="tbl_reportmaster" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbl_autoreportsetting" Role="tbl_autoreportsetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_reportmaster">
+        <PropertyRef Name="ReportID" />
+      </Principal>
+      <Dependent Role="tbl_autoreportsetting">
+        <PropertyRef Name="ReportID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReportPlantID">
+    <End Type="mazakdaqModel.tblplant" Role="tblplant" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbl_autoreportsetting" Role="tbl_autoreportsetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblplant">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="tbl_autoreportsetting">
+        <PropertyRef Name="PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReportShopID">
+    <End Type="mazakdaqModel.tblshop" Role="tblshop" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbl_autoreportsetting" Role="tbl_autoreportsetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblshop">
+        <PropertyRef Name="ShopID" />
+      </Principal>
+      <Dependent Role="tbl_autoreportsetting">
+        <PropertyRef Name="ShopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReportTimeID">
+    <End Type="mazakdaqModel.tbl_autoreporttime" Role="tbl_autoreporttime" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbl_autoreportsetting" Role="tbl_autoreportsetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_autoreporttime">
+        <PropertyRef Name="AutoReportTimeID" />
+      </Principal>
+      <Dependent Role="tbl_autoreportsetting">
+        <PropertyRef Name="AutoReportTimeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReportWorkCentreID">
+    <End Type="mazakdaqModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbl_autoreportsetting" Role="tbl_autoreportsetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetail">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tbl_autoreportsetting">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BreakdowncodeId">
+    <End Type="mazakdaqModel.tbllossescode" Role="tbllossescode" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tblbreakdown" Role="tblbreakdown" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbllossescode">
+        <PropertyRef Name="LossCodeID" />
+      </Principal>
+      <Dependent Role="tblbreakdown">
+        <PropertyRef Name="BreakDownCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CellIDtblmachinedetails">
+    <End Type="mazakdaqModel.tblcell" Role="tblcell" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcell">
+        <PropertyRef Name="CellID" />
+      </Principal>
+      <Dependent Role="tblmachinedetail">
+        <PropertyRef Name="CellID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PlantsId">
+    <End Type="mazakdaqModel.tblplant" Role="tblplant" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tblcell" Role="tblcell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblplant">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="tblcell">
+        <PropertyRef Name="PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ShopId">
+    <End Type="mazakdaqModel.tblshop" Role="tblshop" Multiplicity="1" />
+    <End Type="mazakdaqModel.tblcell" Role="tblcell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblshop">
+        <PropertyRef Name="ShopID" />
+      </Principal>
+      <Dependent Role="tblcell">
+        <PropertyRef Name="ShopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MachineID1">
+    <End Type="mazakdaqModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbldailyprodstatu" Role="tbldailyprodstatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetail">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tbldailyprodstatu">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GenericWorkID">
+    <End Type="mazakdaqModel.tblgenericworkcode" Role="tblgenericworkcode" Multiplicity="1" />
+    <End Type="mazakdaqModel.tblgenericworkentry" Role="tblgenericworkentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblgenericworkcode">
+        <PropertyRef Name="GenericWorkID" />
+      </Principal>
+      <Dependent Role="tblgenericworkentry">
+        <PropertyRef Name="GWCodeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MachineIDhmi">
+    <End Type="mazakdaqModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="1" />
+    <End Type="mazakdaqModel.tblhmiscreen" Role="tblhmiscreen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetail">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tblhmiscreen">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MachineIDLDPS">
+    <End Type="mazakdaqModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbllivedailyprodstatu" Role="tbllivedailyprodstatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetail">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tbllivedailyprodstatu">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LossCodeID">
+    <End Type="mazakdaqModel.tbllossescode" Role="tbllossescode" Multiplicity="1" />
+    <End Type="mazakdaqModel.tbllossofentry" Role="tbllossofentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbllossescode">
+        <PropertyRef Name="LossCodeID" />
+      </Principal>
+      <Dependent Role="tbllossofentry">
+        <PropertyRef Name="MessageCodeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ManualLossCodeID">
+    <End Type="mazakdaqModel.tbllossescode" Role="tbllossescode" Multiplicity="1" />
+    <End Type="mazakdaqModel.tblmanuallossofentry" Role="tblmanuallossofentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbllossescode">
+        <PropertyRef Name="LossCodeID" />
+      </Principal>
+      <Dependent Role="tblmanuallossofentry">
+        <PropertyRef Name="MessageCodeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PlantIDtblmachinedetails">
+    <End Type="mazakdaqModel.tblplant" Role="tblplant" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblplant">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="tblmachinedetail">
+        <PropertyRef Name="PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ShopIDtblmachinedetails">
+    <End Type="mazakdaqModel.tblshop" Role="tblshop" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblshop">
+        <PropertyRef Name="ShopID" />
+      </Principal>
+      <Dependent Role="tblmachinedetail">
+        <PropertyRef Name="ShopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PlantID">
+    <End Type="mazakdaqModel.tblplant" Role="tblplant" Multiplicity="1" />
+    <End Type="mazakdaqModel.tblshop" Role="tblshop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblplant">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="tblshop">
+        <PropertyRef Name="PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tblapp_paths">
+    <Key>
+      <PropertyRef Name="AppPathsID" />
+    </Key>
+    <Property Type="Int32" Name="AppPathsID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AppName" MaxLength="145" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AppPath" MaxLength="245" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="InsertedOn" />
+  </EntityType>
+  <EntityType Name="tbldaytiming">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Time" Name="StartTime" Nullable="false" />
+    <Property Type="Time" Name="EndTime" Nullable="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" />
+    <Property Type="Int32" Name="CreatedBy" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+  </EntityType>
+  <EntityType Name="tbluser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PrimaryRole" Nullable="false" />
+    <Property Type="Int32" Name="SecondaryRole" Nullable="false" />
+    <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedOn" />
+    <Property Type="Int32" Name="ModifiedBy" />
+    <Property Type="Int32" Name="MachineID" />
+    <NavigationProperty Name="tblmachinedetail" Relationship="mazakdaqModel.Mid" FromRole="tbluser" ToRole="tblmachinedetail" />
+  </EntityType>
+  <Association Name="Mid">
+    <End Type="mazakdaqModel.tblmachinedetail" Role="tblmachinedetail" Multiplicity="0..1" />
+    <End Type="mazakdaqModel.tbluser" Role="tbluser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblmachinedetail">
+        <PropertyRef Name="MachineID" />
+      </Principal>
+      <Dependent Role="tbluser">
+        <PropertyRef Name="MachineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

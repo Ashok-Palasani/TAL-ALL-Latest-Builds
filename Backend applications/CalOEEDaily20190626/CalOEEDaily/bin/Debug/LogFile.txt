@@ -1,0 +1,124 @@
+2018-12-03 16:09:48:  StartTime 
+2018-12-03 16:10:07:  EndTime 
+2018-12-03 16:10:07:  StartTime WODetails 
+2018-12-03 17:30:29:  StartTime 
+2018-12-04 17:17:02:  StartTime 
+
+2019-01-16 16:58:12:  StartTime 
+2019-01-16 17:05:23:  MacID: 28System.Data.Entity.Core.EntityException: The underlying provider failed on Open. ---> System.TimeoutException: Timeout in IO operation
+   at MySql.Data.MySqlClient.TimedStream.StopTimer()
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.ReadOk(Boolean read)
+   at MySql.Data.MySqlClient.NativeDriver.SetDatabase(String dbName)
+   at MySql.Data.MySqlClient.Driver.SetDatabase(String dbName)
+   at MySql.Data.MySqlClient.MySqlConnection.ChangeDatabase(String databaseName)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute(Action operation)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   at System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.CalculateOEEForYesterday(Nullable`1 StartDate, Nullable`1 EndDate) in D:\Ashok\TATAProjects\CalOeeDailyForPreviousDays\CalOEEDaily\Form1.cs:line 219
+
+2019-01-16 17:20:49:  StartTime 
+2019-07-02 11:34:13:  StartTime 
+2019-07-02 11:44:18:  StartTime 
+2019-07-02 12:59:33:  StartTime 
+2019-07-02 13:00:31:  EndTime 
+2019-07-02 13:00:31:  StartTime WODetails 
+2019-07-02 13:00:32:  EndTime WODetails 
+2019-07-02 13:00:44:  StartTime 
+2019-07-02 13:00:47:  EndTime 
+2019-07-02 13:00:47:  StartTime WODetails 
+2019-07-02 13:00:48:  EndTime WODetails 
+2019-07-02 13:00:56:  StartTime 
+2019-07-02 13:00:59:  EndTime 
+2019-07-02 13:00:59:  StartTime WODetails 
+2019-07-02 13:01:00:  EndTime WODetails 
+2019-07-02 13:02:58:  StartTime 
+2019-07-02 13:03:19:  EndTime 
+2019-07-02 13:03:19:  StartTime WODetails 
+2019-07-02 13:03:20:  EndTime WODetails 
+2019-07-02 13:07:31:  StartTime 
+2019-07-02 13:20:47:  EndTime 
+2019-07-02 13:20:47:  StartTime WODetails 
+2019-07-02 13:20:48:  EndTime WODetails 
+2019-07-05 17:26:30:  StartTime 
+2019-07-05 17:27:06:  EndTime 
+2019-07-05 17:27:06:  StartTime WODetails 
+2019-07-05 17:27:10:  System.Data.SqlClient.SqlException (0x80131904): Invalid column name '372694-21D'.
+Invalid column name '1800013466'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext() in C:\Users\user\Desktop\CalOEEDaily20190626\CalOEEDaily\Form1.cs:line 1486
+ClientConnectionId:6048ef4d-a108-47b8-a5e9-0e8526dd2581
+Error Number:207,State:1,Class:16
+2019-07-05 17:27:12:  System.Data.SqlClient.SqlException (0x80131904): Invalid column name '372695-8LD'.
+Invalid column name '1800013468'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext() in C:\Users\user\Desktop\CalOEEDaily20190626\CalOEEDaily\Form1.cs:line 1486
+ClientConnectionId:6048ef4d-a108-47b8-a5e9-0e8526dd2581
+Error Number:207,State:1,Class:16
+2019-07-05 17:30:50:  System.Data.SqlClient.SqlException (0x80131904): Invalid column name '372695-8RD'.
+Invalid column name '1800013469'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext() in C:\Users\user\Desktop\CalOEEDaily20190626\CalOEEDaily\Form1.cs:line 1486
+ClientConnectionId:6048ef4d-a108-47b8-a5e9-0e8526dd2581
+Error Number:207,State:1,Class:16
+2019-07-05 17:33:35:  System.NullReferenceException: Object reference not set to an instance of an object.
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext()
+2019-07-05 17:35:30:  StartTime 
+2019-07-05 17:36:13:  EndTime 
+2019-07-05 17:36:13:  StartTime WODetails 
+2019-07-05 17:39:43:  StartTime 
+2019-07-05 17:39:50:  EndTime 
+2019-07-05 17:39:50:  StartTime WODetails 
+2019-07-05 17:40:49:  System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near ','.
+Unclosed quotation mark after the character string ');'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext()
+ClientConnectionId:416041bb-ff74-4efe-94c3-ad9f1658611b
+Error Number:102,State:1,Class:15
+2019-07-05 17:41:11:  StartTime 
+2019-07-05 17:41:17:  EndTime 
+2019-07-05 17:41:17:  StartTime WODetails 
+2019-07-05 17:42:00:  EndTime WODetails 
+2019-07-08 12:58:22:  StartTime 
