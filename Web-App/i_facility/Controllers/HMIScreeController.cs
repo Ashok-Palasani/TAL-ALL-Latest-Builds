@@ -8872,17 +8872,17 @@ namespace i_facility.Controllers
             var oneMacData = obj.GetOneMachineDet(MacId);
             //var oneMacData = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.MachineID == MacId).FirstOrDefault();
             string cellidstring = Convert.ToString(oneMacData.CellID);
-            string workidstring = Convert.ToString(oneMacData.workcntrcode);
+           // string workidstring = Convert.ToString(oneMacData.workcntrcode);
             string shopidstring = Convert.ToString(oneMacData.ShopID);
             int shopid;
             int.TryParse(shopidstring, out shopid);
             int cellid;
-            int workcntrcode;
-            //if (int.TryParse(cellidstring, out workcntrcode) && int.TryParse(shopidstring, out shopid))
-            if (int.TryParse(workidstring, out workcntrcode) && int.TryParse(cellidstring, out cellid) && int.TryParse(shopidstring, out shopid))
+           // int workcntrcode;
+            if (int.TryParse(cellidstring, out cellid) && int.TryParse(shopidstring, out shopid))
+           // if (int.TryParse(workidstring, out workcntrcode) && int.TryParse(cellidstring, out cellid) && int.TryParse(shopidstring, out shopid))
             {
                 List<tblmachinedetail> macList = new List<tblmachinedetail>();
-                var cellmachinedata = obj.GetCellMachineList12(workcntrcode, cellid);
+                var cellmachinedata = obj.GetCellMachineList1(/*workcntrcode, */cellid);
                 macList.AddRange(cellmachinedata);
                 // macList.AddRange(db.tblmachinedetails.Where(m => m.CellID == cellid && m.IsDeleted == 0 && !m.ManualWCID.HasValue).Select(m => m.MachineInvNo).ToList());
                 //macList.AddRange(obj.GetShopMachineList1(workcentercode, shopid));
@@ -8929,7 +8929,7 @@ namespace i_facility.Controllers
                 var machinedata = obj.GetMachineDet2(machineId);
                 //var machinedata = db.tblmachinedetails.Where(m => m.IsDeleted == 0 && m.MachineID == machineId && m.IsNormalWC == 0).FirstOrDefault();
                 Session["macDispName"] = Convert.ToString(machinedata.MachineDispName);
-                machineInvNo =Convert.ToString( machinedata.workcntrcode);
+                machineInvNo =( machinedata.MachineInvNo);
             }
             else 
             {

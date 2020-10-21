@@ -4946,8 +4946,8 @@ namespace i_facilitylibrary.DAO
             List<tblddl> det = new List<tblddl>();
             try
             {
-                //string query = "SELECT * From "+databaseName+".tblddl WHERE WorkCenter = '" + machineInvNo + "' and IsCompleted = 0";
-                string query = "SELECT * From " + databaseName + ".tblddl WHERE WorkCenter like  '%" + machineInvNo + "%' and IsCompleted = 0";
+                string query = "SELECT * From "+databaseName+".tblddl WHERE WorkCenter = '" + machineInvNo + "' and IsCompleted = 0";
+                //string query = "SELECT * From " + databaseName + ".tblddl WHERE WorkCenter like  '%" + machineInvNo + "%' and IsCompleted = 0";
                 //det = _connectionFactory.GetConnection.QueryAsync<tblmachinedetail>(query).Result.ToList();
                 det = lista.GetList(query, _connectionFactory.GetConnection);
             }
