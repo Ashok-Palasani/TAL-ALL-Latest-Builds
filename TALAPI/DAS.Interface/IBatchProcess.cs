@@ -55,5 +55,9 @@ namespace DAS.Interface
         BreakDownCodeResponse GetBreakDownCodes(AddBreakDownCodes data);
         CommonResponsewithEror AddBatchNoListToIdle(AddIdleCodesList data);
         GeneralResponse AddBatchNoListToHoldCode(AddHoldCodesList data);
+        ///////////////////////////////////////////////////////
+        //interface code
+
+        CommonResponsewithEror OperatorLoginCheck(Oplogin data);
     }
 }

@@ -599,3 +599,21 @@ D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.D
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.csproj.CopyComplete
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.dll
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.pdb
+D:\Aswini\TAL\TALAPI\DAS.DAL\bin\Debug\netstandard2.0\DAS.DAL.deps.json
+D:\Aswini\TAL\TALAPI\DAS.DAL\bin\Debug\netstandard2.0\DAS.DAL.dll
+D:\Aswini\TAL\TALAPI\DAS.DAL\bin\Debug\netstandard2.0\DAS.DAL.pdb
+D:\Aswini\TAL\TALAPI\DAS.DAL\bin\Debug\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TAL\TALAPI\DAS.DAL\bin\Debug\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TAL\TALAPI\DAS.DAL\bin\Debug\netstandard2.0\DAS.Interface.dll
+D:\Aswini\TAL\TALAPI\DAS.DAL\bin\Debug\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TAL\TALAPI\DAS.DAL\bin\Debug\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TAL\TALAPI\DAS.DAL\bin\Debug\netstandard2.0\DAS.Interface.pdb
+D:\Aswini\TAL\TALAPI\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.csprojAssemblyReference.cache
+D:\Aswini\TAL\TALAPI\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.Resource.ResourceResponse.resources
+D:\Aswini\TAL\TALAPI\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.csproj.GenerateResource.cache
+D:\Aswini\TAL\TALAPI\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.csproj.CoreCompileInputs.cache
+D:\Aswini\TAL\TALAPI\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.AssemblyInfoInputs.cache
+D:\Aswini\TAL\TALAPI\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.AssemblyInfo.cs
+D:\Aswini\TAL\TALAPI\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.csproj.CopyComplete
+D:\Aswini\TAL\TALAPI\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.dll
+D:\Aswini\TAL\TALAPI\DAS.DAL\obj\Debug\netstandard2.0\DAS.DAL.pdb

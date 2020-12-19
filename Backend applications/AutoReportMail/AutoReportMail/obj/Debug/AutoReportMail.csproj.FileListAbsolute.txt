@@ -67,22 +67,22 @@ D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\BackEnd Applications\AutoReportMa
 D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.csproj.CopyComplete
 D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.exe
 D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.pdb
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\AutoReportMail.exe.config
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\AutoReportMail.exe
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\AutoReportMail.pdb
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\EntityFramework.dll
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\EntityFramework.SqlServer.dll
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\EPPlus.dll
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\MySql.Data.dll
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\MySql.Data.Entity.EF6.dll
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\EntityFramework.xml
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\EntityFramework.SqlServer.xml
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\bin\Debug\EPPlus.xml
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.csprojAssemblyReference.cache
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.Form1.resources
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.Properties.Resources.resources
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.csproj.GenerateResource.cache
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.csproj.CoreCompileInputs.cache
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.csproj.CopyComplete
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.exe
-D:\Aswini\TAL\BackEnd Applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.pdb
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\AutoReportMail.exe.config
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\AutoReportMail.exe
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\AutoReportMail.pdb
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\EntityFramework.dll
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\EntityFramework.SqlServer.dll
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\EPPlus.dll
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\MySql.Data.dll
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\EntityFramework.xml
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\EntityFramework.SqlServer.xml
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\bin\Debug\EPPlus.xml
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.csprojAssemblyReference.cache
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.Form1.resources
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.Properties.Resources.resources
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.csproj.GenerateResource.cache
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.csproj.CoreCompileInputs.cache
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.csproj.CopyComplete
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.exe
+D:\Aswini\TAL\Backend applications\AutoReportMail\AutoReportMail\obj\Debug\AutoReportMail.pdb

@@ -155,5 +155,7 @@ namespace DAS.EntityModels
             public int machineId { get; set; }
             public string machineName { get; set; }
         }
+
+       
     }
 }

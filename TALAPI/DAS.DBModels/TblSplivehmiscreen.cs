@@ -52,5 +52,6 @@ namespace DAS.DBModels
         public int IsBatchFinish { get; set; }
         public int? IsChecked { get; set; }
         public string PcpNo { get; set; }
+        public int? RejectionQuantity { get; set; }
     }
 }

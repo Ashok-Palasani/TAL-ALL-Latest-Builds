@@ -14166,7 +14166,7 @@ namespace AutoReportMail
                     }
                 }
                 //mail.From = new MailAddress("unitworks@tasl.aero");
-                mail.From = new MailAddress("barcodesupport@tal.co.in");
+                mail.From = new MailAddress(MsqlConnection.UserNamemail);
                 mail.Subject = "Auto Report for " + ReportName;
                 mail.Attachments.Add(new Attachment(PathWithFileNameAndExtension));
 
@@ -14199,7 +14199,7 @@ namespace AutoReportMail
                 //smtp.Credentials = new System.Net.NetworkCredential("unitworks@tasl.aero", "527293");
                 //smtp.EnableSsl = false;
                 //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.EnableSsl = true;
+                smtp.EnableSsl = Convert.ToBoolean(MsqlConnection.IsSSL);
                 smtp.Send(mail);
                 Status = true;
                 // MessageBox.Show("Status : success ");

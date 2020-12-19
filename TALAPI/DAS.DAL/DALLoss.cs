@@ -4091,7 +4091,7 @@ namespace DAS.DAL
 
                     if (check.PrimaryRole == checkRole.RoleId)
                     {
-                        var operatorMailId = db.Tbloperatordetails.Where(m => m.EmployeeId == check.UserName).Select(m => m.OperatorMailId).FirstOrDefault();
+                        var operatorMailId = db.TblEmployee.Where(m => m.EmpName == check.UserName).Select(m => m.EmailId).FirstOrDefault();
 
                         if (operatorMailId != null)
                         {
@@ -4099,10 +4099,10 @@ namespace DAS.DAL
 
                             string[] ids = data.tempModeIds.Split(',');
                             List<int> intArry = ids.ToList().Select(int.Parse).ToList();
-                            var check1 = db.Tbltcflossofentry.Where(m => intArry.Contains(m.Ncid) && m.IsArroval == 1).Select(m => new { m.IsArroval, m.ApprovalLevel }).GroupBy(m => new { m.IsArroval, m.ApprovalLevel }).ToList();
+                            var check1 = db.Tbltcflossofentry.Where(m => intArry.Contains(m.Ncid) && m.IsArroval == 1 && m.ApprovalLevel ==0).Select(m => new { m.IsArroval, m.ApprovalLevel }).GroupBy(m => new { m.IsArroval, m.ApprovalLevel }).ToList();
                             if (check1.Count > 0)
                             {
-                                var toMail1 = db.TblTcfApprovedMaster.Where(m => m.CellId == dbCheck.CellId && m.ShopId == dbCheck.ShopId && m.PlantId == dbCheck.PlantId && m.TcfModuleId == 1).Select(m => m.FirstApproverToList).FirstOrDefault();
+                                var toMail1 = db.TblTcfApprovedMaster.Where(m => m.CellId == dbCheck.CellId && m.ShopId == dbCheck.ShopId && m.PlantId == dbCheck.PlantId && m.TcfModuleId == 1 && m.IsDeleted==0).Select(m => m.FirstApproverToList).FirstOrDefault();
 
                                 if (toMail1 == operatorMailId)
                                 {
@@ -4119,7 +4119,7 @@ namespace DAS.DAL
                             var check2 = db.Tbltcflossofentry.Where(m => intArry.Contains(m.Ncid) && m.ApprovalLevel == 1).Select(m => new { m.IsArroval, m.ApprovalLevel }).GroupBy(m => new { m.IsArroval, m.ApprovalLevel }).ToList();
                             if (check2.Count > 0)
                             {
-                                var toMail2 = db.TblTcfApprovedMaster.Where(m => m.CellId == dbCheck.CellId && m.ShopId == dbCheck.ShopId && m.PlantId == dbCheck.PlantId && m.TcfModuleId == 1).Select(m => m.SecondApproverToList).FirstOrDefault();
+                                var toMail2 = db.TblTcfApprovedMaster.Where(m => m.CellId == dbCheck.CellId && m.ShopId == dbCheck.ShopId && m.PlantId == dbCheck.PlantId && m.TcfModuleId == 1 && m.IsDeleted == 0).Select(m => m.SecondApproverToList).FirstOrDefault();
                                 //var operatorMailId = db.Tbloperatordetails.Where(m => m.EmployeeId == checkOpDet.EmployeeId).Select(m => m.OperatorMailId).FirstOrDefault();
                                 if (toMail2 == operatorMailId)
                                 {

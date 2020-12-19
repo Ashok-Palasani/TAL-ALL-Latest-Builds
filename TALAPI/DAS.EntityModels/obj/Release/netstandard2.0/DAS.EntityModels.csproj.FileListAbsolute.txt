@@ -370,3 +370,15 @@ D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.E
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.csproj.CopyComplete
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.dll
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\bin\Release\netstandard2.0\DAS.EntityModels.deps.json
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\bin\Release\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\bin\Release\netstandard2.0\DAS.EntityModels.pdb
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\bin\Release\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\bin\Release\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.csprojAssemblyReference.cache
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.csproj.CoreCompileInputs.cache
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.AssemblyInfoInputs.cache
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.AssemblyInfo.cs
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.csproj.CopyComplete
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.dll
+D:\Aswini\TAL\TALAPI\DAS.EntityModels\obj\Release\netstandard2.0\DAS.EntityModels.pdb

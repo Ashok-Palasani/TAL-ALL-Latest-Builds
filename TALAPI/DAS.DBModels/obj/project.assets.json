@@ -5015,11 +5015,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.DBModels\\DAS.DBModels.csproj",
+      "projectUniqueName": "D:\\Aswini\\TAL\\TALAPI\\DAS.DBModels\\DAS.DBModels.csproj",
       "projectName": "DAS.DBModels",
-      "projectPath": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.DBModels\\DAS.DBModels.csproj",
+      "projectPath": "D:\\Aswini\\TAL\\TALAPI\\DAS.DBModels\\DAS.DBModels.csproj",
       "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
-      "outputPath": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.DBModels\\obj\\",
+      "outputPath": "D:\\Aswini\\TAL\\TALAPI\\DAS.DBModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

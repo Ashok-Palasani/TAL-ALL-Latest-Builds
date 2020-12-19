@@ -505,5 +505,16 @@ namespace DAS.Controllers
 
         #endregion Anjali code end
 
+        [HttpPost]
+        [Route("BatchProcessing/OperatorLoginCheck")]
+        public async Task<IActionResult> OperatorLoginCheck(Oplogin data)
+        {
+            //calling DepartmentDAL busines layer
+            CommonResponsewithEror response = new CommonResponsewithEror();
+            response = batobj.OperatorLoginCheck(data);
+            //return Ok(response);;
+            return Ok(response);
+        }
+
     }
 }

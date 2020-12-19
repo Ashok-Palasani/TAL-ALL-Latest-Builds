@@ -20,6 +20,9 @@ using static DAS.EntityModels.CommonResponseWithMachineName;
 namespace DAS.DAL
 {
     public class DALBatch : IBatchProcess
+
+
+
     {
         public i_facility_talContext db = new i_facility_talContext();
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(DALBatch));
@@ -306,6 +309,7 @@ namespace DAS.DAL
                         woobj.targetQty = Convert.ToString(row.TargetQty);
                         woobj.ProcessQty = Convert.ToString(row.ProcessQty);
                         woobj.pcpNo = row.PcpNo;
+                        woobj.RejectionQty = Convert.ToString(row.RejectionQuantity);
                         woList.Add(woobj);
                     }
                     var getdata = db.TblSplivehmiscreen.Where(m => m.AutoBatchNumber == data.BatchNo && m.IsReworkClicked == 1).FirstOrDefault();
@@ -801,6 +805,8 @@ namespace DAS.DAL
                             objbat.DeliveredQty = 0;
                             objbat.DdlwokrCentre = batch.DdlwokrCentre;
                             objbat.PcpNo = batch.PcpNo;
+                            objbat.DeliveredQty = 0;
+                            objbat.RejectionQuantity = 0;
                             db.TblSplivehmiscreen.Add(objbat);
                             db.SaveChanges();
 
@@ -1116,7 +1122,8 @@ namespace DAS.DAL
             {
                 int procqty = Convert.ToInt32(qty.ProcessQty);
                 int delqty = Convert.ToInt32(qty.DeliveredQty);
-                processqty = delqty + procqty;
+                int rejqty = Convert.ToInt32(qty.RejectionQuantity);
+                processqty = delqty + procqty + rejqty;
             }
             return processqty;
         }
@@ -3668,6 +3675,55 @@ namespace DAS.DAL
         }
 
         //set Delivered Qty
+        //public CommonResponsewithEror SetDeliveredQty(SetDel data)
+        //{
+        //    CommonResponsewithEror obj = new CommonResponsewithEror();
+        //    try
+        //    {
+        //        var HmiData = db.TblSplivehmiscreen.Where(x => x.Sphmiid == data.HMIID).FirstOrDefault();
+        //        if (HmiData != null)
+        //        {
+        //            HmiData.DeliveredQty = data.DeliveredQty;
+        //            db.SaveChanges();
+
+        //            HmiData = db.TblSplivehmiscreen.Where(x => x.Sphmiid == data.HMIID).FirstOrDefault();
+
+        //            int deliveredQty = 0;
+        //            if (int.TryParse(Convert.ToString(HmiData.DeliveredQty), out deliveredQty))
+        //            {
+        //                int processed = 0;
+        //                int.TryParse(Convert.ToString(HmiData.ProcessQty), out processed);
+        //                if ((deliveredQty + processed) > Convert.ToInt32(HmiData.TargetQty))
+        //                {
+        //                    obj.isTure = false;
+        //                    obj.errorMsg = "DeliveredQty Must be less than Target Quantity for " + HmiData.WorkOrderNo;
+        //                    HmiData.DeliveredQty = 0;
+        //                    db.SaveChanges();
+        //                }
+        //                //else
+        //                //{
+        //                //    HmiData.DeliveredQty =0;
+        //                //    db.SaveChanges();
+        //                //}
+        //            }
+        //            obj.isTure = true;
+        //            obj.response = ResourceResponse.UpdatedSuccessMessage;
+        //        }
+        //        else
+        //        {
+        //            obj.isTure = false;
+        //            obj.response = ResourceResponse.NoItemsFound;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        obj.isTure = false;
+        //        obj.response = ResourceResponse.ExceptionMessage;
+        //        log.Error(ex); if (ex.InnerException.ToString() != null) { log.Error(ex.InnerException.ToString()); }
+        //    }
+        //    return obj;
+        //}
+
         public CommonResponsewithEror SetDeliveredQty(SetDel data)
         {
             CommonResponsewithEror obj = new CommonResponsewithEror();
@@ -3677,6 +3733,7 @@ namespace DAS.DAL
                 if (HmiData != null)
                 {
                     HmiData.DeliveredQty = data.DeliveredQty;
+                    HmiData.RejectionQuantity = data.RejectionQty;
                     db.SaveChanges();
 
                     HmiData = db.TblSplivehmiscreen.Where(x => x.Sphmiid == data.HMIID).FirstOrDefault();
@@ -3686,11 +3743,17 @@ namespace DAS.DAL
                     {
                         int processed = 0;
                         int.TryParse(Convert.ToString(HmiData.ProcessQty), out processed);
-                        if ((deliveredQty + processed) > Convert.ToInt32(HmiData.TargetQty))
+
+                        int rejInt = 0;
+                        int.TryParse(Convert.ToString(HmiData.RejectionQuantity), out rejInt);
+
+
+                        if ((deliveredQty + processed + rejInt) > Convert.ToInt32(HmiData.TargetQty))
                         {
                             obj.isTure = false;
-                            obj.errorMsg = "DeliveredQty Must be less than Target Quantity for " + HmiData.WorkOrderNo;
+                            obj.errorMsg = "DeliveredQty and RejectionQty Must be less than Target Quantity for " + HmiData.WorkOrderNo;
                             HmiData.DeliveredQty = 0;
+                            HmiData.RejectionQuantity = 0;
                             db.SaveChanges();
                         }
                         //else
@@ -3698,9 +3761,16 @@ namespace DAS.DAL
                         //    HmiData.DeliveredQty =0;
                         //    db.SaveChanges();
                         //}
+
+                        else
+                        {
+                            obj.isTure = true;
+                            obj.response = ResourceResponse.UpdatedSuccessMessage;
+
+                        }
+
                     }
-                    obj.isTure = true;
-                    obj.response = ResourceResponse.UpdatedSuccessMessage;
+
                 }
                 else
                 {
@@ -6548,7 +6618,36 @@ namespace DAS.DAL
             return obj;
         }
 
+        public CommonResponsewithEror OperatorLoginCheck(Oplogin data)
+        {
+            CommonResponsewithEror obj = new CommonResponsewithEror();
+            try
+            {
+                var modeData = db.Tblusers.Where(m => m.UserId == data.operatorId && m.Password == data.password && m.IsDeleted == 0).FirstOrDefault();
+                if (modeData != null)
+                {
+                    obj.isTure = true;
+                    obj.response = "Opertor Login Correct";
+                }
+                else
+                {
+                    obj.isTure = false;
+                    obj.response = "No Data Found";
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+                obj.isTure = false;
+            }
+            return obj;
+        }
 
+
+        
+
+
+        
 
         #endregion
     }

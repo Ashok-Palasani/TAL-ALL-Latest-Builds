@@ -41,5 +41,6 @@ namespace DAS.DBModels
         public int? IsPatialFinish { get; set; }
         public int? IsGenericClicked { get; set; }
         public string PcpNo { get; set; }
+        public int? RejectionQuantity { get; set; }
     }
 }

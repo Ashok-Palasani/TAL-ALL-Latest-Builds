@@ -39,5 +39,6 @@ namespace DAS.DBModels
         public int? BatchCount { get; set; }
         public int IsSync { get; set; }
         public int? IsSplitSapUpdated { get; set; }
+        public int? RejectionQuantity { get; set; }
     }
 }

@@ -1,0 +1,834 @@
+2018-12-03 16:09:48:  StartTime 
+2018-12-03 16:10:07:  EndTime 
+2018-12-03 16:10:07:  StartTime WODetails 
+2018-12-03 17:30:29:  StartTime 
+2018-12-04 17:17:02:  StartTime 
+
+2019-01-16 16:58:12:  StartTime 
+2019-01-16 17:05:23:  MacID: 28System.Data.Entity.Core.EntityException: The underlying provider failed on Open. ---> System.TimeoutException: Timeout in IO operation
+   at MySql.Data.MySqlClient.TimedStream.StopTimer()
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.ReadOk(Boolean read)
+   at MySql.Data.MySqlClient.NativeDriver.SetDatabase(String dbName)
+   at MySql.Data.MySqlClient.Driver.SetDatabase(String dbName)
+   at MySql.Data.MySqlClient.MySqlConnection.ChangeDatabase(String databaseName)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute(Action operation)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   at System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.CalculateOEEForYesterday(Nullable`1 StartDate, Nullable`1 EndDate) in D:\Ashok\TATAProjects\CalOeeDailyForPreviousDays\CalOEEDaily\Form1.cs:line 219
+
+2019-01-16 17:20:49:  StartTime 
+2019-07-02 11:34:13:  StartTime 
+2019-07-02 11:44:18:  StartTime 
+2019-07-02 12:59:33:  StartTime 
+2019-07-02 13:00:31:  EndTime 
+2019-07-02 13:00:31:  StartTime WODetails 
+2019-07-02 13:00:32:  EndTime WODetails 
+2019-07-02 13:00:44:  StartTime 
+2019-07-02 13:00:47:  EndTime 
+2019-07-02 13:00:47:  StartTime WODetails 
+2019-07-02 13:00:48:  EndTime WODetails 
+2019-07-02 13:00:56:  StartTime 
+2019-07-02 13:00:59:  EndTime 
+2019-07-02 13:00:59:  StartTime WODetails 
+2019-07-02 13:01:00:  EndTime WODetails 
+2019-07-02 13:02:58:  StartTime 
+2019-07-02 13:03:19:  EndTime 
+2019-07-02 13:03:19:  StartTime WODetails 
+2019-07-02 13:03:20:  EndTime WODetails 
+2019-07-02 13:07:31:  StartTime 
+2019-07-02 13:20:47:  EndTime 
+2019-07-02 13:20:47:  StartTime WODetails 
+2019-07-02 13:20:48:  EndTime WODetails 
+2019-07-05 17:26:30:  StartTime 
+2019-07-05 17:27:06:  EndTime 
+2019-07-05 17:27:06:  StartTime WODetails 
+2019-07-05 17:27:10:  System.Data.SqlClient.SqlException (0x80131904): Invalid column name '372694-21D'.
+Invalid column name '1800013466'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext() in C:\Users\user\Desktop\CalOEEDaily20190626\CalOEEDaily\Form1.cs:line 1486
+ClientConnectionId:6048ef4d-a108-47b8-a5e9-0e8526dd2581
+Error Number:207,State:1,Class:16
+2019-07-05 17:27:12:  System.Data.SqlClient.SqlException (0x80131904): Invalid column name '372695-8LD'.
+Invalid column name '1800013468'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext() in C:\Users\user\Desktop\CalOEEDaily20190626\CalOEEDaily\Form1.cs:line 1486
+ClientConnectionId:6048ef4d-a108-47b8-a5e9-0e8526dd2581
+Error Number:207,State:1,Class:16
+2019-07-05 17:30:50:  System.Data.SqlClient.SqlException (0x80131904): Invalid column name '372695-8RD'.
+Invalid column name '1800013469'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext() in C:\Users\user\Desktop\CalOEEDaily20190626\CalOEEDaily\Form1.cs:line 1486
+ClientConnectionId:6048ef4d-a108-47b8-a5e9-0e8526dd2581
+Error Number:207,State:1,Class:16
+2019-07-05 17:33:35:  System.NullReferenceException: Object reference not set to an instance of an object.
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext()
+2019-07-05 17:35:30:  StartTime 
+2019-07-05 17:36:13:  EndTime 
+2019-07-05 17:36:13:  StartTime WODetails 
+2019-07-05 17:39:43:  StartTime 
+2019-07-05 17:39:50:  EndTime 
+2019-07-05 17:39:50:  StartTime WODetails 
+2019-07-05 17:40:49:  System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near ','.
+Unclosed quotation mark after the character string ');'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__21.MoveNext()
+ClientConnectionId:416041bb-ff74-4efe-94c3-ad9f1658611b
+Error Number:102,State:1,Class:15
+2019-07-05 17:41:11:  StartTime 
+2019-07-05 17:41:17:  EndTime 
+2019-07-05 17:41:17:  StartTime WODetails 
+2019-07-05 17:42:00:  EndTime WODetails 
+2019-07-08 12:58:22:  StartTime 
+2019-08-05 17:47:47:  CalWODataForYesterday
+2019-08-05 17:47:49:  CalWODataForYesterday fromdate2019-08-04 06:00:00
+2019-08-05 17:47:50:  CalWODataForYesterday todate2019-08-05 06:00:00
+2019-08-05 17:48:09:  CalWODataForYesterday MachineID1
+2019-08-05 17:48:14:  CalWODataForYesterday WODataPresent0
+2019-08-05 17:48:48:  CalWODataForYesterday MachineID2
+2019-08-05 17:48:52:  CalWODataForYesterday WODataPresent0
+2019-08-05 17:49:07:  CalWODataForYesterday MachineID3
+2019-08-05 17:49:09:  CalWODataForYesterday WODataPresent0
+2019-08-05 17:50:00:  CalWODataForYesterday MachineID4
+2019-08-05 17:50:02:  CalWODataForYesterday WODataPresent0
+2019-08-05 17:50:12:  CalWODataForYesterday MachineID5
+2019-08-05 17:50:15:  CalWODataForYesterday WODataPresent0
+2019-08-05 17:50:25:  CalWODataForYesterday MachineID6
+2019-08-05 17:50:26:  CalWODataForYesterday WODataPresent0
+2019-08-05 17:50:32:  CalWODataForYesterday MachineID7
+2019-08-05 17:50:33:  CalWODataForYesterday WODataPresent0
+2019-08-05 17:52:04:  CalWODataForYesterday
+2019-08-05 17:52:06:  CalWODataForYesterday fromdate2019-08-04 06:00:00
+2019-08-05 17:52:06:  CalWODataForYesterday todate2019-08-05 06:00:00
+2019-08-05 17:52:10:  CalWODataForYesterday MachineID23
+2019-08-05 17:52:14:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:10:57:  CalWODataForYesterday
+2019-11-06 13:10:57:  CalWODataForYesterday fromdate2019-10-18 06:00:00
+2019-11-06 13:10:57:  CalWODataForYesterday todate2019-10-18 06:00:00
+2019-11-06 13:10:58:  CalWODataForYesterday MachineID23
+2019-11-06 13:10:58:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:05:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:05:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:05:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:05:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:06:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:06:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:06:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:06:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:06:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:06:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:07:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:07:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:07:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:07:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:07:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:07:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:07:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:07:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:08:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:08:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:08:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:08:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:08:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:08:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:08:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:09:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:09:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:09:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:09:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:09:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:10:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:10:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:10:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:10:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:10:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:10:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:10:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:10:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:11:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:11:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:11:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:11:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:11:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:11:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:12:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:12:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:12:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:12:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:13:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:13:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:13:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:13:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:13:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:13:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:14:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:14:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:14:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:14:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:15:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:15:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:15:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:15:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:15:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:15:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:16:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:16:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:16:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:16:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:17:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:17:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:17:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:17:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:17:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:17:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:18:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:18:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:18:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:18:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:19:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:19:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:19:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:19:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:19:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:19:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:19:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:19:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:20:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:20:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:20:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:20:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:20:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:20:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:21:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:21:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:22:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:22:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:22:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:22:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:22:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:22:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:22:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:22:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:23:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:23:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:23:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:23:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:24:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:24:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:24:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:24:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:24:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:24:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:24:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:24:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:25:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:25:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:25:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:25:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:25:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:25:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:25:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:25:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:26:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:26:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:26:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:26:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:26:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:26:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:26:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:26:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:27:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:27:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:27:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:27:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:27:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:27:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:27:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:27:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:27:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:27:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:28:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:28:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:28:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:28:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:28:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:28:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:28:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:28:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:28:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:28:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:29:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:29:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:29:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:29:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:29:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:29:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:30:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:30:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:30:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:30:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:30:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:30:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:30:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:30:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:31:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:31:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:31:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:31:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:31:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:31:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:31:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:31:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:32:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:32:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:32:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:32:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:33:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:33:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:33:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:33:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:33:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:33:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:33:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:33:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:34:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:34:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:34:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:34:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:34:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:34:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:35:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:35:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:35:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:35:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:35:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:35:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:35:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:35:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:36:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:36:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:36:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:36:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:36:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:36:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:36:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:36:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:37:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:37:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:37:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:37:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:37:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:37:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:37:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:37:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:38:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:38:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:38:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:38:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:39:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:39:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:39:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:39:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:39:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:39:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:40:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:40:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:40:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:40:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:41:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:41:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:41:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:41:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:41:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:41:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:42:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:42:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:42:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:42:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:43:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:43:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:43:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:43:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:43:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:43:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:44:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:44:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:44:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:44:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:44:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:44:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:44:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:44:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:45:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:45:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:45:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:45:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:45:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:45:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:45:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:45:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:46:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:46:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:46:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:46:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:46:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:46:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:47:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:47:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:47:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:47:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:47:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:47:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:47:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:47:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:48:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:48:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:48:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:48:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:49:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:49:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:49:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:49:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:50:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:50:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:50:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:50:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:50:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:50:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:51:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:51:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:51:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:51:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:52:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:52:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:52:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:52:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:52:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:52:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:52:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:53:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:53:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:53:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:53:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:53:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:53:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:53:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:54:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:54:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:54:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:54:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:54:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:54:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:55:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:55:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:55:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:55:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:56:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:56:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:56:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:56:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:56:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:56:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:56:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:57:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:57:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:57:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:57:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:57:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:58:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:58:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:58:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:58:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:58:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:58:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:58:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:58:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:59:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:59:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:59:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:59:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:59:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:59:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:11:59:  CalWODataForYesterday MachineID23
+2019-11-06 13:11:59:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:00:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:00:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:00:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:00:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:00:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:00:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:01:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:01:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:01:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:01:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:01:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:01:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:01:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:01:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:02:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:02:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:02:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:02:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:02:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:02:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:02:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:02:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:12:03:  CalWODataForYesterday MachineID23
+2019-11-06 13:12:03:  CalWODataForYesterday WODataPresent0
+2019-11-06 13:15:19:  StartTime 
+2020-09-29 12:05:23:  CalWODataForYesterday
+2020-09-29 12:05:23:  CalWODataForYesterday fromdate2020-09-28 06:00:00
+2020-09-29 12:05:23:  CalWODataForYesterday todate2020-09-29 06:00:00
+2020-09-29 12:05:24:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:24:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:25:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:25:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:25:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:26:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:26:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:27:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:27:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:28:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:29:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:29:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:29:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:30:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:30:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:31:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:31:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:32:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:34:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:34:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:35:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:36:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:37:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:38:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:38:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:38:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:39:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:39:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:40:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:40:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:41:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:41:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:42:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:43:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:43:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:44:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:44:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:45:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:45:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:46:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:47:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:47:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:48:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:48:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:48:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:49:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:49:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:49:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:50:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:50:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:51:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:51:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:52:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:52:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:52:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:52:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:53:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:54:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:54:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:55:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:56:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:56:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:56:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:56:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:57:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:57:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:05:59:  CalWODataForYesterday MachineID23
+2020-09-29 12:05:59:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:00:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:00:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:00:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:01:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:02:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:02:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:03:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:03:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:04:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:04:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:04:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:05:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:06:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:06:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:07:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:07:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:07:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:08:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:08:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:08:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:08:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:09:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:09:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:09:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:06:10:  CalWODataForYesterday MachineID23
+2020-09-29 12:06:10:  CalWODataForYesterday WODataPresent0
+2020-09-29 12:07:59:  Losses Block System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception: The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__33.MoveNext() in D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\SPCalOEE\CalOEEDaily20191106\CalOEEDaily\Form1.cs:line 2825
+2020-09-29 12:15:13:  Losses Block System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception: The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__33.MoveNext() in D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\SPCalOEE\CalOEEDaily20191106\CalOEEDaily\Form1.cs:line 2832
+2020-09-29 12:16:02:  Losses Block System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception: The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__33.MoveNext() in D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\SPCalOEE\CalOEEDaily20191106\CalOEEDaily\Form1.cs:line 2821
+2020-09-29 12:24:02:  Losses Block System.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception (0x80004005): The wait operation timed out
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__33.MoveNext() in D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\SPCalOEE\CalOEEDaily20191106\CalOEEDaily\Form1.cs:line 2853
+ClientConnectionId:ee35095e-635e-432f-be85-298888762fa1
+Error Number:-2,State:0,Class:11
+2020-09-29 12:30:20:  Losses Block System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception: The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__33.MoveNext() in D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\SPCalOEE\CalOEEDaily20191106\CalOEEDaily\Form1.cs:line 2832
+2020-09-29 12:30:55:  WorkOrder Block System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception: The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at CalOEEDaily.Form1.<CalWODataForYesterday>d__33.MoveNext() in D:\Aswini\TSAL\BackEnd ApplicationsTALTSALTMAL\SPCalOEE\CalOEEDaily20191106\CalOEEDaily\Form1.cs:line 2657

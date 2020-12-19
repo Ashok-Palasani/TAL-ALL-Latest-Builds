@@ -57,6 +57,7 @@ namespace DAS.DBModels
         public string EquipmentNum { get; set; }
         public int? IsNestedSheetMachine { get; set; }
         public int IsDlversion { get; set; }
+        public string Workcntrcode { get; set; }
 
         public virtual Tblcell Cell { get; set; }
         public virtual Tblplant Plant { get; set; }

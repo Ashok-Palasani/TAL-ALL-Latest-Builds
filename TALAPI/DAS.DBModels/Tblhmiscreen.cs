@@ -52,6 +52,7 @@ namespace DAS.DBModels
         public string OnHoldFlag { get; set; }
         public int OnHoldCode { get; set; }
         public int IsSplitSapUpdated { get; set; }
+        public int? RejectionQuantity { get; set; }
 
         public virtual Tblmachinedetails Machine { get; set; }
         public virtual ICollection<TblMultiwoselection> TblMultiwoselection { get; set; }

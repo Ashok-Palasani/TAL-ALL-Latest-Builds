@@ -26,6 +26,7 @@ namespace DAS.EntityModels
         public string ProcessQty { get; set; }
         public string DeliverdQty { get; set; }
         public string pcpNo { get; set; }
+        public string RejectionQty { get; set; }
     }
 
     public class GenericWODetails
@@ -206,6 +207,10 @@ namespace DAS.EntityModels
     {
         public int HMIID { get; set; }
         public int DeliveredQty { get; set; }
+
+        public int RejectionQty { get; set; }
+
+
     }
 
     public class SetShiftbatch
@@ -251,4 +256,16 @@ namespace DAS.EntityModels
     //    public int skipeValue { get; set; }
     //    //public int count { get; set; }
     //}
+
+    //////////////////////////////////////////////
+
+    //entity code
+
+    public class Oplogin
+    {
+        public int operatorId { get; set; }
+        public string password { get; set; }
+
+    }
+
 }

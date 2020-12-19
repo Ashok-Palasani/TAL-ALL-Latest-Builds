@@ -4973,11 +4973,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.EntityModels\\DAS.EntityModels.csproj",
+      "projectUniqueName": "D:\\Aswini\\TAL\\TALAPI\\DAS.EntityModels\\DAS.EntityModels.csproj",
       "projectName": "DAS.EntityModels",
-      "projectPath": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.EntityModels\\DAS.EntityModels.csproj",
+      "projectPath": "D:\\Aswini\\TAL\\TALAPI\\DAS.EntityModels\\DAS.EntityModels.csproj",
       "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
-      "outputPath": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.EntityModels\\obj\\",
+      "outputPath": "D:\\Aswini\\TAL\\TALAPI\\DAS.EntityModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4996,8 +4996,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.DBModels\\DAS.DBModels.csproj": {
-              "projectPath": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.DBModels\\DAS.DBModels.csproj"
+            "D:\\Aswini\\TAL\\TALAPI\\DAS.DBModels\\DAS.DBModels.csproj": {
+              "projectPath": "D:\\Aswini\\TAL\\TALAPI\\DAS.DBModels\\DAS.DBModels.csproj"
             }
           }
         }

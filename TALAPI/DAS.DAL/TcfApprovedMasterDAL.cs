@@ -25,6 +25,55 @@ namespace DAS.DAL
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
+        //public CommonResponse1 AddAndEditTcfApprovedMaster(AddAndEditTcfMaster data)
+        //{
+        //    CommonResponse1 obj = new CommonResponse1();
+        //    try
+        //    {
+        //        var check = db.TblTcfApprovedMaster.Where(m => m.TcfApprovedMasterId == data.TcfApprovedMasterId).FirstOrDefault();
+        //        if (check == null)
+        //        {
+        //            TblTcfApprovedMaster tblTcfApprovedMaster = new TblTcfApprovedMaster();
+        //            tblTcfApprovedMaster.TcfModuleId = data.TcfModuleId;
+        //            tblTcfApprovedMaster.FirstApproverToList = data.FirstApproverToList;
+        //            tblTcfApprovedMaster.FirstApproverCcList = data.FirstApproverCcList;
+        //            tblTcfApprovedMaster.SecondApproverToList = data.SecondApproverToList;
+        //            tblTcfApprovedMaster.SecondApproverCcList = data.SecondApproverCcList;
+        //            tblTcfApprovedMaster.PlantId = data.PlantId;
+        //            tblTcfApprovedMaster.ShopId = data.ShopId;
+        //            tblTcfApprovedMaster.CellId = data.CellId;
+        //            tblTcfApprovedMaster.CreatedOn = DateTime.Now;
+        //            tblTcfApprovedMaster.IsDeleted = 0;
+        //            db.TblTcfApprovedMaster.Add(tblTcfApprovedMaster);
+        //            db.SaveChanges();
+        //            obj.isStatus = true;
+        //            obj.response = "Added Successfully";
+        //        }
+        //        else
+        //        {
+        //            check.TcfModuleId = data.TcfModuleId;
+        //            check.FirstApproverToList = data.FirstApproverToList;
+        //            check.FirstApproverCcList = data.FirstApproverCcList;
+        //            check.SecondApproverToList = data.SecondApproverToList;
+        //            check.SecondApproverCcList = data.SecondApproverCcList;
+        //            check.PlantId = data.PlantId;
+        //            check.ShopId = data.ShopId;
+        //            check.CellId = data.CellId;
+        //            check.ModifiedOn = DateTime.Now;
+        //            db.SaveChanges();
+        //            obj.isStatus = true;
+        //            obj.response = "Updated Successfully";
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+        //        obj.isStatus = false;
+        //    }
+        //    return obj;
+        //}
+
+
         public CommonResponse1 AddAndEditTcfApprovedMaster(AddAndEditTcfMaster data)
         {
             CommonResponse1 obj = new CommonResponse1();
@@ -35,10 +84,89 @@ namespace DAS.DAL
                 {
                     TblTcfApprovedMaster tblTcfApprovedMaster = new TblTcfApprovedMaster();
                     tblTcfApprovedMaster.TcfModuleId = data.TcfModuleId;
-                    tblTcfApprovedMaster.FirstApproverToList = data.FirstApproverToList;
-                    tblTcfApprovedMaster.FirstApproverCcList = data.FirstApproverCcList;
-                    tblTcfApprovedMaster.SecondApproverToList = data.SecondApproverToList;
-                    tblTcfApprovedMaster.SecondApproverCcList = data.SecondApproverCcList;
+
+                    if (data.FirstApproverToList != null)
+                    {
+                        string[] ss = data.FirstApproverToList;
+                        List<string> tolist = new List<string>();
+                        tolist = ss.ToList();
+                        string tblsaveft = "";
+                        foreach (var im in tolist)
+                        {
+                            string saveft = im + ",";
+                            tblsaveft += saveft;
+
+
+
+                        }
+                        tblsaveft = tblsaveft.TrimEnd(',');
+                        tblTcfApprovedMaster.FirstApproverToList = tblsaveft;
+
+                    }
+
+
+                    if (data.FirstApproverCcList != null)
+                    {
+                        string[] ss1 = data.FirstApproverCcList;
+                        List<string> tolist1 = new List<string>();
+                        tolist1 = ss1.ToList();
+                        string tblsaveft1 = "";
+                        foreach (var im in tolist1)
+                        {
+                            string saveft1 = im + ",";
+                            tblsaveft1 += saveft1;
+
+
+
+                        }
+                        tblsaveft1 = tblsaveft1.TrimEnd(',');
+                        tblTcfApprovedMaster.FirstApproverCcList = tblsaveft1;
+
+                    }
+                    if (data.SecondApproverToList != null)
+                    {
+                        string[] ss1 = data.SecondApproverToList;
+                        List<string> tolist1 = new List<string>();
+                        tolist1 = ss1.ToList();
+                        string tblsaveft1 = "";
+                        foreach (var im in tolist1)
+                        {
+                            string saveft1 = im + ",";
+                            tblsaveft1 += saveft1;
+
+
+
+                        }
+                        tblsaveft1 = tblsaveft1.TrimEnd(',');
+                        tblTcfApprovedMaster.SecondApproverToList = tblsaveft1;
+
+                    }
+
+                    if (data.SecondApproverCcList != null)
+                    {
+                        string[] ss1 = data.SecondApproverCcList;
+                        List<string> tolist1 = new List<string>();
+                        tolist1 = ss1.ToList();
+                        string tblsaveft1 = "";
+                        foreach (var im in tolist1)
+                        {
+                            string saveft1 = im + ",";
+                            tblsaveft1 += saveft1;
+
+
+
+                        }
+                        tblsaveft1 = tblsaveft1.TrimEnd(',');
+                        tblTcfApprovedMaster.SecondApproverCcList = tblsaveft1;
+
+                    }
+
+
+                    // tblTcfApprovedMaster.FirstApproverCcList = data.FirstApproverCcList;
+                    //  tblTcfApprovedMaster.SecondApproverToList = data.SecondApproverToList;
+                    //  tblTcfApprovedMaster.SecondApproverCcList = data.SecondApproverCcList;
+
+
                     tblTcfApprovedMaster.PlantId = data.PlantId;
                     tblTcfApprovedMaster.ShopId = data.ShopId;
                     tblTcfApprovedMaster.CellId = data.CellId;
@@ -48,14 +176,90 @@ namespace DAS.DAL
                     db.SaveChanges();
                     obj.isStatus = true;
                     obj.response = "Added Successfully";
+                    obj.isTure = true;
+
                 }
                 else
                 {
                     check.TcfModuleId = data.TcfModuleId;
-                    check.FirstApproverToList = data.FirstApproverToList;
-                    check.FirstApproverCcList = data.FirstApproverCcList;
-                    check.SecondApproverToList = data.SecondApproverToList;
-                    check.SecondApproverCcList = data.SecondApproverCcList;
+
+                    if (data.FirstApproverToList != null)
+                    {
+                        string[] ss = data.FirstApproverToList;
+                        List<string> tolist = new List<string>();
+                        tolist = ss.ToList();
+                        string tblsaveft = "";
+                        foreach (var im in tolist)
+                        {
+                            string saveft = im + ",";
+                            tblsaveft += saveft;
+
+
+
+                        }
+                        tblsaveft = tblsaveft.TrimEnd(',');
+                        check.FirstApproverToList = tblsaveft;
+
+                    }
+
+
+                    if (data.FirstApproverCcList != null)
+                    {
+                        string[] ss1 = data.FirstApproverCcList;
+                        List<string> tolist1 = new List<string>();
+                        tolist1 = ss1.ToList();
+                        string tblsaveft1 = "";
+                        foreach (var im in tolist1)
+                        {
+                            string saveft1 = im + ",";
+                            tblsaveft1 += saveft1;
+
+
+
+                        }
+                        tblsaveft1 = tblsaveft1.TrimEnd(',');
+                        check.FirstApproverCcList = tblsaveft1;
+
+                    }
+                    if (data.SecondApproverToList != null)
+                    {
+                        string[] ss1 = data.SecondApproverToList;
+                        List<string> tolist1 = new List<string>();
+                        tolist1 = ss1.ToList();
+                        string tblsaveft1 = "";
+                        foreach (var im in tolist1)
+                        {
+                            string saveft1 = im + ",";
+                            tblsaveft1 += saveft1;
+
+
+
+                        }
+                        tblsaveft1 = tblsaveft1.TrimEnd(',');
+                        check.SecondApproverToList = tblsaveft1;
+
+                    }
+
+                    if (data.SecondApproverCcList != null)
+                    {
+                        string[] ss1 = data.SecondApproverCcList;
+                        List<string> tolist1 = new List<string>();
+                        tolist1 = ss1.ToList();
+                        string tblsaveft1 = "";
+                        foreach (var im in tolist1)
+                        {
+                            string saveft1 = im + ",";
+                            tblsaveft1 += saveft1;
+
+
+
+                        }
+                        tblsaveft1 = tblsaveft1.TrimEnd(',');
+                        check.SecondApproverCcList = tblsaveft1;
+
+                    }
+
+
                     check.PlantId = data.PlantId;
                     check.ShopId = data.ShopId;
                     check.CellId = data.CellId;
@@ -63,6 +267,7 @@ namespace DAS.DAL
                     db.SaveChanges();
                     obj.isStatus = true;
                     obj.response = "Updated Successfully";
+                    obj.isTure = true;
                 }
             }
             catch (Exception ex)
@@ -77,6 +282,95 @@ namespace DAS.DAL
         /// View Multiple Tcf Approved Master
         /// </summary>
         /// <returns></returns>
+        //public CommonResponse1 ViewMultipleTcfApprovedMaster()
+        //{
+        //    CommonResponse1 obj = new CommonResponse1();
+        //    try
+        //    {
+        //        var check = (from wf in db.TblTcfApprovedMaster
+        //                     where wf.IsDeleted == 0
+        //                     select new
+        //                     {
+        //                         TcfApprovedMasterId = wf.TcfApprovedMasterId,
+        //                         FirstApproverToList = wf.FirstApproverToList,
+        //                         FirstApproverCcList = wf.FirstApproverCcList,
+        //                         SecondApproverToList = wf.SecondApproverToList,
+        //                         SecondApproverCcList = wf.SecondApproverCcList,
+        //                         plantName = db.Tblplant.Where(m => m.PlantId == wf.PlantId).Select(m => m.PlantName).FirstOrDefault(),
+        //                         plantId = wf.PlantId,
+        //                         shopName = db.Tblshop.Where(m => m.ShopId == wf.ShopId).Select(m => m.ShopName).FirstOrDefault(),
+        //                         shopId = wf.ShopId,
+        //                         cellName = db.Tblcell.Where(m => m.CellId == wf.CellId).Select(m => m.CellName).FirstOrDefault(),
+        //                         cellId = wf.CellId,
+        //                         ModuleName = db.TblTcfModule.Where(m => m.TcfModuleId == wf.TcfModuleId).Select(m => m.TcfModuleName).FirstOrDefault(),
+        //                         tcfModuleId = wf.TcfModuleId
+        //                     }).ToList();
+
+        //        List<ViewTcfMaster> viewTcfMasterList = new List<ViewTcfMaster>();
+        //        List<FirstAppCcLists> firstAppCcLists = new List<FirstAppCcLists>();
+        //        List<SecondAppCcLists> secondAppCcLists = new List<SecondAppCcLists>();
+
+        //        foreach (var item in check)
+        //        {
+        //            ViewTcfMaster viewTcfMaster = new ViewTcfMaster();
+        //            viewTcfMaster.TcfApprovedMasterId = item.TcfApprovedMasterId;
+        //            if (item.FirstApproverToList != "" && item.FirstApproverToList != null)
+        //            {
+        //                viewTcfMaster.FirstApproverToList = item.FirstApproverToList;
+        //            }
+
+        //            if (item.FirstApproverCcList != null && item.FirstApproverCcList != "")
+        //            {
+        //                string[] ids = item.FirstApproverCcList.Split(',');
+
+        //                //foreach (var i in ids)
+        //                //{
+        //                //    FirstAppCcLists firstAppCcLists1 = new FirstAppCcLists();
+        //                //    firstAppCcLists1.FirstApproverCcList = i;
+        //                //    firstAppCcLists.Add(firstAppCcLists1);
+        //                //}
+        //                viewTcfMaster.FirstApproverCcList = ids;
+        //            }
+
+        //            if (item.SecondApproverToList != " " && item.SecondApproverToList != null)
+        //            {
+        //                viewTcfMaster.SecondApproverToList = item.SecondApproverToList;
+        //            }
+
+        //            if (item.SecondApproverCcList != null && item.SecondApproverCcList != "")
+        //            {
+        //                string[] ids1 = item.SecondApproverCcList.Split(',');
+
+        //                //foreach (var i in ids1)
+        //                //{
+        //                //    SecondAppCcLists secondAppCcLists1 = new SecondAppCcLists();
+        //                //    secondAppCcLists1.SecondApproverCcList = i;
+        //                //    secondAppCcLists.Add(secondAppCcLists1);
+        //                //}
+        //                viewTcfMaster.SecondApproverCcList = ids1;
+        //            }
+        //            viewTcfMaster.PlantId = Convert.ToInt32(item.plantId);
+        //            viewTcfMaster.ShopId = Convert.ToInt32(item.shopId);
+        //            viewTcfMaster.CellId = Convert.ToInt32(item.cellId);
+        //            viewTcfMaster.PlantName = item.plantName;
+        //            viewTcfMaster.ShopName = item.shopName;
+        //            viewTcfMaster.CellName = item.cellName;
+        //            viewTcfMaster.ModuleName = item.ModuleName;
+        //            viewTcfMaster.TcfModuleId = item.tcfModuleId;
+        //            viewTcfMasterList.Add(viewTcfMaster);
+        //        }
+        //        obj.isStatus = true;
+        //        obj.response = viewTcfMasterList;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+        //        obj.isStatus = false;
+        //    }
+        //    return obj;
+        //}
+
+
         public CommonResponse1 ViewMultipleTcfApprovedMaster()
         {
             CommonResponse1 obj = new CommonResponse1();
@@ -86,76 +380,88 @@ namespace DAS.DAL
                              where wf.IsDeleted == 0
                              select new
                              {
-                                 TcfApprovedMasterId = wf.TcfApprovedMasterId,
-                                 FirstApproverToList = wf.FirstApproverToList,
-                                 FirstApproverCcList = wf.FirstApproverCcList,
-                                 SecondApproverToList = wf.SecondApproverToList,
-                                 SecondApproverCcList = wf.SecondApproverCcList,
+                                 tcfApprovedMasterId = wf.TcfApprovedMasterId,
+                                 firstApproverToList = wf.FirstApproverToList,
+                                 firstApproverCcList = wf.FirstApproverCcList,
+                                 secondApproverToList = wf.SecondApproverToList,
+                                 secondApproverCcList = wf.SecondApproverCcList,
                                  plantName = db.Tblplant.Where(m => m.PlantId == wf.PlantId).Select(m => m.PlantName).FirstOrDefault(),
                                  plantId = wf.PlantId,
                                  shopName = db.Tblshop.Where(m => m.ShopId == wf.ShopId).Select(m => m.ShopName).FirstOrDefault(),
                                  shopId = wf.ShopId,
                                  cellName = db.Tblcell.Where(m => m.CellId == wf.CellId).Select(m => m.CellName).FirstOrDefault(),
                                  cellId = wf.CellId,
-                                 ModuleName = db.TblTcfModule.Where(m => m.TcfModuleId == wf.TcfModuleId).Select(m => m.TcfModuleName).FirstOrDefault(),
+                                 moduleName = db.TblTcfModule.Where(m => m.TcfModuleId == wf.TcfModuleId).Select(m => m.TcfModuleName).FirstOrDefault(),
                                  tcfModuleId = wf.TcfModuleId
                              }).ToList();
 
                 List<ViewTcfMaster> viewTcfMasterList = new List<ViewTcfMaster>();
-                List<FirstAppCcLists> firstAppCcLists = new List<FirstAppCcLists>();
-                List<SecondAppCcLists> secondAppCcLists = new List<SecondAppCcLists>();
+                //  List<FirstAppCcLists> firstAppCcLists = new List<FirstAppCcLists>();
+                //  List<SecondAppCcLists> secondAppCcLists = new List<SecondAppCcLists>();
 
                 foreach (var item in check)
                 {
                     ViewTcfMaster viewTcfMaster = new ViewTcfMaster();
-                    viewTcfMaster.TcfApprovedMasterId = item.TcfApprovedMasterId;
-                    if (item.FirstApproverToList != "" && item.FirstApproverToList != null)
+
+                    // viewTcfMaster.
+
+
+                    viewTcfMaster.TcfApprovedMasterId = item.tcfApprovedMasterId;
+
+
+
+                    if (!string.IsNullOrEmpty(item.firstApproverToList))
                     {
-                        viewTcfMaster.FirstApproverToList = item.FirstApproverToList;
+                        string[] ftolist = item.firstApproverToList.Split(',');
+
+                        viewTcfMaster.FirstApproverToList = ftolist;
                     }
 
-                    if (item.FirstApproverCcList != null && item.FirstApproverCcList != "")
+                    if (!string.IsNullOrEmpty(item.firstApproverCcList))
                     {
-                        string[] ids = item.FirstApproverCcList.Split(',');
+                        string[] cclist = item.firstApproverCcList.Split(',');
 
-                        //foreach (var i in ids)
-                        //{
-                        //    FirstAppCcLists firstAppCcLists1 = new FirstAppCcLists();
-                        //    firstAppCcLists1.FirstApproverCcList = i;
-                        //    firstAppCcLists.Add(firstAppCcLists1);
-                        //}
-                        viewTcfMaster.FirstApproverCcList = ids;
+                        viewTcfMaster.FirstApproverCcList = cclist;
                     }
 
-                    if (item.SecondApproverToList != " " && item.SecondApproverToList != null)
+                    if (!string.IsNullOrEmpty(item.secondApproverToList))
                     {
-                        viewTcfMaster.SecondApproverToList = item.SecondApproverToList;
+                        string[] stolist = item.secondApproverToList.Split(',');
+
+                        viewTcfMaster.SecondApproverToList = stolist;
+                    }
+                    if (!string.IsNullOrEmpty(item.secondApproverCcList))
+                    {
+                        string[] tolist = item.secondApproverCcList.Split(',');
+
+                        viewTcfMaster.SecondApproverCcList = tolist;
                     }
 
-                    if (item.SecondApproverCcList != null && item.SecondApproverCcList != "")
-                    {
-                        string[] ids1 = item.SecondApproverCcList.Split(',');
-
-                        //foreach (var i in ids1)
-                        //{
-                        //    SecondAppCcLists secondAppCcLists1 = new SecondAppCcLists();
-                        //    secondAppCcLists1.SecondApproverCcList = i;
-                        //    secondAppCcLists.Add(secondAppCcLists1);
-                        //}
-                        viewTcfMaster.SecondApproverCcList = ids1;
-                    }
                     viewTcfMaster.PlantId = Convert.ToInt32(item.plantId);
                     viewTcfMaster.ShopId = Convert.ToInt32(item.shopId);
                     viewTcfMaster.CellId = Convert.ToInt32(item.cellId);
                     viewTcfMaster.PlantName = item.plantName;
                     viewTcfMaster.ShopName = item.shopName;
                     viewTcfMaster.CellName = item.cellName;
-                    viewTcfMaster.ModuleName = item.ModuleName;
+                    viewTcfMaster.ModuleName = item.moduleName;
                     viewTcfMaster.TcfModuleId = item.tcfModuleId;
                     viewTcfMasterList.Add(viewTcfMaster);
                 }
-                obj.isStatus = true;
-                obj.response = viewTcfMasterList;
+
+
+                if (viewTcfMasterList.Count > 0)
+                {
+                    obj.isStatus = true;
+                    obj.response = viewTcfMasterList;
+                    obj.isTure = true;
+                }
+                else
+                {
+                    obj.isStatus = false;
+                    obj.response = "items not found";
+                    obj.isTure = false;
+                }
+
             }
             catch (Exception ex)
             {
@@ -170,32 +476,125 @@ namespace DAS.DAL
         /// </summary>
         /// <param name="tcfMasterId"></param>
         /// <returns></returns>
+        //public CommonResponse1 ViewMultipleTcfApprovedMasterById(int tcfMasterId)
+        //{
+        //    CommonResponse1 obj = new CommonResponse1();
+        //    try
+        //    {
+        //        var check = (from wf in db.TblTcfApprovedMaster
+        //                     where wf.IsDeleted == 0 && wf.TcfApprovedMasterId == tcfMasterId
+        //                     select new
+        //                     {
+        //                         TcfApprovedMasterId = wf.TcfApprovedMasterId,
+        //                         FirstApproverToList = wf.FirstApproverToList,
+        //                         FirstApproverCcList = wf.FirstApproverCcList,
+        //                         SecondApproverToList = wf.SecondApproverToList,
+        //                         SecondApproverCcList = wf.SecondApproverCcList,
+        //                         plantName = db.Tblplant.Where(m => m.PlantId == wf.PlantId).Select(m => m.PlantName).FirstOrDefault(),
+        //                         plantId = wf.PlantId,
+        //                         shopName = db.Tblshop.Where(m => m.PlantId == wf.ShopId).Select(m => m.ShopName).FirstOrDefault(),
+        //                         shopId = wf.ShopId,
+        //                         cellName = db.Tblcell.Where(m => m.CellId == wf.CellId).Select(m => m.CellName).FirstOrDefault(),
+        //                         cellId = wf.CellId,
+        //                         ModuleName = db.TblTcfModule.Where(m => m.TcfModuleId == wf.TcfModuleId).Select(m => m.TcfModuleName).FirstOrDefault()
+        //                     }).ToList();
+        //        if (check.Count > 0)
+        //        {
+        //            obj.isStatus = true;
+        //            obj.response = check;
+        //        }
+        //        else
+        //        {
+        //            obj.isStatus = false;
+        //            obj.response = "No Items Found";
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex); if (ex.InnerException != null) { log.Error(ex.InnerException.ToString()); }
+        //        obj.isStatus = false;
+        //    }
+        //    return obj;
+        //}
+
+
         public CommonResponse1 ViewMultipleTcfApprovedMasterById(int tcfMasterId)
         {
             CommonResponse1 obj = new CommonResponse1();
             try
             {
-                var check = (from wf in db.TblTcfApprovedMaster
-                             where wf.IsDeleted == 0 && wf.TcfApprovedMasterId == tcfMasterId
-                             select new
-                             {
-                                 TcfApprovedMasterId = wf.TcfApprovedMasterId,
-                                 FirstApproverToList = wf.FirstApproverToList,
-                                 FirstApproverCcList = wf.FirstApproverCcList,
-                                 SecondApproverToList = wf.SecondApproverToList,
-                                 SecondApproverCcList = wf.SecondApproverCcList,
-                                 plantName = db.Tblplant.Where(m => m.PlantId == wf.PlantId).Select(m => m.PlantName).FirstOrDefault(),
-                                 plantId = wf.PlantId,
-                                 shopName = db.Tblshop.Where(m => m.PlantId == wf.ShopId).Select(m => m.ShopName).FirstOrDefault(),
-                                 shopId = wf.ShopId,
-                                 cellName = db.Tblcell.Where(m => m.CellId == wf.CellId).Select(m => m.CellName).FirstOrDefault(),
-                                 cellId = wf.CellId,
-                                 ModuleName = db.TblTcfModule.Where(m => m.TcfModuleId == wf.TcfModuleId).Select(m => m.TcfModuleName).FirstOrDefault()
-                             }).ToList();
-                if (check.Count > 0)
+                var item = (from wf in db.TblTcfApprovedMaster
+                            where wf.IsDeleted == 0 && wf.TcfApprovedMasterId == tcfMasterId
+                            select new
+                            {
+                                tcfApprovedMasterId = wf.TcfApprovedMasterId,
+                                firstApproverToList = wf.FirstApproverToList,
+                                firstApproverCcList = wf.FirstApproverCcList,
+                                secondApproverToList = wf.SecondApproverToList,
+                                secondApproverCcList = wf.SecondApproverCcList,
+                                plantName = db.Tblplant.Where(m => m.PlantId == wf.PlantId).Select(m => m.PlantName).FirstOrDefault(),
+                                plantId = wf.PlantId,
+                                shopName = db.Tblshop.Where(m => m.ShopId == wf.ShopId).Select(m => m.ShopName).FirstOrDefault(),
+                                shopId = wf.ShopId,
+                                cellName = db.Tblcell.Where(m => m.CellId == wf.CellId).Select(m => m.CellName).FirstOrDefault(),
+                                cellId = wf.CellId,
+                                moduleName = db.TblTcfModule.Where(m => m.TcfModuleId == wf.TcfModuleId).Select(m => m.TcfModuleName).FirstOrDefault(),
+                                tcfModuleId = wf.TcfModuleId
+
+                            }).FirstOrDefault();
+
+                ViewTcfMaster viewTcfMaster = new ViewTcfMaster();
+
+                // viewTcfMaster.
+
+
+                viewTcfMaster.TcfApprovedMasterId = item.tcfApprovedMasterId;
+
+
+
+                if (!string.IsNullOrEmpty(item.firstApproverToList))
+                {
+                    string[] ftolist = item.firstApproverToList.Split(',');
+
+                    viewTcfMaster.FirstApproverToList = ftolist;
+                }
+
+                if (!string.IsNullOrEmpty(item.firstApproverCcList))
+                {
+                    string[] cclist = item.firstApproverCcList.Split(',');
+
+                    viewTcfMaster.FirstApproverCcList = cclist;
+                }
+
+                if (!string.IsNullOrEmpty(item.secondApproverToList))
+                {
+                    string[] stolist = item.secondApproverToList.Split(',');
+
+                    viewTcfMaster.SecondApproverToList = stolist;
+                }
+                if (!string.IsNullOrEmpty(item.secondApproverCcList))
+                {
+                    string[] tolist = item.secondApproverCcList.Split(',');
+
+                    viewTcfMaster.SecondApproverCcList = tolist;
+                }
+
+                viewTcfMaster.PlantId = Convert.ToInt32(item.plantId);
+                viewTcfMaster.ShopId = Convert.ToInt32(item.shopId);
+                viewTcfMaster.CellId = Convert.ToInt32(item.cellId);
+                viewTcfMaster.PlantName = item.plantName;
+                viewTcfMaster.ShopName = item.shopName;
+                viewTcfMaster.CellName = item.cellName;
+                viewTcfMaster.ModuleName = item.moduleName;
+                viewTcfMaster.TcfModuleId = item.tcfModuleId;
+
+
+
+                if (viewTcfMaster != null)
                 {
                     obj.isStatus = true;
-                    obj.response = check;
+                    obj.response = viewTcfMaster;
+                    obj.isTure = true;
                 }
                 else
                 {

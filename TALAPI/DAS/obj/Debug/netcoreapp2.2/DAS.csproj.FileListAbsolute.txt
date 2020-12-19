@@ -1288,3 +1288,41 @@ D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS\o
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS\obj\Debug\netcoreapp2.2\DAS.csproj.CopyComplete
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS\obj\Debug\netcoreapp2.2\DAS.dll
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS\obj\Debug\netcoreapp2.2\DAS.pdb
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.deps.json
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.runtimeconfig.json
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.runtimeconfig.dev.json
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.dll
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.pdb
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.Views.dll
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.Views.pdb
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.DAL.dll
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.DBModels.dll
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.EntityModels.dll
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.Interface.dll
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.DAL.pdb
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.DBModels.pdb
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.EntityModels.pdb
+D:\Aswini\TAL\TALAPI\DAS\bin\Debug\netcoreapp2.2\DAS.Interface.pdb
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.csprojAssemblyReference.cache
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.csproj.CoreCompileInputs.cache
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.RazorAssemblyInfo.cache
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.RazorAssemblyInfo.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.AssemblyInfoInputs.cache
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.AssemblyInfo.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.TagHelpers.input.cache
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.TagHelpers.output.cache
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.RazorCoreGenerate.cache
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.RazorTargetAssemblyInfo.cache
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.RazorTargetAssemblyInfo.cs
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.Views.pdb
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.csproj.CopyComplete
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.dll
+D:\Aswini\TAL\TALAPI\DAS\obj\Debug\netcoreapp2.2\DAS.pdb

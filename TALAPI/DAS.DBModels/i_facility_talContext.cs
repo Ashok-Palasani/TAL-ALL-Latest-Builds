@@ -25,6 +25,10 @@ namespace DAS.DBModels
         public virtual DbSet<CuttingTimeReportPdf> CuttingTimeReportPdf { get; set; }
         public virtual DbSet<DashboardMenus> DashboardMenus { get; set; }
         public virtual DbSet<DayStEndTime> DayStEndTime { get; set; }
+        public virtual DbSet<DncdashboardMenus> DncdashboardMenus { get; set; }
+        public virtual DbSet<Dncmenus> Dncmenus { get; set; }
+        public virtual DbSet<DncsidebarMenus> DncsidebarMenus { get; set; }
+        public virtual DbSet<DncuserMenus> DncuserMenus { get; set; }
         public virtual DbSet<DocumentUploaderMaster> DocumentUploaderMaster { get; set; }
         public virtual DbSet<Frommail> Frommail { get; set; }
         public virtual DbSet<HandleNoPing> HandleNoPing { get; set; }
@@ -110,6 +114,8 @@ namespace DAS.DBModels
         public virtual DbSet<Tbldaytiming> Tbldaytiming { get; set; }
         public virtual DbSet<Tblddl> Tblddl { get; set; }
         public virtual DbSet<TblddlBackup> TblddlBackup { get; set; }
+        public virtual DbSet<Tbldncroles> Tbldncroles { get; set; }
+        public virtual DbSet<Tbldncusers> Tbldncusers { get; set; }
         public virtual DbSet<Tbldowntimecategory> Tbldowntimecategory { get; set; }
         public virtual DbSet<Tbldowntimedetails> Tbldowntimedetails { get; set; }
         public virtual DbSet<Tblemailescalation> Tblemailescalation { get; set; }
@@ -198,7 +204,7 @@ namespace DAS.DBModels
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=TCP:10.80.20.25,1433;Database=i_facility_tal;user id=sa;password=password@123;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-72HGDFG\\SQLDEV17013;Database=i_facility_tal;user id=sa;password=srks4$;Trusted_Connection=True;");
             }
         }
 
@@ -488,6 +494,101 @@ namespace DAS.DBModels
                 entity.Property(e => e.DayEnd).HasColumnType("time(0)");
 
                 entity.Property(e => e.DayStart).HasColumnType("time(0)");
+            });
+
+            modelBuilder.Entity<DncdashboardMenus>(entity =>
+            {
+                entity.ToTable("dncdashboard_menus");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.ColourDiv)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.ImageUrl)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MenuName)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MenuUrl)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.Style)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Dncmenus>(entity =>
+            {
+                entity.ToTable("dncmenus");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.IsDashboard).HasDefaultValueSql("('0')");
+
+                entity.Property(e => e.IsSideMenubar).HasDefaultValueSql("('0')");
+
+                entity.Property(e => e.MenuName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime2(0)");
+            });
+
+            modelBuilder.Entity<DncsidebarMenus>(entity =>
+            {
+                entity.ToTable("dncsidebar_menus");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.CreatedBy)
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.ImageUrl)
+                    .HasColumnName("ImageURL")
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MenuName)
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MenuUrl)
+                    .HasColumnName("MenuURL")
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.SubMenuName)
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SubMenuUrl)
+                    .HasColumnName("SubMenuURL")
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<DncuserMenus>(entity =>
+            {
+                entity.ToTable("dncuser_menus");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime2(0)");
             });
 
             modelBuilder.Entity<DocumentUploaderMaster>(entity =>
@@ -3789,6 +3890,60 @@ namespace DAS.DBModels
                     .ValueGeneratedNever();
             });
 
+            modelBuilder.Entity<Tbldncroles>(entity =>
+            {
+                entity.HasKey(e => e.RoleId);
+
+                entity.ToTable("tbldncroles");
+
+                entity.Property(e => e.RoleId).HasColumnName("Role_ID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.RoleDesc)
+                    .IsRequired()
+                    .HasMaxLength(60)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RoleType)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Tbldncusers>(entity =>
+            {
+                entity.HasKey(e => e.UserId)
+                    .HasName("PK__tbldncusers__1788CCACEFA66AA0");
+
+                entity.ToTable("tbldncusers");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.DisplayName)
+                    .IsRequired()
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MachineId).HasColumnName("MachineID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime2(0)");
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Tbldowntimecategory>(entity =>
             {
                 entity.HasKey(e => e.DtcId)
@@ -5187,6 +5342,10 @@ namespace DAS.DBModels
                     .IsRequired()
                     .HasMaxLength(150)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Workcntrcode)
+                    .HasColumnName("workcntrcode")
+                    .HasMaxLength(50);
 
                 entity.HasOne(d => d.Cell)
                     .WithMany(p => p.Tblmachinedetails)
@@ -7016,6 +7175,8 @@ namespace DAS.DBModels
                 entity.Property(e => e.LossName)
                     .HasMaxLength(145)
                     .IsUnicode(false);
+
+                entity.Property(e => e.WoLossesId).HasColumnName("woLossesId");
             });
 
             modelBuilder.Entity<Tblworeport>(entity =>
@@ -7264,6 +7425,8 @@ namespace DAS.DBModels
                 entity.Property(e => e.Type)
                     .HasMaxLength(45)
                     .IsUnicode(false);
+
+                entity.Property(e => e.WoReportId).HasColumnName("woReportID");
 
                 entity.Property(e => e.Woefficiency)
                     .HasColumnName("WOEfficiency")

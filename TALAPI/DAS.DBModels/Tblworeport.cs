@@ -44,5 +44,6 @@ namespace DAS.DBModels
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
         public int? BatchNo { get; set; }
+        public int? RejectionQuantity { get; set; }
     }
 }

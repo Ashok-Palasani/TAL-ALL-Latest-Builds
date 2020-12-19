@@ -277,3 +277,12 @@ D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.D
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.DBModels\obj\Release\netstandard2.0\DAS.DBModels.AssemblyInfo.cs
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.DBModels\obj\Release\netstandard2.0\DAS.DBModels.dll
 D:\Aswini\TAL\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\DAS.DBModels\obj\Release\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TAL\TALAPI\DAS.DBModels\bin\Release\netstandard2.0\DAS.DBModels.deps.json
+D:\Aswini\TAL\TALAPI\DAS.DBModels\bin\Release\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TAL\TALAPI\DAS.DBModels\bin\Release\netstandard2.0\DAS.DBModels.pdb
+D:\Aswini\TAL\TALAPI\DAS.DBModels\obj\Release\netstandard2.0\DAS.DBModels.csprojAssemblyReference.cache
+D:\Aswini\TAL\TALAPI\DAS.DBModels\obj\Release\netstandard2.0\DAS.DBModels.csproj.CoreCompileInputs.cache
+D:\Aswini\TAL\TALAPI\DAS.DBModels\obj\Release\netstandard2.0\DAS.DBModels.AssemblyInfoInputs.cache
+D:\Aswini\TAL\TALAPI\DAS.DBModels\obj\Release\netstandard2.0\DAS.DBModels.AssemblyInfo.cs
+D:\Aswini\TAL\TALAPI\DAS.DBModels\obj\Release\netstandard2.0\DAS.DBModels.dll
+D:\Aswini\TAL\TALAPI\DAS.DBModels\obj\Release\netstandard2.0\DAS.DBModels.pdb

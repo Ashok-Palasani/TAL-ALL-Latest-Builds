@@ -14405,11 +14405,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS\\DAS.csproj",
+      "projectUniqueName": "D:\\Aswini\\TAL\\TALAPI\\DAS\\DAS.csproj",
       "projectName": "DAS",
-      "projectPath": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS\\DAS.csproj",
+      "projectPath": "D:\\Aswini\\TAL\\TALAPI\\DAS\\DAS.csproj",
       "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
-      "outputPath": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS\\obj\\",
+      "outputPath": "D:\\Aswini\\TAL\\TALAPI\\DAS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14428,11 +14428,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.DAL\\DAS.DAL.csproj": {
-              "projectPath": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.DAL\\DAS.DAL.csproj"
+            "D:\\Aswini\\TAL\\TALAPI\\DAS.DAL\\DAS.DAL.csproj": {
+              "projectPath": "D:\\Aswini\\TAL\\TALAPI\\DAS.DAL\\DAS.DAL.csproj"
             },
-            "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.DBModels\\DAS.DBModels.csproj": {
-              "projectPath": "D:\\Aswini\\TAL\\Withnocomplienece & OEE deck latest_withinte_20200801_LATEST\\DAS.DBModels\\DAS.DBModels.csproj"
+            "D:\\Aswini\\TAL\\TALAPI\\DAS.DBModels\\DAS.DBModels.csproj": {
+              "projectPath": "D:\\Aswini\\TAL\\TALAPI\\DAS.DBModels\\DAS.DBModels.csproj"
             }
           }
         }

@@ -42,6 +42,7 @@ namespace DAS.DBModels
         public int Pcsflag { get; set; }
         public string OnHoldFlag { get; set; }
         public int OnHoldCode { get; set; }
+        public int? RejectionQuantity { get; set; }
 
         public virtual Tblmachinedetails Machine { get; set; }
     }
